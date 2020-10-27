@@ -1,0 +1,279 @@
+body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            color: black;
+            font-size: 43px;
+           background: linear-gradient(#11071ff0, #130921F0,#140922A1);      
+        }
+    
+header {
+    width: 100%;
+    font-size: 42px;
+    background: linear-gradient(#150924, #130921);
+    height: 110px;
+    position: fixed;
+    z-index: 2;
+    padding: 18px 8px 0px 18px;
+    top :0;
+}
+
+header img {
+    height: 55px;
+    margin-top: 14px;
+}
+
+header nav {
+    font-size: 32px;
+    color: white;
+    float: right;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 18px 18px;
+    border-radius: 50%;
+    background-color: #291b3c;
+    margin-right: 10px;
+}
+
+#fa-user , #fa-wifi , #fa-bell{
+	width: 50px;
+    height: 40px;
+    text-align: center;
+}
+header nav ul li:nth-child(2) {
+    position: relative;
+}
+
+ #badge{
+    position: absolute;
+    right: 7px;
+    top: 3px;
+    border-radius: 50%;
+    background: red;
+    font-size: 21px;
+   } 
+   
+.user_name{
+	 position: relative;
+      right: 5px;
+}
+  
+
+header nav ul li:hover {
+    display: inline-block;
+    padding: 18px 18px;
+    color: rgba(255, 132, 0, 1)
+}
+.main_container{
+	height: 100vh;
+    width: 100%;
+    color: white;
+    margin-top: 67px;
+    position: relative;
+    padding: 66px;
+    background: linear-gradient(rgba(21, 9, 36, 1), rgba(20, 9, 34, 0.7), rgba(21, 9, 36, 1)), url(../images/rightBacground.png);
+
+	}
+.main_container h1{
+	font-weight :bold
+}
+.play_btn {
+    width: 200px;
+    border: 2px solid hsla(266, 6%, 45%, 1);
+    background: rgba(255, 132, 0, 1);
+    border-radius: 9px;
+    height: 58px;
+    border: none;
+    position: relative;
+    left: 0;
+    font-size: 23px;
+    color: white;
+    font-weight: bold;
+    padding-left: 28px;
+}
+.fa-play {
+    background: rgb(255, 170, 79);
+    padding: 17.5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 9px 0px 0px 9px;
+}
+.watch_btn {
+   width: 200px;
+    border-radius: 9px;
+    height: 58px;
+    background: #706382;
+    border: none;
+    position: relative;
+    left: 3%;
+    font-size: 23px;
+    color: white;
+    font-weight: bold;
+}
+
+#fa_star {
+    background: #a099a9a1;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 9px 0px 0px 9px;
+}
+
+#heart_icon{
+   position: relative;
+    top: 7px;
+    font-size: 37px;
+    left: 6%;
+    padding: 12px;
+    border-radius: 50%;
+    background: #706382;
+}
+  h1{
+  font-size: 60px;
+  }
+  .type{
+  font-size: 23px;
+  }
+  span .fa-circle{
+    margin-left: 12px;
+    font-size: 24px;
+  }
+.age{
+	background: gray;
+    margin-left: 18px;
+    border-radius: 4px;
+    font-size: 23px;
+    padding: 5px 15px 3px 14px;
+}
+.circle{
+	font-size: 23px;
+}
+.rating{
+	font-size: 25px;
+}
+.description p{
+	font-size: 26px;
+	color :white;
+}
+.category_text p{
+	font-size: 28px;
+	color :white;
+	font-weight: bold;
+}
+.d-flex p .fa-circle{
+	font-size: 17px;
+}
+
+.cast{
+	font-size: 28px;
+    font-weight: bold;
+}
+.cast_description{
+	font-size: 23px;
+}
+.see_more{
+    font-size: 23px;
+    font-weight: bold;
+}
+.more_like{
+    font-weight: bold;
+    font-size: 25PX;
+}
+#documentry{
+   font-weight: bold;
+    position: relative;
+    left: 5%;
+    top :19px;
+}
+/ carsoul /
+
+.carousel .carousel-item {
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel .carousel-item h4 {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.carousel .carousel-item img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.carousel .carousel-item .btn {
+    border-radius: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    background: #a177ff;
+    padding: 6px 15px;
+    margin-top: 5px;
+}
+
+.carousel .carousel-item .btn:hover {
+    background: #8c5bff;
+}
+
+.carousel .carousel-item .btn i {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.carousel .thumb-wrapper {
+    margin: 5px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.carousel .thumb-content {
+    padding: 15px;
+    font-size: 13px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    height: 44px;
+    width: 44px;
+    background: none;
+    margin: auto 0;
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+   font-size: 45px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -22px 117px 0 135px;
+    z-index: 5;
+    left: 26px;
+    right: 0;
+    color: white;
+    text-shadow: none;
+    font-weight: bold;
+    width: 76px;
+    height: 76px;
+    background: gray;
+    border-radius: 50%;
+    padding: 18px;
+}
+
+.carousel-control-prev i {
+    margin-left: -3px;
+}
+
+.carousel-control-next i {
+    margin-right: -3px;
+}
+.img-box .img-fluid {
+    width: 400px;
+    height: 260px;
+}

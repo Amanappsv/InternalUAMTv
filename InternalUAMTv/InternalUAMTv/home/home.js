@@ -34,10 +34,10 @@ window.onload = init;
 
 function initText(){
 	
-	document.getElementById("watch_btn_id").innerHTML = TIZEN_L10N['home_watch_now_text'];
-	document.getElementById("category_btn_id").innerHTML = TIZEN_L10N['home_category_text'];
-	document.getElementById("fav_btn_id").innerHTML = TIZEN_L10N['home_favorites_text'];
-	document.getElementById("setting_btn_id").innerHTML = TIZEN_L10N['home_settings_text'];	
+	document.getElementById("watch_txt").innerHTML = TIZEN_L10N['home_watch_now_text'];
+	document.getElementById("cat_txt").innerHTML = TIZEN_L10N['home_category_text'];
+	document.getElementById("fav_txt").innerHTML = TIZEN_L10N['home_favorites_text'];
+	document.getElementById("set_txt").innerHTML = TIZEN_L10N['home_settings_text'];	
 	document.getElementById("category_list_id").innerHTML = TIZEN_L10N['home_category_list'];	
 	document.getElementById("see_more_list_id").innerHTML = TIZEN_L10N['home_see_more_list'];	
 	document.getElementById("most_viewed_list_id").innerHTML = TIZEN_L10N['home_most_viewed_list'];	

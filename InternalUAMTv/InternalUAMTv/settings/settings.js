@@ -2,6 +2,8 @@ const URL = "https://api.uam.tv/";
 
 var init = function () {
        
+	
+	viewLoader();
 	getProfileData();
     initTizenKeys();
 };
@@ -76,10 +78,7 @@ function getProfileData() {
 						//get Subscription details...
 						getSubscriptionDetails(token);
 						
-						
-						//show profile section...
-						showProfileSection();	
-						
+							
 				
 
 				  
@@ -172,7 +171,7 @@ function getDeviceListDetails(token){
 				})
 			
 			
-				
+				hideLoader();
 						
 				//show profile section...
 				showProfileSection();	
@@ -301,4 +300,21 @@ function hideSection(id){
 	document.getElementById(id).style.display = "none";
 	
 }
+
+
+
+function viewLoader(){
+	document.getElementById("parentRightSection").classList.add('parent_right_section');
+	document.getElementById("spinner_display_id").classList.add('loadingio-spinner-spinner-rexyx9adxl');
+
+	}
+
+
+function hideLoader(){
+		document.getElementById("parentRightSection").classList.remove('parent_right_section');
+		document.getElementById("spinner_display_id").classList.remove('loadingio-spinner-spinner-rexyx9adxl');
+		
+	
+		}
+
 

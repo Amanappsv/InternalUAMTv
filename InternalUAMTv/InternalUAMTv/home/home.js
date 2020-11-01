@@ -5,6 +5,7 @@ var mostViewedList = [];
 var randomBannerList = []; 
 
 
+
 var selectedListPos ;               //selected element of any of 3 lists...
 
 var init = function () {
@@ -18,7 +19,8 @@ var init = function () {
 	//set Focus on details text....
 	
 	
-	setFocus("detail" , "activeDetail");
+	setFocus("watch_btn_id" , "watch_btn");
+	setFocus("watch_btn_id" , "onLeft");
 	
 	
 	
@@ -43,7 +45,7 @@ function initText(){
 	document.getElementById("most_viewed_list_id").innerHTML = TIZEN_L10N['home_most_viewed_list'];	
 	document.getElementById("most_recent_list_id").innerHTML = TIZEN_L10N['home_most_recent_list'];	
 	document.getElementById("detail").innerHTML = TIZEN_L10N['home_detail_text'];	
-	document.getElementById("play_btn").innerHTML = TIZEN_L10N['home_play_now_text'];	
+	document.getElementById("add_play_btn").innerHTML = TIZEN_L10N['home_play_now_text'];	
 	document.getElementById("add_fav_btn").innerHTML = TIZEN_L10N['home_add_to_fav_text'];	
 
 }
@@ -140,19 +142,52 @@ function moveOk()
 
 function moveUp()
 {
-	if(document.getElementsByClassName("activeCategory")[0] !== undefined)
+	
+	//on left not null ie. control is on side nav bar...
+	if(document.getElementsByClassName("onLeft")[0] !== undefined)
 		{
-		   setFocus("play_btn" , "button_play_now");
+		
+			var el = document.getElementsByClassName("watch_btn")[0].id;
+	
+			 if(el === "category_btn_id")
+			{
+				
+				removeFocus("watch_btn");
+				setFocus("watch_btn_id", "watch_btn");  
+				
+				showWatchSection();
+			
+			}
+			else if(el === "fav_btn_id")
+			{
+				removeFocus("watch_btn");
+				setFocus("category_btn_id", "watch_btn");  
+				
+				showCategorySection();
+				
+			}
+			
+		
+		}
+	
+	
+	//start else..
+	else
+		{
+		
+		if(document.getElementsByClassName("activeCategory")[0] !== undefined)
+		{
+		   setFocus("add_play_btn" , "button_play");
 		   
 		   removeFocus("activeCategory");
 			
 		}
-	else if(document.getElementsByClassName("button_play_now")[0] !== undefined)
+	else if(document.getElementsByClassName("button_play")[0] !== undefined)
 	{
 	  
 	   setFocus("detail", "activeDetail");
 	   
-	   removeFocus("button_play_now");
+	   removeFocus("button_play");
 	}
 	else if(document.getElementsByClassName("button_favourite")[0] !== undefined)
 	{
@@ -178,25 +213,67 @@ function moveUp()
 	   
 	   removeFocus("activeRecents");
 	}
+		
+		
+		}
+	
+	//end else..
+	
+	
 	
 }
 
 
 function moveDown()
 {
-	if(document.getElementsByClassName("activeDetail")[0] !== undefined)
+	
+	//on left not null ie. control is on side nav bar...
+	if(document.getElementsByClassName("onLeft")[0] !== undefined)
 		{
-		   setFocus("play_btn", "button_play_now");
+		
+			var el = document.getElementsByClassName("watch_btn")[0].id;
+			
+			if(el === "watch_btn_id")
+				{
+						removeFocus("watch_btn");
+						setFocus("category_btn_id", "watch_btn");  
+						
+						showCategorySection();
+				}
+			else if(el === "category_btn_id")
+			{
+				
+				removeFocus("watch_btn");
+				setFocus("fav_btn_id", "watch_btn");  
+				
+				showFavouriteSection();
+			}
+			else if(el === "fav_btn_id")
+			{
+				removeFocus("watch_btn");
+				setFocus("setting_btn_id", "watch_btn");  
+				
+				settingsNavigate();
+			}
+			
+		
+		}
+	else
+		{
+	
+		if(document.getElementsByClassName("activeDetail")[0] !== undefined)
+		{
+		   setFocus("add_play_btn", "button_play");
 		   
 		   removeFocus("activeDetail");
 			
 		}
-	else if(document.getElementsByClassName("button_play_now")[0] !== undefined)
+	else if(document.getElementsByClassName("button_play")[0] !== undefined)
 		{
 		   selectedListPos = 0 ;
 		   setFocus("categories " +  selectedListPos, "activeCategory");
 		   
-		   removeFocus("button_play_now");
+		   removeFocus("button_play");
 		}
 	else if(document.getElementsByClassName("button_favourite")[0] !== undefined)
 	{
@@ -224,6 +301,9 @@ function moveDown()
 	   removeFocus("activeViewed");
 	}
 	
+		}
+	
+	
 }
 
 
@@ -234,13 +314,140 @@ function moveLeft(){
 	if(document.getElementsByClassName("button_favourite")[0] !== undefined)
 	{
 		
-	   setFocus("play_btn", "button_play_now");
+	   setFocus("add_play_btn", "button_play");
 	   
 	   removeFocus("button_favourite");
 	}
+	else if(document.getElementsByClassName("activeCategory")[0] !== undefined)
+	{
+		if(selectedListPos !== 0)
+			{
+			
+			  if(selectedListPos % 4 == 0)
+				{
+					document.getElementById("category_control_left").click();
+				}
+			
+			   selectedListPos--;
+			   removeFocus("activeCategory");
+			   setFocus("categories " +  selectedListPos, "activeCategory");
+			   
+			 
+			   
+			}
+		else
+			{
+			removeFocus("activeCategory");
+	        var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
+		    setFocus(onLeftElementId , "onLeft");
+		    
+		    document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			  
+			
+			
+			
+			}
+	  
+	   
+	  
+	}
+	else if(document.getElementsByClassName("activeViewed")[0] !== undefined)
+	{
+		if(selectedListPos !== 0)
+			{
+			
+			 if(selectedListPos % 4 == 0)
+				{
+					document.getElementById("viewed_control_left").click();
+				}
+			
+			   selectedListPos--;
+			   removeFocus("activeViewed");
+			   setFocus("viewed " +  selectedListPos, "activeViewed");
+			   
+			  
+			}	  
+		
+			else
+				{
+				removeFocus("activeViewed");
+				var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
+				setFocus(onLeftElementId , "onLeft");
+				
+				 document.body.scrollTop = 0;
+				  document.documentElement.scrollTop = 0;
+				  
+				
+				
+				
+				}
+			
+	  
+	}
+	else if(document.getElementsByClassName("activeRecents")[0] !== undefined)
+	{
+		if(selectedListPos !== 0)
+			{
+			
+			 if(selectedListPos % 4 == 0)
+				{
+					document.getElementById("recent_control_left").click();
+				}
+			
+			   selectedListPos--;
+			   removeFocus("activeRecents");
+			   setFocus("recent " +  selectedListPos, "activeRecents");
+			   
+			  
+			}	  	
+		else
+		{
+			removeFocus("activeRecents");
+			var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
+			setFocus(onLeftElementId , "onLeft");
+			
+			 document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			  
+			
+			
+			
+		}
+	  
+	}
+	
+	
+	
+	//move to side navigation drawer
+	else if(document.getElementsByClassName("activeDetail")[0] !== undefined)
+	{
+		        removeFocus("activeDetail");
+		        var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
+			    setFocus(onLeftElementId , "onLeft");
+			    
+			    document.body.scrollTop = 0;
+				  document.documentElement.scrollTop = 0;
+				  
+	}
+	else if(document.getElementsByClassName("button_play")[0] !== undefined)
+	{
+				removeFocus("button_play");
+		        var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
+			    setFocus(onLeftElementId , "onLeft");
+	}
+	
+	
 	
 }
 
+
+
+function settingsNavigate()
+{
+   location.href = "../settings/settings.html";
+
+}
 
 
 function scroll(by)
@@ -253,46 +460,107 @@ function scroll(by)
 
 function moveRight()
 {
-	if(document.getElementsByClassName("button_play_now")[0] !== undefined)
-	{
+	//on left not null ie. control is on side nav bar...
+	if(document.getElementsByClassName("onLeft")[0] !== undefined)
+		{
 		
-			   removeFocus("button_play_now");
-			   setFocus("add_fav_btn", "button_favourite");
+			removeFocus("onLeft");
+			var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
+		    if(onLeftElementId === "watch_btn_id")
+		    	{
+		    		setFocus("detail" , "activeDetail");
+		    	}
+		    else if(onLeftElementId === "category_btn_id")
+	    	{
+	    		
+	    	}
+			
 		
-	  
-	}
-	else if(document.getElementsByClassName("activeCategory")[0] !== undefined)
-	{
-		if(selectedListPos !== (categoryList.length-1))
-			{
-			   selectedListPos++;
-			   removeFocus("activeCategory");
-			   setFocus("categories " +  selectedListPos, "activeCategory");
-			}
-	  
-	   
-	  
-	}
-	else if(document.getElementsByClassName("activeViewed")[0] !== undefined)
-	{
-		if(selectedListPos !== (mostViewedList.length-1))
-			{
-			   selectedListPos++;
-			   removeFocus("activeViewed");
-			   setFocus("viewed " +  selectedListPos, "activeViewed");
-			}	  	
-	  
-	}
-	else if(document.getElementsByClassName("activeRecents")[0] !== undefined)
-	{
-		if(selectedListPos !== (mostRecentsList.length-1))
-			{
-			   selectedListPos++;
-			   removeFocus("activeRecents");
-			   setFocus("recent " +  selectedListPos, "activeRecents");
-			}	  	
-	  
-	}
+		}
+	else
+		{
+		
+		if(document.getElementsByClassName("button_play")[0] !== undefined)
+		{
+			
+				   removeFocus("button_play");
+				   setFocus("add_fav_btn", "button_favourite");
+			
+		  
+		}
+		else if(document.getElementsByClassName("activeCategory")[0] !== undefined)
+		{
+			if(selectedListPos !== (categoryList.length-1))
+				{
+				   selectedListPos++;
+				   removeFocus("activeCategory");
+				   setFocus("categories " +  selectedListPos, "activeCategory");
+				   
+				   if(selectedListPos % 4 == 0)
+					{
+						document.getElementById("category_control_right").click();
+					}
+				}
+			else
+				{
+					selectedListPos = 0;
+				   removeFocus("activeCategory");
+				   setFocus("categories " +  selectedListPos, "activeCategory");
+				   document.getElementById("category_control_right").click();
+				}
+			
+			
+		  
+		   
+		  
+		}
+		else if(document.getElementsByClassName("activeViewed")[0] !== undefined)
+		{
+			if(selectedListPos !== (mostViewedList.length-1))
+				{
+				   selectedListPos++;
+				   removeFocus("activeViewed");
+				   setFocus("viewed " +  selectedListPos, "activeViewed");
+				   if(selectedListPos % 4 == 0)
+					{
+						document.getElementById("viewed_control_right").click();
+					}
+				}
+			else
+				{
+					selectedListPos = 0;
+				   removeFocus("activeViewed");
+				   setFocus("viewed " +  selectedListPos, "activeViewed");
+				   document.getElementById("viewed_control_right").click();
+				}
+			
+		  
+		}
+		else if(document.getElementsByClassName("activeRecents")[0] !== undefined)
+		{
+			if(selectedListPos !== (mostRecentsList.length-1))
+				{
+				   selectedListPos++;
+				   removeFocus("activeRecents");
+				   setFocus("recent " +  selectedListPos, "activeRecents");
+				   if(selectedListPos % 4 == 0)
+					{
+						document.getElementById("recent_control_right").click();
+					}
+				}
+			else
+				{
+					selectedListPos = 0;
+				   removeFocus("activeRecents");
+				   setFocus("recent " +  selectedListPos, "activeRecents");
+				   document.getElementById("recent_control_right").click();
+				}
+			  	
+		  
+		}
+		
+		
+		}
 	
 	
 }
@@ -947,9 +1215,9 @@ function removeFocusHome(){
 	
 	
 	//Assign focus to detail button....
-	if(document.getElementsByClassName("activeDetail")[0] === undefined)
+	if(document.getElementsByClassName("activeDetail")[0] !== undefined)
 	{
-	   setFocus("detail" , "activeDetail");	
+	   remove("activeDetail");	
 	}
 
 	
@@ -957,9 +1225,9 @@ function removeFocusHome(){
 	{
 	   removeFocus("activeCategory");	
 	}
-else if(document.getElementsByClassName("button_play_now")[0] !== undefined)
+else if(document.getElementsByClassName("button_play")[0] !== undefined)
 	{
-		removeFocus("button_play_now");
+		removeFocus("button_play");
 	}
 else if(document.getElementsByClassName("button_favourite")[0] !== undefined)
 	{

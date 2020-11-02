@@ -6,7 +6,7 @@ var randomBannerList = [];
 
 
 
-var selectedCatPos=0 ,  selectedViewedPos=0 ,  selectedRecentPos=0;               //selected element of any of 3 lists...
+var selectedCatPos=0 ,  selectedViewedPos=0 ,  selectedRecentPos=0 , selectedScreenCatPos=0;               //selected element of any of 3 lists...
 
 var init = function () {
        
@@ -44,8 +44,7 @@ function initText(){
 	document.getElementById("see_more_list_id").innerHTML = TIZEN_L10N['home_see_more_list'];	
 	document.getElementById("most_viewed_list_id").innerHTML = TIZEN_L10N['home_most_viewed_list'];	
 	document.getElementById("most_recent_list_id").innerHTML = TIZEN_L10N['home_most_recent_list'];	
-	document.getElementById("detail").innerHTML = TIZEN_L10N['home_detail_text'];	
-	document.getElementById("add_play_btn").innerHTML = TIZEN_L10N['home_play_now_text'];	
+	document.getElementById("detail").innerHTML = TIZEN_L10N['home_detail_text'];		
 	document.getElementById("add_fav_btn").innerHTML = TIZEN_L10N['home_add_to_fav_text'];	
 
 }
@@ -134,7 +133,10 @@ function moveOk()
 	{
 		console.log( document.getElementsByClassName("activeRecents")[0].id);
 	}
-	
+	else if(document.getElementsByClassName("activeScreenCategory")[0] !== undefined)
+	{
+		console.log( document.getElementsByClassName("activeScreenCategory")[0].id);
+	}
 	
 	  
 }
@@ -178,6 +180,7 @@ function moveUp()
 		if(document.getElementsByClassName("activeCategory")[0] !== undefined)
 		{
 		   setFocus("add_play_btn" , "button_play");
+		   document.getElementById("add_play_btn").style.opacity = 0.5;
 		   
 		   removeFocus("activeCategory");
 			
@@ -186,6 +189,8 @@ function moveUp()
 	{
 	  
 	   setFocus("detail", "activeDetail");
+	   document.getElementById("add_play_btn").style.opacity = 1;
+
 	   
 	   removeFocus("button_play");
 	}
@@ -264,7 +269,8 @@ function moveDown()
 		if(document.getElementsByClassName("activeDetail")[0] !== undefined)
 		{
 		   setFocus("add_play_btn", "button_play");
-		   
+		   document.getElementById("add_play_btn").style.opacity = 0.5;
+
 		   removeFocus("activeDetail");
 			
 		}
@@ -272,6 +278,8 @@ function moveDown()
 		{
 		 //  selectedListPos = 0 ;
 		   setFocus("categories " +  selectedCatPos, "activeCategory");
+		   document.getElementById("add_play_btn").style.opacity = 1;
+
 		   
 		   removeFocus("button_play");
 		}
@@ -315,6 +323,8 @@ function moveLeft(){
 	{
 		
 	   setFocus("add_play_btn", "button_play");
+	   document.getElementById("add_play_btn").style.opacity = 0.5;
+
 	   
 	   removeFocus("button_favourite");
 	}
@@ -416,6 +426,43 @@ function moveLeft(){
 		}
 	  
 	}
+
+	
+	//	activeScreenCategory
+	else if(document.getElementsByClassName("activeScreenCategory")[0] !== undefined)
+	{
+		if(selectedScreenCatPos !== 0)
+			{
+			
+			
+			 if(selectedScreenCatPos % 4 ===0)
+				 {
+				 	scroll('-=200px');
+				 }
+				 
+			   selectedScreenCatPos--;
+			   removeFocus("activeScreenCategory");
+			   setFocus("categoryScreen " +  selectedScreenCatPos, "activeScreenCategory");
+			   
+			  
+			   
+			  
+			}	  	
+		else
+		{
+			removeFocus("activeScreenCategory");
+			var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
+			setFocus(onLeftElementId , "onLeft");
+			
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			  
+			
+			
+			
+		}
+	  
+	}
 	
 	
 	
@@ -433,6 +480,8 @@ function moveLeft(){
 	else if(document.getElementsByClassName("button_play")[0] !== undefined)
 	{
 				removeFocus("button_play");
+			   document.getElementById("add_play_btn").style.opacity = 1;
+
 		        var onLeftElementId =  document.getElementsByClassName("watch_btn")[0].id;
 			    setFocus(onLeftElementId , "onLeft");
 	}
@@ -472,17 +521,22 @@ function moveRight()
 		    	}
 		    else if(onLeftElementId === "category_btn_id")
 	    	{
-	    		
+		   
+		    		setFocus("categoryScreen " +  selectedScreenCatPos, "activeScreenCategory");
 	    	}
 			
 		
 		}
+	
+	//start else
 	else
 		{
 		
 		if(document.getElementsByClassName("button_play")[0] !== undefined)
 		{
 			
+			   document.getElementById("add_play_btn").style.opacity = 1;
+
 				   removeFocus("button_play");
 				   setFocus("add_fav_btn", "button_favourite");
 			
@@ -558,8 +612,36 @@ function moveRight()
 			  	
 		  
 		}
+		else if(document.getElementsByClassName("activeScreenCategory")[0] !== undefined)
+		{
+			if(selectedScreenCatPos !== (categoryList.length-1))
+				{
+					selectedScreenCatPos++;
+				   removeFocus("activeScreenCategory");
+				   setFocus("categoryScreen " +  selectedScreenCatPos, "activeScreenCategory");
+				   
+				   if(selectedScreenCatPos % 4 ===0)
+					 {
+					 	scroll('+=200px');
+					 }
+					 
+				}
+			else
+				{
+					selectedScreenCatPos = 0;
+				   removeFocus("activeScreenCategory");
+				   setFocus("categoryScreen " +  selectedScreenCatPos, "activeScreenCategory");
+				   
+
+					  document.body.scrollTop = 0;
+					  document.documentElement.scrollTop = 0;
+					  
+				}	  
+		}
 		
 		
+		
+		//end else
 		}
 	
 	
@@ -800,7 +882,7 @@ var rowId = "-1";
         
         
         
-        <div class="col-lg-3 mt-4">
+        <div id="categoryScreen ${idx}" class="col-lg-3 mt-4">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="${result["image"]}" alt="Card image cap">
             <p class="category_type">${result["title"]}</p>
@@ -1103,7 +1185,7 @@ var rowId = "-1";
         
         
         
-        <div class="col-lg-3 mt-4">
+        <div id="viewedScreen ${idx}" class="col-lg-3 mt-4">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="${result["image"]}" alt="Card image cap">
             <p class="category_type">${result["title"]}</p>

@@ -501,7 +501,7 @@ span #detail {
 	
 
 .button_play{
-	 opacity: 0.4;
+	 opacity: 0.4 !important;
 }
 .button_favourite{
 	opacity: 0.4;

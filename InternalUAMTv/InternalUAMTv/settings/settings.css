@@ -45,7 +45,9 @@ header nav ul li {
     background-color: #291b3c;
     margin-right: 10px;
 }
-
+.viewBorder{
+	 border-left: 3px solid #FF8400;
+}
 #fa-user , #fa-wifi , #fa-bell{
 	width: 50px;
     height: 40px;
@@ -114,12 +116,6 @@ hr{
     height: .5px;
     margin-left: 25px;
 }
-
-
-.parent_right_section{
-	display: none;
-}
-
 
 
 
@@ -435,7 +431,7 @@ color: white;
   background: #82777a;
 }
 .loadingio-spinner-spinner-rexyx9adxl {
-       width: 200px;
+    width: 200px;
     height: 200px;
     display: inline-block;
     overflow: hidden;
@@ -446,20 +442,33 @@ color: white;
     margin: 0 auto;
     right: 0;
     z-index: 2;
-  
-
 }
 .ldio-eon67kjyqwt {
   width: 100%;
   height: 100%;
-    position: absolute;
-    top: 30%;
-    left: 55%;
-      transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
   backface-visibility: hidden;
   transform-origin: 0 0; / see note above /
 }
 .ldio-eon67kjyqwt div {
 	box-sizing: content-box; 
-	}}
+	}
 	
+	.spinner{
+    position: absolute;
+    left: 58%;
+    top: 33%;
+    }
+    
+.hideLoader{
+    display: none;
+    }
+    
+ .showLoader{
+    display: block;
+    }
+    
+.parent_right_section{
+	display: none;
+}
+    

@@ -225,7 +225,12 @@ function showProfileSection()
 	  hideSection("help_section_id");
 	  hideSection("about_section_id");
 	  hideSection("contact_section_id");
- 
+      document.getElementById('profile_border').classList.add('viewBorder');
+      document.getElementById('subscription_border').classList.remove('viewBorder');
+      document.getElementById('register_border').classList.remove('viewBorder');
+      document.getElementById('help_border').classList.remove('viewBorder');
+      document.getElementById('contact_border').classList.remove('viewBorder');
+      document.getElementById('about_border').classList.remove('viewBorder');
 
 }
 
@@ -238,6 +243,12 @@ function showSubscriptionSection()
   hideSection("help_section_id");
   hideSection("about_section_id");
   hideSection("contact_section_id");
+  document.getElementById('profile_border').classList.remove('viewBorder');
+  document.getElementById('subscription_border').classList.add('viewBorder');
+  document.getElementById('register_border').classList.remove('viewBorder');
+  document.getElementById('help_border').classList.remove('viewBorder');
+  document.getElementById('contact_border').classList.remove('viewBorder');
+  document.getElementById('about_border').classList.remove('viewBorder');
 
 }
 
@@ -249,6 +260,12 @@ function showRegisterSection()
   hideSection("help_section_id");
   hideSection("about_section_id");
   hideSection("contact_section_id");
+  document.getElementById('profile_border').classList.remove('viewBorder');
+  document.getElementById('subscription_border').classList.remove('viewBorder');
+  document.getElementById('register_border').classList.add('viewBorder');
+  document.getElementById('help_border').classList.remove('viewBorder');
+  document.getElementById('contact_border').classList.remove('viewBorder');
+  document.getElementById('about_border').classList.remove('viewBorder');
 
 }
 
@@ -261,6 +278,12 @@ function showHelpSection()
   showSection("help_section_id");
   hideSection("about_section_id");
   hideSection("contact_section_id");
+  document.getElementById('profile_border').classList.remove('viewBorder');
+  document.getElementById('subscription_border').classList.remove('viewBorder');
+  document.getElementById('register_border').classList.remove('viewBorder');
+  document.getElementById('help_border').classList.add('viewBorder');
+  document.getElementById('contact_border').classList.remove('viewBorder');
+  document.getElementById('about_border').classList.remove('viewBorder');
 
 }
 
@@ -272,6 +295,12 @@ function showContactSection()
   hideSection("help_section_id");
   hideSection("about_section_id");
   showSection("contact_section_id");
+  document.getElementById('profile_border').classList.remove('viewBorder');
+  document.getElementById('subscription_border').classList.remove('viewBorder');
+  document.getElementById('register_border').classList.remove('viewBorder');
+  document.getElementById('help_border').classList.remove('viewBorder');
+  document.getElementById('contact_border').classList.add('viewBorder');
+  document.getElementById('about_border').classList.remove('viewBorder');
 }
 
 
@@ -283,6 +312,12 @@ function showAboutSection()
   hideSection("help_section_id");
   showSection("about_section_id");
   hideSection("contact_section_id");
+  document.getElementById('profile_border').classList.remove('viewBorder');
+  document.getElementById('subscription_border').classList.remove('viewBorder');
+  document.getElementById('register_border').classList.remove('viewBorder');
+  document.getElementById('help_border').classList.remove('viewBorder');
+  document.getElementById('contact_border').classList.remove('viewBorder');
+  document.getElementById('about_border').classList.add('viewBorder');
 
 }
 
@@ -290,6 +325,7 @@ function showAboutSection()
 function showSection(id){
 
 	document.getElementById(id).style.display = "block";
+	
 	
 }
 
@@ -304,15 +340,21 @@ function hideSection(id){
 
 
 function viewLoader(){
-	document.getElementById("parentRightSection").classList.add('parent_right_section');
-	document.getElementById("spinner_display_id").classList.add('loadingio-spinner-spinner-rexyx9adxl');
+	/* document.getElementById("parentRightSection").classList.add('parent_right_section');
+	document.getElementById("spinner_display_id").classList.add('showLoader'); */
+	document.getElementById('spinner_display_id').classList.add('showLoader');
+	document.getElementById('parentRightSection').classList.add('hideLoader');
 
 	}
 
 
 function hideLoader(){
-		document.getElementById("parentRightSection").classList.remove('parent_right_section');
-		document.getElementById("spinner_display_id").classList.remove('loadingio-spinner-spinner-rexyx9adxl');
+		/*document.getElementById("parentRightSection").classList.remove('parent_right_section');
+		document.getElementById("spinner_display_id").classList.remove('showLoader'); */
+	  document.getElementById('spinner_display_id').classList.remove('showLoader');
+	  document.getElementById('spinner_display_id').classList.add('hideLoader');
+	  document.getElementById('parentRightSection').classList.remove('hideLoader');
+	  document.getElementById('parentRightSection').classList.add('showLoader');
 		
 	
 		}

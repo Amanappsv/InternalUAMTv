@@ -15,6 +15,7 @@
       <link rel="stylesheet" type="text/css" href="../settings/settings.css" />
 </head>
 
+
 <body>
 
   <header>
@@ -31,9 +32,6 @@
 </header>
 
    <div class="main_section">
-   
-   
-   
    
      <div id="mySidenav" class="sidenav">
 
@@ -94,9 +92,9 @@
    
    
    
-      <!-- Loader section -->
-             <div class=" spinner .loadingio-spinner-spinner-rexyx9adxl" id="spinner_display_id">
-            <div class="ldio-eon67kjyqwt">
+     <!-- Loader section -->
+             <div class=" spinner " id="spinner_display_id">
+            <div class="ldio-eon67kjyqwt" >
                 <div></div>
                 <div></div>
                 <div></div>
@@ -112,25 +110,27 @@
             </div>
         </div>
    
-   
-   
+
 <div class="container-fluid">
         <div class="row" style=" height: 100vh;">
            <div class="col-3 offset-2 ">
-   <h1 class="mt-5 pl-2 setting_text"><i class="fa fa-arrow-left"></i> Settings</h1>
-                <div class="d-flex flex-column pl-5 pr-5 pt-5 left_nav_item" style="
-    align-items: start;
-">
-                    <button class="mt-4 nav_button" onclick="showProfileSection()">Profile</button>
-                    <button class="mt-4 nav_button" onclick="showSubscriptionSection()">Subscription</button>
-                    <button class="mt-4 nav_button" onclick="showRegisterSection()">Registered device</button>
-                    <button class="mt-4 nav_button" onclick="showHelpSection()">Help</button>
-                    <button class="mt-4 nav_button" onclick="showContactSection()">Contat Us</button>
-                    <button class="mt-4 nav_button" onclick="showAboutSection()">About Us</button>
+   <h1 class="mt-5 pl-2 setting_text"><i class="fa fa-arrow-left" ></i> <span >Settings</span></h1>
+                <div class="d-flex flex-column pl-5 pr-5 pt-5 left_nav_item" style="align-items: start;">
+                    <button class="mt-4 nav_button" onclick="showProfileSection()" id="profile_border">Profile</button>
+                    <button class="mt-4 nav_button" onclick="showSubscriptionSection()" id="subscription_border">Subscription</button>
+                    <button class="mt-4 nav_button" onclick="showRegisterSection()" id="register_border">Registered device</button>
+                    <button class="mt-4 nav_button" onclick="showHelpSection()" id="help_border">Help</button>
+                    <button class="mt-4 nav_button" onclick="showContactSection()" id="contact_border">Contat Us</button>
+                    <button class="mt-4 nav_button" onclick="showAboutSection()" id="about_border">About Us</button>
                 </div>
             </div>
+               <script type="text/javascript">
+
+   </script>
             <div id="parentRightSection" class="col-7 mt-5 pl-5 my-4">
             <br><br><br>
+            
+    
             
            
            <!-- Profile section -->
@@ -157,22 +157,8 @@
         </div>
             
             </div>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+                 
+             <!-- Subscription section -->
             <div id="subscription_section_id" >
             
             <h1 style="font-weight:bold; font-size: 49px">Subscription Palns</h1>
@@ -226,10 +212,8 @@
             
             </div>
             
-            
-            
-            
-            
+                   
+             <!-- Register section -->
             <div id="register_section_id">
             
             <h1 style="font-weight:bold; font-size: 49px">Registered Devices</h1>
@@ -258,12 +242,7 @@
             
             
             </div>
-            
-            
-            
-            
-            
-            
+          <!-- Help section -->
            <div id="help_section_id" class="col-7" style="text-align: center;display: block;position: absolute;top: 120px;left: 15%;">
           
                
@@ -273,7 +252,7 @@
                <h1 class="mt-5 website">https://uam.tv/page/about/faq/</h1>
              
            </div>
-            
+             <!-- Contact section -->
             <div id="contact_section_id" >
             
             <h1 style="font-weight:bold; font-size: 49px" class="ml-3">Contact Us</h1>
@@ -297,8 +276,7 @@
             
             </div>
             
-            
-            
+            <!-- About section -->
             <div id="about_section_id" >
             
             
@@ -316,14 +294,9 @@
                          
                </div>
                </div>
-            
-            
-            </div>
-            
-            
-            
-         
-             
+                       
+            </div>                   
+                
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@ var randomBannerList = [];
 
 
 
-var selectedListPos ;               //selected element of any of 3 lists...
+var selectedCatPos=0 ,  selectedViewedPos=0 ,  selectedRecentPos=0;               //selected element of any of 3 lists...
 
 var init = function () {
        
@@ -199,8 +199,8 @@ function moveUp()
 	else if(document.getElementsByClassName("activeViewed")[0] !== undefined)
 		{
 			scroll('-=500px');
-		   selectedListPos = 0 ;
-		   setFocus("categories " +  selectedListPos, "activeCategory");
+//		   selectedListPos = 0 ;
+		   setFocus("categories " +  selectedCatPos, "activeCategory");
 		   
 		   removeFocus("activeViewed");
 		}
@@ -208,8 +208,8 @@ function moveUp()
 	{
 	
 		scroll('-=200px');
-		selectedListPos = 0 ;
-	   setFocus("viewed " +  selectedListPos, "activeViewed");
+	//	selectedListPos = 0 ;
+	   setFocus("viewed " +  selectedRecentPos, "activeViewed");
 	   
 	   removeFocus("activeRecents");
 	}
@@ -270,15 +270,15 @@ function moveDown()
 		}
 	else if(document.getElementsByClassName("button_play")[0] !== undefined)
 		{
-		   selectedListPos = 0 ;
-		   setFocus("categories " +  selectedListPos, "activeCategory");
+		 //  selectedListPos = 0 ;
+		   setFocus("categories " +  selectedCatPos, "activeCategory");
 		   
 		   removeFocus("button_play");
 		}
 	else if(document.getElementsByClassName("button_favourite")[0] !== undefined)
 	{
-	   selectedListPos = 0 ;
-	   setFocus("categories " +  selectedListPos, "activeCategory");
+	  // selectedListPos = 0 ;
+	   setFocus("categories " +  selectedCatPos, "activeCategory");
 	   
 	   removeFocus("button_favourite");
 	}
@@ -286,8 +286,8 @@ function moveDown()
 		{
 		 
 		 scroll('+=400px');
-		 selectedListPos = 0 ;
-		   setFocus("viewed " +  selectedListPos, "activeViewed");
+		// selectedListPos = 0 ;
+		   setFocus("viewed " +  selectedViewedPos, "activeViewed");
 		   
 		   removeFocus("activeCategory");
 		}
@@ -295,8 +295,8 @@ function moveDown()
 	{
 		
 		 scroll('+=300px');	
-		selectedListPos = 0 ;
-	   setFocus("recent " +  selectedListPos, "activeRecents");
+	//	selectedListPos = 0 ;
+	   setFocus("recent " +  selectedViewedPos, "activeRecents");
 	   
 	   removeFocus("activeViewed");
 	}
@@ -320,17 +320,17 @@ function moveLeft(){
 	}
 	else if(document.getElementsByClassName("activeCategory")[0] !== undefined)
 	{
-		if(selectedListPos !== 0)
+		if(selectedCatPos !== 0)
 			{
 			
-			  if(selectedListPos % 4 == 0)
+			  if(selectedCatPos % 4 == 0)
 				{
 					document.getElementById("category_control_left").click();
 				}
 			
-			   selectedListPos--;
+			   selectedCatPos--;
 			   removeFocus("activeCategory");
-			   setFocus("categories " +  selectedListPos, "activeCategory");
+			   setFocus("categories " +  selectedCatPos, "activeCategory");
 			   
 			 
 			   
@@ -354,17 +354,17 @@ function moveLeft(){
 	}
 	else if(document.getElementsByClassName("activeViewed")[0] !== undefined)
 	{
-		if(selectedListPos !== 0)
+		if(selectedViewedPos !== 0)
 			{
 			
-			 if(selectedListPos % 4 == 0)
+			 if(selectedViewedPos % 4 == 0)
 				{
 					document.getElementById("viewed_control_left").click();
 				}
 			
-			   selectedListPos--;
+			 selectedViewedPos--;
 			   removeFocus("activeViewed");
-			   setFocus("viewed " +  selectedListPos, "activeViewed");
+			   setFocus("viewed " +  selectedViewedPos, "activeViewed");
 			   
 			  
 			}	  
@@ -387,17 +387,17 @@ function moveLeft(){
 	}
 	else if(document.getElementsByClassName("activeRecents")[0] !== undefined)
 	{
-		if(selectedListPos !== 0)
+		if(selectedRecentPos !== 0)
 			{
 			
-			 if(selectedListPos % 4 == 0)
+			 if(selectedRecentPos % 4 == 0)
 				{
 					document.getElementById("recent_control_left").click();
 				}
 			
-			   selectedListPos--;
+			 selectedRecentPos--;
 			   removeFocus("activeRecents");
-			   setFocus("recent " +  selectedListPos, "activeRecents");
+			   setFocus("recent " +  selectedRecentPos, "activeRecents");
 			   
 			  
 			}	  	
@@ -490,22 +490,22 @@ function moveRight()
 		}
 		else if(document.getElementsByClassName("activeCategory")[0] !== undefined)
 		{
-			if(selectedListPos !== (categoryList.length-1))
+			if(selectedCatPos !== (categoryList.length-1))
 				{
-				   selectedListPos++;
+				selectedCatPos++;
 				   removeFocus("activeCategory");
-				   setFocus("categories " +  selectedListPos, "activeCategory");
+				   setFocus("categories " +  selectedCatPos, "activeCategory");
 				   
-				   if(selectedListPos % 4 == 0)
+				   if(selectedCatPos % 4 == 0)
 					{
 						document.getElementById("category_control_right").click();
 					}
 				}
 			else
 				{
-					selectedListPos = 0;
+					selectedCatPos = 0;
 				   removeFocus("activeCategory");
-				   setFocus("categories " +  selectedListPos, "activeCategory");
+				   setFocus("categories " +  selectedCatPos, "activeCategory");
 				   document.getElementById("category_control_right").click();
 				}
 			
@@ -516,21 +516,21 @@ function moveRight()
 		}
 		else if(document.getElementsByClassName("activeViewed")[0] !== undefined)
 		{
-			if(selectedListPos !== (mostViewedList.length-1))
+			if(selectedViewedPos !== (mostViewedList.length-1))
 				{
-				   selectedListPos++;
+				selectedViewedPos++;
 				   removeFocus("activeViewed");
-				   setFocus("viewed " +  selectedListPos, "activeViewed");
-				   if(selectedListPos % 4 == 0)
+				   setFocus("viewed " +  selectedViewedPos, "activeViewed");
+				   if(selectedViewedPos % 4 == 0)
 					{
 						document.getElementById("viewed_control_right").click();
 					}
 				}
 			else
 				{
-					selectedListPos = 0;
+				selectedViewedPos = 0;
 				   removeFocus("activeViewed");
-				   setFocus("viewed " +  selectedListPos, "activeViewed");
+				   setFocus("viewed " +  selectedViewedPos, "activeViewed");
 				   document.getElementById("viewed_control_right").click();
 				}
 			
@@ -538,21 +538,21 @@ function moveRight()
 		}
 		else if(document.getElementsByClassName("activeRecents")[0] !== undefined)
 		{
-			if(selectedListPos !== (mostRecentsList.length-1))
+			if(selectedRecentPos !== (mostRecentsList.length-1))
 				{
-				   selectedListPos++;
+				selectedRecentPos++;
 				   removeFocus("activeRecents");
-				   setFocus("recent " +  selectedListPos, "activeRecents");
-				   if(selectedListPos % 4 == 0)
+				   setFocus("recent " +  selectedRecentPos, "activeRecents");
+				   if(selectedRecentPos % 4 == 0)
 					{
 						document.getElementById("recent_control_right").click();
 					}
 				}
 			else
 				{
-					selectedListPos = 0;
+				selectedRecentPos = 0;
 				   removeFocus("activeRecents");
-				   setFocus("recent " +  selectedListPos, "activeRecents");
+				   setFocus("recent " +  selectedRecentPos, "activeRecents");
 				   document.getElementById("recent_control_right").click();
 				}
 			  	

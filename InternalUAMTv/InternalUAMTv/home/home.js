@@ -6,10 +6,12 @@ var randomBannerList = [];
 
 
 
+
 var selectedCatPos = 0,
     selectedViewedPos = 0,
     selectedRecentPos = 0,
     selectedScreenCatPos = 0; //selected element of any of 3 lists...
+
 
 var init = function() {
 
@@ -155,6 +157,7 @@ function moveUp() {
             document.getElementById("add_play_btn").style.opacity = 0.5;
 
             removeFocus("activeCategory");
+            removeFocus("cardhover");
 
         } else if (document.getElementsByClassName("button_play")[0] !== undefined) {
 
@@ -174,13 +177,21 @@ function moveUp() {
             setFocus("categories " + selectedCatPos, "activeCategory");
 
             removeFocus("activeViewed");
+            removeFocus("cardhover");
+            
+            setFocus("cat-wrap " + selectedCatPos, "cardhover");
+
         } else if (document.getElementsByClassName("activeRecents")[0] !== undefined) {
 
             scroll('-=200px');
             //	selectedListPos = 0 ;
-            setFocus("viewed " + selectedRecentPos, "activeViewed");
+            setFocus("viewed " + selectedViewedPos, "activeViewed");
+            
 
             removeFocus("activeRecents");
+            removeFocus("cardhover");
+            
+            setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
         }
 
 
@@ -228,6 +239,8 @@ function moveDown() {
         } else if (document.getElementsByClassName("button_play")[0] !== undefined) {
             //  selectedListPos = 0 ;
             setFocus("categories " + selectedCatPos, "activeCategory");
+            setFocus("cat-wrap " + selectedCatPos, "cardhover");
+
             document.getElementById("add_play_btn").style.opacity = 1;
 
 
@@ -235,22 +248,32 @@ function moveDown() {
         } else if (document.getElementsByClassName("button_favourite")[0] !== undefined) {
             // selectedListPos = 0 ;
             setFocus("categories " + selectedCatPos, "activeCategory");
+            setFocus("cat-wrap " + selectedCatPos, "cardhover");
 
             removeFocus("button_favourite");
         } else if (document.getElementsByClassName("activeCategory")[0] !== undefined) {
 
             scroll('+=400px');
             // selectedListPos = 0 ;
-            setFocus("viewed " + selectedViewedPos, "activeViewed");
+           
 
             removeFocus("activeCategory");
+            removeFocus("cardhover");
+            
+            setFocus("viewed " + selectedViewedPos, "activeViewed");
+            setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
+            
+            
         } else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {
 
             scroll('+=300px');
             //	selectedListPos = 0 ;
-            setFocus("recent " + selectedViewedPos, "activeRecents");
-
+            
             removeFocus("activeViewed");
+            removeFocus("cardhover");
+            
+            setFocus("recent " + selectedRecentPos, "activeRecents");
+            setFocus("recent-wrap " + selectedRecentPos, "cardhover");
         }
 
     }
@@ -279,12 +302,16 @@ function moveLeft() {
 
             selectedCatPos--;
             removeFocus("activeCategory");
+            removeFocus("cardhover");
             setFocus("categories " + selectedCatPos, "activeCategory");
+            setFocus("cat-wrap " + selectedCatPos, "cardhover");
 
 
 
         } else {
             removeFocus("activeCategory");
+            removeFocus("cardhover");
+            
             var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
             setFocus(onLeftElementId, "onLeft");
 
@@ -300,11 +327,17 @@ function moveLeft() {
 
             selectedViewedPos--;
             removeFocus("activeViewed");
+            removeFocus("cardhover");
+            
             setFocus("viewed " + selectedViewedPos, "activeViewed");
+            setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
+
 
 
         } else {
             removeFocus("activeViewed");
+            removeFocus("cardhover");
+            
             var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
             setFocus(onLeftElementId, "onLeft");
 
@@ -322,11 +355,18 @@ function moveLeft() {
             }
 
             selectedRecentPos--;
+            
             removeFocus("activeRecents");
+            removeFocus("cardhover");
+            
             setFocus("recent " + selectedRecentPos, "activeRecents");
+            setFocus("recent-wrap " + selectedRecentPos, "cardhover");
+            
 
         } else {
             removeFocus("activeRecents");
+            removeFocus("cardhover");
+
             var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
             setFocus(onLeftElementId, "onLeft");
 
@@ -423,15 +463,23 @@ function moveRight() {
             if (selectedCatPos !== (categoryList.length - 1)) {
                 selectedCatPos++;
                 removeFocus("activeCategory");
+                removeFocus("cardhover");
+                
                 setFocus("categories " + selectedCatPos, "activeCategory");
+                setFocus("cat-wrap " + selectedCatPos, "cardhover");
 
                 if (selectedCatPos % 4 == 0) {
                     document.getElementById("category_control_right").click();
                 }
             } else {
                 selectedCatPos = 0;
+                
                 removeFocus("activeCategory");
+                removeFocus("cardhover");
+                
                 setFocus("categories " + selectedCatPos, "activeCategory");
+                setFocus("cat-wrap " + selectedCatPos, "cardhover");
+                
                 document.getElementById("category_control_right").click();
             }
 
@@ -439,14 +487,22 @@ function moveRight() {
             if (selectedViewedPos !== (mostViewedList.length - 1)) {
                 selectedViewedPos++;
                 removeFocus("activeViewed");
+                removeFocus("cardhover");
+                
                 setFocus("viewed " + selectedViewedPos, "activeViewed");
+                setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
+                
                 if (selectedViewedPos % 4 == 0) {
                     document.getElementById("viewed_control_right").click();
                 }
             } else {
                 selectedViewedPos = 0;
                 removeFocus("activeViewed");
+                removeFocus("cardhover");
+                
                 setFocus("viewed " + selectedViewedPos, "activeViewed");
+                setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
+                
                 document.getElementById("viewed_control_right").click();
             }
 
@@ -455,14 +511,22 @@ function moveRight() {
             if (selectedRecentPos !== (mostRecentsList.length - 1)) {
                 selectedRecentPos++;
                 removeFocus("activeRecents");
+                removeFocus("cardhover");
+                
                 setFocus("recent " + selectedRecentPos, "activeRecents");
+                setFocus("recent-wrap " + selectedRecentPos, "cardhover");
+                
                 if (selectedRecentPos % 4 == 0) {
                     document.getElementById("recent_control_right").click();
                 }
             } else {
                 selectedRecentPos = 0;
                 removeFocus("activeRecents");
+                removeFocus("cardhover");
+                
                 setFocus("recent " + selectedRecentPos, "activeRecents");
+                setFocus("recent-wrap " + selectedRecentPos, "cardhover");
+                
                 document.getElementById("recent_control_right").click();
             }
 
@@ -735,7 +799,7 @@ function addCategories() {
         var row = document.getElementById("row " + rowId);
         var temp = `      
         <div id="categories ${idx}" class="col-sm-3">
-        <div class="thumb-wrapper">
+        <div id="cat-wrap ${idx}" class="thumb-wrapper">
             <div class="img-box">
                 <img src= "${result["image"]}" class="img-fluid" alt="">
                 <p class="catagory_name_style ml-2">${result["title"]}</p>
@@ -788,7 +852,7 @@ function addMostRecents() {
         var temp = `
      
         <div id="recent ${idx}" class="col-sm-3">
-        <div class="thumb-wrapper">
+        <div id="recent-wrap ${idx}" class="thumb-wrapper">
             <div class="img-box">
                 <img src= "${result["image"]}" class="img-fluid" alt="">
         
@@ -849,7 +913,7 @@ function addMostViewed() {
         
         
         <div id="viewed ${idx}" class="col-sm-3">
-        <div class="thumb-wrapper">
+        <div id="viewed-wrap ${idx}" class="thumb-wrapper">
             <div class="img-box">
                 <img src= "${result["image"]}" class="img-fluid" alt="">
         

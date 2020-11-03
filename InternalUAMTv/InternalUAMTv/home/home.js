@@ -1014,13 +1014,14 @@ function changeBg(image) {
     var d = {
         img: image,
     }
-    var img = d.img;
-
-    var a = "linear-gradient (rgb(21, 9, 36,0.9), rgba(20, 9, 34, 0.2), rgba(21, 9, 36, 0.1)),"
+    var img =  d.img;
+    var a = "linear-gradient(rgba(21, 9, 36, 1), rgba(20, 9, 34, .7), rgba(21, 9, 36, .7)),"
     var b = "url(" + img + ")";
     var c = a + b;
     console.log(c);
     document.getElementById('split_right').style.backgroundImage = c;
+    
+    
 }
 
 

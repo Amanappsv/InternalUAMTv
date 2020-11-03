@@ -138,13 +138,17 @@ span #detail {
     right: 0;
 }
 
+
+
 #split_right {
+
     margin-top: 119px;
     color: white;
     background: linear-gradient(rgba(21, 9, 36, 1), rgba(20, 9, 34, .7), rgba(21, 9, 36, .7)), black;
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
 
 .centered {
     padding: 22px 0px 0px 35px;

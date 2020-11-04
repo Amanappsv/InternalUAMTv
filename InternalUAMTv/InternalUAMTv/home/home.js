@@ -4,6 +4,8 @@ var mostRecentsList = [];
 var mostViewedList = [];
 var randomBannerList = [];
 
+var selectedBanner;
+
 
 
 
@@ -582,12 +584,18 @@ function getRandomMovies(token) {
 
             data.forEach((result, index) => {
 
+            	
                 //add categories to list.....
                 var obj = {
                     "fullId": result["src"]["id_full"],
+                    "year" : result["meta"]["year"],
+                    "length" : result["meta"]["lenght"],
+                    "cast" : result["meta"]["cast"],
+                    "director" : result["meta"]["directors"],
                     "title": result["langs"]["it"]["title"],
                     "image": "https://media.uam.tv/images/media/frames/" + result["src"]["id_full"] + ".jpg",
                     "desc": result["langs"]["it"]["logline"],
+                    "tag" : result["langs"]["it"]["tags"]
                 };
 
                 randomBannerList.push(obj);
@@ -709,6 +717,9 @@ function addBackground() {
     changeBg(randomBannerList[0]["image"]);
     document.getElementById('random-title').innerHTML = randomBannerList[0]["title"];
     document.getElementById('desc').innerHTML = randomBannerList[0]["desc"];
+    
+    
+    localStorage.setItem("detail", JSON.stringify(randomBannerList[0]));
 
 }
 

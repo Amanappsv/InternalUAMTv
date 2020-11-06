@@ -180,7 +180,7 @@ function moveUp() {
 
             removeFocus("activeViewed");
             removeFocus("cardhover");
-            
+
             setFocus("cat-wrap " + selectedCatPos, "cardhover");
 
         } else if (document.getElementsByClassName("activeRecents")[0] !== undefined) {
@@ -188,11 +188,11 @@ function moveUp() {
             scroll('-=200px');
             //	selectedListPos = 0 ;
             setFocus("viewed " + selectedViewedPos, "activeViewed");
-            
+
 
             removeFocus("activeRecents");
             removeFocus("cardhover");
-            
+
             setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
         }
 
@@ -257,23 +257,23 @@ function moveDown() {
 
             scroll('+=400px');
             // selectedListPos = 0 ;
-           
+
 
             removeFocus("activeCategory");
             removeFocus("cardhover");
-            
+
             setFocus("viewed " + selectedViewedPos, "activeViewed");
             setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
-            
-            
+
+
         } else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {
 
             scroll('+=300px');
             //	selectedListPos = 0 ;
-            
+
             removeFocus("activeViewed");
             removeFocus("cardhover");
-            
+
             setFocus("recent " + selectedRecentPos, "activeRecents");
             setFocus("recent-wrap " + selectedRecentPos, "cardhover");
         }
@@ -313,7 +313,7 @@ function moveLeft() {
         } else {
             removeFocus("activeCategory");
             removeFocus("cardhover");
-            
+
             var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
             setFocus(onLeftElementId, "onLeft");
 
@@ -330,7 +330,7 @@ function moveLeft() {
             selectedViewedPos--;
             removeFocus("activeViewed");
             removeFocus("cardhover");
-            
+
             setFocus("viewed " + selectedViewedPos, "activeViewed");
             setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
 
@@ -339,7 +339,7 @@ function moveLeft() {
         } else {
             removeFocus("activeViewed");
             removeFocus("cardhover");
-            
+
             var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
             setFocus(onLeftElementId, "onLeft");
 
@@ -357,13 +357,13 @@ function moveLeft() {
             }
 
             selectedRecentPos--;
-            
+
             removeFocus("activeRecents");
             removeFocus("cardhover");
-            
+
             setFocus("recent " + selectedRecentPos, "activeRecents");
             setFocus("recent-wrap " + selectedRecentPos, "cardhover");
-            
+
 
         } else {
             removeFocus("activeRecents");
@@ -466,7 +466,7 @@ function moveRight() {
                 selectedCatPos++;
                 removeFocus("activeCategory");
                 removeFocus("cardhover");
-                
+
                 setFocus("categories " + selectedCatPos, "activeCategory");
                 setFocus("cat-wrap " + selectedCatPos, "cardhover");
 
@@ -475,13 +475,13 @@ function moveRight() {
                 }
             } else {
                 selectedCatPos = 0;
-                
+
                 removeFocus("activeCategory");
                 removeFocus("cardhover");
-                
+
                 setFocus("categories " + selectedCatPos, "activeCategory");
                 setFocus("cat-wrap " + selectedCatPos, "cardhover");
-                
+
                 document.getElementById("category_control_right").click();
             }
 
@@ -490,10 +490,10 @@ function moveRight() {
                 selectedViewedPos++;
                 removeFocus("activeViewed");
                 removeFocus("cardhover");
-                
+
                 setFocus("viewed " + selectedViewedPos, "activeViewed");
                 setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
-                
+
                 if (selectedViewedPos % 4 == 0) {
                     document.getElementById("viewed_control_right").click();
                 }
@@ -501,10 +501,10 @@ function moveRight() {
                 selectedViewedPos = 0;
                 removeFocus("activeViewed");
                 removeFocus("cardhover");
-                
+
                 setFocus("viewed " + selectedViewedPos, "activeViewed");
                 setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
-                
+
                 document.getElementById("viewed_control_right").click();
             }
 
@@ -514,10 +514,10 @@ function moveRight() {
                 selectedRecentPos++;
                 removeFocus("activeRecents");
                 removeFocus("cardhover");
-                
+
                 setFocus("recent " + selectedRecentPos, "activeRecents");
                 setFocus("recent-wrap " + selectedRecentPos, "cardhover");
-                
+
                 if (selectedRecentPos % 4 == 0) {
                     document.getElementById("recent_control_right").click();
                 }
@@ -525,10 +525,10 @@ function moveRight() {
                 selectedRecentPos = 0;
                 removeFocus("activeRecents");
                 removeFocus("cardhover");
-                
+
                 setFocus("recent " + selectedRecentPos, "activeRecents");
                 setFocus("recent-wrap " + selectedRecentPos, "cardhover");
-                
+
                 document.getElementById("recent_control_right").click();
             }
 
@@ -1022,6 +1022,7 @@ function showFavouriteSection() {
 
 
 function changeBg(image) {
+
     var d = {
         img: image,
     }

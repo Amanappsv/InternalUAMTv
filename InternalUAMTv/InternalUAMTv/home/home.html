@@ -23,9 +23,12 @@
         <img src="../images/logo.svg" alt="">
         <nav>
             <ul>
-                <li onclick="openWifiNav()"><i id="fa-wifi" class="fa fa-wifi "></i></li>
-                <li onclick="openNav()"><i id="fa-bell" class="fa fa-bell"></i><span class="badge" id="badge">5</span></li>
-                <li><i id="fa-user" class="fa fa-user "></i></li>
+                <li onclick="openWifiNav()"><i id="fa-wifi" class="fa fa-wifi "></i>
+                </li>
+                <li onclick="openNav()"><i id="fa-bell" class="fa fa-bell"></i><span class="badge" id="badge">5</span>
+                </li>
+                <li><i id="fa-user" class="fa fa-user "></i>
+                </li>
                 <span class="user_name">Jamshed</span>
             </ul>
         </nav>
@@ -52,28 +55,25 @@
         <div class="split left">
             <div class="centered">
                 <div class="left_navigation">
-                    <span> <i class="fa fa-search"></i></span> <input type="text" class="search_Box" placeholder="Search">
+                    <span> <i class="fa fa-search"></i></span> 
+                    <input type="text" class="search_Box" placeholder="Search">
 
                     <button id="watch_btn_id" onclick="showWatchSection()">
-						<span> <i class="far fa-play-circle"></i></span> <span
-							class="ml-4" id="watch_txt"> Watch Now</span>
-					</button>
+                        <span> <i class="far fa-play-circle"></i></span>  <span class="ml-4" id="watch_txt"> Watch Now</span>
+                    </button>
 
                     <button id="category_btn_id" onclick="showCategorySection()">
-						<span><i class="fa fa-th-list"></i></span><span class="ml-4"
-							id="cat_txt"> Catagories</span>
-					</button>
+                        <span><i class="fa fa-th-list"></i></span><span class="ml-4" id="cat_txt"> Catagories</span>
+                    </button>
 
                     <button id="fav_btn_id" onclick="showFavouriteSection()">
-						<span><i class="far fa-heart"></i></span> <span class="ml-4"
-							id="fav_txt"> Favourites</span>
-					</button>
+                        <span><i class="far fa-heart"></i></span>  <span class="ml-4" id="fav_txt"> Favourites</span>
+                    </button>
                 </div>
             </div>
             <button id="setting_btn_id" class="setting_btn" onclick="settingsNavigate()">
-				<span><i class="fas fa-sliders-h"></i></span> <span class="ml-4"
-					id="set_txt">Settings</span>
-			</button>
+                <span><i class="fas fa-sliders-h"></i></span>  <span class="ml-4" id="set_txt">Settings</span>
+            </button>
 
         </div>
 
@@ -95,6 +95,7 @@
                 <div class="network_header">
                     <p>
                         <i class="fa fa-arrow-left" onclick="closeWifiNav()"></i>&nbsp; <span>Network
+
 							& Internet</span>
                     </p>
                 </div>
@@ -104,7 +105,8 @@
                 <div class="avail_network_body">
                     <div class="d-flex justify-content-around">
                         <div>
-                            <i class="fa fa-wifi ml-2 wifi_icon"></i> <span class="ml-3 mb-5 wifi_name">Home <br> <span
+                            <i class="fa fa-wifi ml-2 wifi_icon"></i>  <span class="ml-3 mb-5 wifi_name">Home <br> <span
+
 								class="conented_wifi_txt">Connectd</span>
                             </span>
                         </div>
@@ -114,7 +116,7 @@
                     </div>
                     <div class="d-flex justify-content-around mt-5">
                         <div>
-                            <i class="fa fa-wifi ml-2 wifi_icon"></i> <span class="ml-3 mb-5 wifi_name">Bob </span>
+                            <i class="fa fa-wifi ml-2 wifi_icon"></i>  <span class="ml-3 mb-5 wifi_name">Bob </span>
                         </div>
                         <p>
                             <i class="fa fa-lock lock_icon ml-5"></i>
@@ -155,22 +157,30 @@
                             <button id="detail" class="nonstyle_btns ml-5">Details ></button>
                         </p>
 
-                        <button id="add_play_btn" class="play_btn mt-5">
-								<i class="fa fa-play text-white"></i><span class="ml-3"
-									> Play Now</span>
-							</button>
+                        <button id="add_play_btn" class="play_btn mt-5" onclick="videoSection()">
+                            <i class="fa fa-play text-white"></i><span class="ml-3"> Play Now</span>
+                        </button>
+                        <script>
+                            function videoSection(){
+                            							location.href="../Video/video.html"
+                            							}
+                        </script>
 
                         <button class="favourite_btn mt-5">
-								<i class="fa fa-star text-white"></i><span class="ml-3"
-									id="add_fav_btn"> Add to favourites</span>
-							</button>
-                        </span> <br>
+                            <i class="fa fa-star text-white"></i><span class="ml-3" id="add_fav_btn"> Add to favourites</span>
+                        </button>
+                        </span>
+                        <br>
                         <br>
                         <div class="left_right_arrow">
                             <span id="right_bg">
+
 								<button class="nonstyle_btns">></button>
+
 							</span><span id="left_bg">
+
 								<button class="nonstyle_btns"><</button>
+
 							</span>
                         </div>
                     </div>
@@ -183,8 +193,7 @@
                                 <div class="d-flex justify-content-between catagory_type_text">
                                     <p id="category_list_id">Category</p>
 
-                                    <button id="see_more_list_id" class="nonstyle_btns">See
-										more ></button>
+                                    <button id="see_more_list_id" class="nonstyle_btns">See more ></button>
                                 </div>
                                 <div id="myCarousel1" class="carousel slide" data-ride="carousel" data-interval="0">
                                     <!-- Wrapper for carousel items -->
@@ -209,8 +218,7 @@
                             <div class="col-lg-12 mx-auto ml-5">
                                 <div class="d-flex justify-content-between catagory_type_text">
                                     <p id="most_viewed_list_id">Most Viewed</p>
-                                    <button id="see_more_list_id" class="nonstyle_btns">See
-										more ></button>
+                                    <button id="see_more_list_id" class="nonstyle_btns">See more ></button>
                                 </div>
                                 <div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="0">
                                     <!-- Wrapper for carousel items -->
@@ -235,8 +243,7 @@
                             <div class="col-lg-12 mx-auto ml-5">
                                 <div class="d-flex justify-content-between catagory_type_text">
                                     <p id="most_recent_list_id">Most Recent</p>
-                                    <button id="see_more_list_id" class="nonstyle_btns">See
-										more ></button>
+                                    <button id="see_more_list_id" class="nonstyle_btns">See more ></button>
                                 </div>
                                 <div id="myCarousel3" class="carousel slide" data-ride="carousel" data-interval="0">
                                     <!-- Wrapper for carousel items -->

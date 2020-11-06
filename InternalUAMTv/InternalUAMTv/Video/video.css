@@ -1,0 +1,96 @@
+.video-js .vjs-big-play-button {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…h0PSIxNiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGwxMiA4LTEyIDhWMHoiLz48L3N2Zz4=);
+    background-color: rgba(0, 0, 0, .3);
+    background-position: 30px center;
+    background-repeat: no-repeat;
+    background-size: 40% 50%;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    height: 86px;
+    left: 50%;
+    margin: -43px 0 0 -43px;
+    position: absolute;
+    top: 50%;
+    width: 86px;
+    cursor: pointer;
+    z-index: 5;
+    display: none;
+}
+.video-js .vjs-control-bar .vjs-button {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.video-js .vjs-volume-panel {
+    position: relative;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+}
+.video-js .vjs-time-control {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+}
+.video-js .vjs-progress-control .vjs-load-progress {
+    background-color: rgba(0, 177, 255, .4);
+    border-radius: 4px;
+    background: gray;
+}
+.video-js .vjs-progress-control .vjs-play-progress {
+    background-color: #FF8400;
+    border-radius: 4px
+}
+.video-js .vjs-time-control {
+    font-size: 30px;
+    line-height: 40px;
+}
+.video-js .vjs-control-bar .vjs-button {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+#player_one {
+    position: relative;
+}
+.text_div {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: red;
+    font-size: 33px;
+}
+.text_documentry {
+    position: absolute;
+    bottom: 20%;
+    left: 2%;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+.text_div {
+    position: absolute;
+    left: 2%;
+    font-size: 33px;
+    color: white;
+    font-weight: bold;
+    font-size: 54px;
+    top: 82%;
+}
+.text_view {
+    position: absolute;
+    left: 14%;
+    font-size: 33px;
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+    bottom: 20%;
+}
+.text_documentry {
+    position: absolute;
+    bottom: 20%;
+    left: 2%;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}

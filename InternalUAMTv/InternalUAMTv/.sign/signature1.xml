@@ -14,13 +14,13 @@ HkIRP/sYbA==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>A39QCRAiD+KdUIm8CHSF+pibczBDE5F5ff902wxQ6w3hMyCZ8BOgWPkGU/NpeDtIg67b37Yl36oP
-M4b8aQakww==</DigestValue>
+<DigestValue>0Typ+vQtB+C1eOUcpmWc7uCLnSesPjumCNfAqzjmQWkrzZV7Dm3RvyT8FNH8BU2YyVAK7y4AWDCB
+p5N08YXSew==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>werWQcNZjOo0sdc3ReLu/6auMdp3wo6xR4SvcQWTjWshnPQP5lkw/xBxaoaMBZs4KX1GuAn8XQ/U
-a5ZM2CUkKg==</DigestValue>
+<DigestValue>glyNDLTZvTqQTpPwXYfhU6p/GKxX0Iq6hz1Rz+plkK8NYDsDgrVWTKKTGDr5HeR7GYCDUj4kTkN1
+RO87n26+YQ==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -39,13 +39,8 @@ YaWQIX0yYw==</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<<<<<<< Updated upstream
-<DigestValue>6VZqwjT3bckimEmEzUrJbXilaI1/s/taByuZJ9yAGIdz9x99XfDbi4h89ROyYoheRiSkpglrZDfy
-SddyLmY0NQ==</DigestValue>
-=======
-<DigestValue>dMLQEGlZ1jazDR7cjpc4ppRMM9pp8e6YhHDpCSbwxOqFppxDOipekKqiyhDHK9+/UMndL6OT00/D
-eiHfGCAvXw==</DigestValue>
->>>>>>> Stashed changes
+<DigestValue>6bb0Vk+ogrZBC5QSDxxjDD/nTM7Tp4tJwnMVi5ikcZpyGVNpJhzDr294K9eiEYnqoyod9QmaqW/m
+g37i8KfjTQ==</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -54,78 +49,58 @@ ot27CqiqRA==</DigestValue>
 </Reference>
 <Reference URI="css%2Fall.min.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>4nAegGSFoPDu3Va192UDZLMvq6M0aTLjRnzOaKTvOjw6yp9ofL4tIIzKp5Lj1CD2942zX/lFmxfA
-Rf58BB1Lqw==</DigestValue>
+<DigestValue>KulI0psuJQK8UMpOeiMLDXJtGOZEBm8RZNTyBBHIWqoXoPMFcw+L5AEo0YMpsW8BfiuWrdD1rH6G
+WGgQBF59Lg==</DigestValue>
 </Reference>
 <Reference URI="css%2Fbootstrap.min.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>o32fdyhVS7bCQdaDA+Dwm9Qn8GGmgc9hvd3x3aQKDHfBDj4L+OWPHTHBrxTffllBwm7lOwZeNUVO
-qM3/tHOS7g==</DigestValue>
+<DigestValue>tDXPcamuZsWWd6OsKFyH6nAqh/MjZ/5Yk88T5o+aMfygqNFPan1pLyPFAndRzmOWHKT+jSDzWpJv
+8krj6x1LMA==</DigestValue>
 </Reference>
 <Reference URI="css%2Flogin.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>eGXaChAJN1+NwOZtBHg0D+LmYnBQyg9fAcL+9t11nKdaIGkOTP1U0S3c0uUz7XjiKBT4joOZHYfx
-Lyoov7KtkQ==</DigestValue>
+<DigestValue>NagAjNaXGXqAHl5DnVDVyrFm8WxbZ0RIXQ1EaiYzbDLKCMkmTAyjWHeXUGAr1kj1wgds4xVYxA1w
+1OfaIX+HqQ==</DigestValue>
 </Reference>
 <Reference URI="css%2Fsplash.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>9ER4TFho+sRrfzCd8zK7R1qKXmZVhcp1JnYx7vd+KJRLWtYOLHxBNPCjh+Nn8JejxlR0J0LXp3UF
-QflkhFYI4g==</DigestValue>
+<DigestValue>AOFWuzt2yEVByGDY0bpAMnpS+7VyaC5wjXpJwiljfMm4NcbK90h8GPYf/B7xbjE4DftUv5YM8tVX
++Y9kSFrTCQ==</DigestValue>
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>7ApfhE4I1675fe5ApMpYEkV09KqkmH2SuEwvXM0sJNUYLPPHB/K2X5OS3xmj5EClZgSedGC+QsOC
-njSGfTOAyQ==</DigestValue>
+<DigestValue>q+GcTxV5qgOUAIY9FT3+p666YT+uLUtQ/R0uWQpFhDIFwK1HtgttkjpUfrtSgWQ0QN6ok2mleREl
+vmpb5yX/5w==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>Iyu2tur24MJtbJhKBge8aCRZTOw/uDeiDfyEsyWX+Jwoj066uXlkuyOY8CgfvYCbPSzjNz3pWYXb
-0puezpEJMg==</DigestValue>
+<DigestValue>rZfSluSA9B9vNUbbNwhT8IRVpZRpb9Nr5LqpHq35DV8UkJ0WR0mar6iI08K5sFYRbJLMFSKPYveR
+TK2gx1qjlg==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<<<<<<< Updated upstream
 <DigestValue>giDHUncHTzUA0CcZq2oHqV4cxnLAQ8AtSptZwd8LFdtQ2aFTS/armaZOvHKSaa9k7EcisreFlJwK
 QU8KWahSUA==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>iCGtErfeH2QshiMpp373A48ePpO7IK6rA/KPvRxjc0x15JqGx87thNYO9iUX3cYb/H7qJneBQo+t
-PpsFLQb05g==</DigestValue>
+<DigestValue>rh+1v8fyjquLgdvLRjtjJ2B8tQsmzXyomzc/fC4h6zzZozB4GqPuCq9VP+aPmVtcMjkOp8wTljGj
+mCFbnXYivQ==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>b8rWD7qgPziVLifbqC+LGJO6EWlhNEVLkmvRlMxR9d36FwGSxl3BScjvuRP+KQLFzRfnHIHcLnuE
-9v1ou2zcGQ==</DigestValue>
-=======
-<DigestValue>9vMcuhbOPNHUu5lvoFYYHRrT6e9P4ms7gPWQPes6vsE+7k1khzpPRkrDQT5C/5UF2F8YchjKU9p0
-dixsqutt1Q==</DigestValue>
-</Reference>
-<Reference URI="detail%2Fdetail.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>ZzrLR8kz0oA6hBt0AjA/67X9qGJhXBOiXP5vmverZHx/vdQyEd/ZfGG2/ZRsm95eFRDca0yfeyr+
-KXwxNg732w==</DigestValue>
-</Reference>
-<Reference URI="home%2Fhome.css">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>5wa3G7xjZKIJz7j014aqKU7fLflMDqYO0cYFJydZwZ/leNHLqGZUFCgCtXedrKY6TeCFPxEPSE3x
-caK6aoJIzg==</DigestValue>
->>>>>>> Stashed changes
+<DigestValue>QoPoqy0lJk2M4oojrEGAEEjGJUug6KKtqmKVzzEA17SNIKrjhH9NoKdXWmphIb2p1U1OZPwvPieG
+as/7bR0HJQ==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>vATKMOuwsCBQrmhwc9UWHJzQfuHnqVsK1QWtvgfhDiT2BD+f4hLwMhX7J3ZcT09WKbBQT1G1pNsh
-wkqGSGb0qQ==</DigestValue>
+<DigestValue>EjFfVyyOXgtvswcWRcAaiZ5iNIO9i0fbnB7rrKOmXG+IHI/+i0zyU/OPOGF8GJOE5FN32bw4Z5Ja
+8dms35kC6A==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<<<<<<< Updated upstream
-<DigestValue>+sOS5Ya7ewDACH+jhOq5Z2G4V8+6maaDeZtCpmpmsd250llwf+wz1OJpfRR97UN6xX/ww/piDEgi
-A4I7gkAcxg==</DigestValue>
-=======
-<DigestValue>askaf6qxAGjUczJ8WfH6DEy8o6WyNgeRX+UJCRLEq+gEk0Ij+EsP/X5m9xG3THqNsUJsjenzH4Yd
-vsPKo3wM4Q==</DigestValue>
->>>>>>> Stashed changes
+<DigestValue>r2UdSM8/pKgMisV+bLjdboqPDw2vUzxQbZr/C0xzfG1SU+NsAnjYx4p6C1/OybHHjcEfFo1MpT/r
+VxtVpZj8Bw==</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -194,8 +169,8 @@ FD4iefxLsg==</DigestValue>
 </Reference>
 <Reference URI="js%2Fbootstrap.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>Mnv0Cc3RZxcaMA73+V+sXLyAIyCyhy6oRexDT/eYeiHLDwNGqOs8uJFEe5ji5iLD1yG8KVv08m52
-NlnbuKCZQA==</DigestValue>
+<DigestValue>Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6K
+nhZjFKB+0A==</DigestValue>
 </Reference>
 <Reference URI="js%2Fjquery.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -204,8 +179,8 @@ ezvU1gtJ/A==</DigestValue>
 </Reference>
 <Reference URI="js%2Flogin.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>skKNSOhCqPlxOiHD0eotXdh6oBTs2p4Lq8ewGISyb0XIOx0n6+rbUm+KRW4s4Zn1JgsnJdEEd0Co
-Kgn4JnjaNw==</DigestValue>
+<DigestValue>6/Cu48ycVvuKh17LbG59MkawBLb54kg2aXc4xMfztriWz042DnIuT+Texzc36seBcXwGCiY8Z3fZ
+xlbAGbbYZQ==</DigestValue>
 </Reference>
 <Reference URI="js%2Fpopper.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -214,8 +189,8 @@ Kgn4JnjaNw==</DigestValue>
 </Reference>
 <Reference URI="js%2Fsplash.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>pRBzMr4oTgYVHesBgbFkWOOb1qzM9wMeo2fkckazn1aGCGKvCoWmOOeVNu4SlGdrQWZdPl+XfsWa
-DGdHRUmpUg==</DigestValue>
+<DigestValue>8c5juh6a7AOkIR+cJnWru1x9XLyxIyYabkozW8dCeqiNPxjbevhjW306vPw1f/gkjjx/nl7Rqf7K
+fCNQdNrtLw==</DigestValue>
 </Reference>
 <Reference URI="language.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -224,43 +199,38 @@ ODJ6+SfaPg==</DigestValue>
 </Reference>
 <Reference URI="locales%2Fen-us%2Flanguage.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>sQjaMfvyfy2W0iscq8OP8vmtdyH1L2VY89+4htLiDKfrdQlAAfCcgj5+reDCxYTZYZaE+xxuklXQ
-5bq60dB+Vg==</DigestValue>
+<DigestValue>/KdDDepyEA+pIashDL6OOfmS4EEUhYWJd0KlDMxOmuWfDkMwEyTrYu7CiL8DSefvZO2pO7FEVcvF
+3aPnGb7p5A==</DigestValue>
 </Reference>
 <Reference URI="locales%2Fit-it%2Flanguage.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>9ysi/A/8VNisMbvgz5wjKoOef0dV5IcGIXhm6LvpJu5cZfZSBddH1CIKSWe+0jO+Jrv5ndvhvO1r
-dQAOXfFDpA==</DigestValue>
+<DigestValue>zZ/UmzRiF1FvrigJDASC0UhQw+kssN7qC5Kxolh2Dmh6HBOZQ1VAm7D1JXk8vJ/GJ+4HxypvMIcK
+WlRMdeMs1Q==</DigestValue>
 </Reference>
 <Reference URI="login.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>ldnwKXmYibbolaJgSowaLitqxrkIM7K7N6pKmgVaCd4Yq157hoRsp5NgoMVQvuoyb9K9upRxQoM2
-Sbn5NZAHAA==</DigestValue>
+<DigestValue>jSQzIhc0iVuIqog+42kNW2p+OSGU0Unt8g9MBMJOmVPdpNkfnUuc9Ov33Bqrq+e/fCQvHEE3CXgv
+XyaOB4Jrqw==</DigestValue>
 </Reference>
 <Reference URI="settings%2Fsettings.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>UjkW44Ak3tI6NkGPOQgDvz4REKhEu/7ENnEKfw0Q5JbXAFotwuFRUKKV78vJ3aro489j405C12Cz
-pkkytLqPVw==</DigestValue>
+<DigestValue>1DEQxlG0cmwERv5vO+gFdIbYQ5uP5faox7cPbaPrGXtf9NrIPsECTY+tW/z1lbKRohbwtSGyMPSQ
+9RkCfNsydg==</DigestValue>
 </Reference>
 <Reference URI="settings%2Fsettings.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>p3+hlX+ya6fFIxQz2fWX3/yMqYeTB2inJO0Jb48rzUUWnaUCGZPHjSXcvFfQ3DYwKo5PmuCvlTt7
-9bAv8ch6bw==</DigestValue>
+<DigestValue>2PdHeA6GsR5qM98DML2sPNU8bLZN7XCSAuBwoayfWmHoAURMeMChglAeOIEpl64b2wIVL1xYUU9u
+A88tfl5qoQ==</DigestValue>
 </Reference>
 <Reference URI="settings%2Fsettings.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>qI2+vlt28fgQZ98FRKXgKteEgO4FHvUy4dQFdYI8w3DUjgJNyGPxMGVTlyjqIZ6ZeAhpyHHp+5f1
-MdP8KvpKbQ==</DigestValue>
+<DigestValue>FyuX9v2rxQiRHogXkNzQ8yyw0ICuv3S7nAWNjSF0qaY4bPohe4OUc6KPgu15PoJsQT9VjSoswNqq
+IN7GNL7TLg==</DigestValue>
 </Reference>
 <Reference URI="splash.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>WYZ3JbomZaftWlmrBrkYeUx6/Q3iuOZ9YwNg8vrniZ20EwNdCkkEuilPh8sW9s5RvciLZkNj/9RY
-fUWByern2g==</DigestValue>
-</Reference>
-<Reference URI="vid.mp4">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>ysoGjBrcmP1QujInaI6gULwTmzCjh0TxWOvRC2KN22vl4ps9wvfSwneOCj8lUMNGandldCLGaora
-GKSMiOqPuw==</DigestValue>
+<DigestValue>retKFYWIbzDePUNnxTyo+BoI65YuQ8WWumhyv2NABPKSxwylEv3iW9d3VCsXMRwjWKiv0OOTpsc5
+SPKbHpChbw==</DigestValue>
 </Reference>
 <Reference URI="webfonts%2Ffa-brands-400.eot">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -269,8 +239,8 @@ zVRftI5+zw==</DigestValue>
 </Reference>
 <Reference URI="webfonts%2Ffa-brands-400.svg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>RxZaO+pQQlIjs1j73mJDje1yPdtOP1/ZIaWgdN1x48SripdZpNWwFmikueQtO0EkaheOoNJ7DAmH
-ojdgpYP+Sg==</DigestValue>
+<DigestValue>xKN2+YxzEqmvhFVz6TfOveGsBZSPokhw9gx6a6sU1kuiwfD5UI5Ai5me3sy62yVLkDPNEWf1TnY4
+4NqqymxiQw==</DigestValue>
 </Reference>
 <Reference URI="webfonts%2Ffa-brands-400.ttf">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -294,8 +264,8 @@ ZAJP3YMFzg==</DigestValue>
 </Reference>
 <Reference URI="webfonts%2Ffa-regular-400.svg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>4enVkVGjI+Y1vPOG9t1G6iFjOd6/7EJcLHc31QHE1GMbxHC+iUZg3mdWi+Ew7eiAC74d59NytDF9
-sMhGWcb3pw==</DigestValue>
+<DigestValue>6b469a/gHlBi5BP5jorszd/dsn2ho+iaVap2CcAjJaRDGVoWrJqn4m9cbuO9VdtKHEyk9x/Fv2OE
+udN68IRsZA==</DigestValue>
 </Reference>
 <Reference URI="webfonts%2Ffa-regular-400.ttf">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -319,8 +289,8 @@ PGs5PYUMQg==</DigestValue>
 </Reference>
 <Reference URI="webfonts%2Ffa-solid-900.svg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>zVwnxvt2EBgYFck1UKVUz0oGgBH3XHLLba3Q22PCOEseFZWTVPV5GGF5d9GpBXyiKsZlvbb6QPKs
-WOdrIYfW1g==</DigestValue>
+<DigestValue>qB1Ae3/qpfZ+gPGCAfhgWQ4ZDpIT/fbm0+xFOBezTv55/dv7f9u9U/kEdT47oQMhItsTtzGzgBq/
+KcsNcdzjPQ==</DigestValue>
 </Reference>
 <Reference URI="webfonts%2Ffa-solid-900.ttf">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -347,15 +317,9 @@ GyvKX9Snig==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-<<<<<<< Updated upstream
-Ek/RZQwPjysLExJr6FxFbWSRjPV4ovK+SyvRXxMIGnZSx/uy0BrovWBUrvYyJQo90hPYtuDUtk9z
-oT2GenmcQcg9wUXRnWWpBWArQ5TqDTLIinWTZBszcxYzwPPykjTkVg0RwyyHFYUwPBOebs5bHbpI
-ZQlliPkD2uoqUoiVG/g=
-=======
-Qit16Zcn+HIWNnv2CcW/Pfg0QsA8p13RGxOI0UB0AbnAabbGf6Z4aI1Rqi3t5bC7O9e61aHF7t//
-RbpiO/jFhwRfld5zCVVChJRsq1cTzUUpfO1DVfTOCITmJPVOJpvbTGVpkQ7Kfenkj9znSsiUlI4r
-AJSX3M8ivKjQVyMoWFk=
->>>>>>> Stashed changes
+CLePKdxLi8byd3zY/kEGyGldjZVzmW5nanCXilu4is3TcSx/svawEHsheZBUFl/AGxpuYw5S3+hY
+miId/YJiEH4+HnCUm6P6E7b06k3O+oghw4FLjfY5wlQj+PbB7KlsISbPmCtwpOwowE3iAJlcXfZs
+61idSvgM14sW9SpazV4=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

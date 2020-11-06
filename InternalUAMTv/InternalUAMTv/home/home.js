@@ -9,6 +9,8 @@ var selectedBanner;
 
 
 
+
+
 var selectedCatPos = 0,
     selectedViewedPos = 0,
     selectedRecentPos = 0,
@@ -29,6 +31,10 @@ var init = function() {
     setFocus("watch_btn_id", "onLeft");
     getHomeScreenData();
     initTizenKeys();
+
+
+
+
 };
 
 window.onload = init;
@@ -584,18 +590,19 @@ function getRandomMovies(token) {
 
             data.forEach((result, index) => {
 
-            	
+
                 //add categories to list.....
                 var obj = {
                     "fullId": result["src"]["id_full"],
-                    "year" : result["meta"]["year"],
-                    "length" : result["meta"]["lenght"],
-                    "cast" : result["meta"]["cast"],
-                    "director" : result["meta"]["directors"],
+                    "year": result["meta"]["year"],
+                    "length": result["meta"]["lenght"],
+                    "cast": result["meta"]["cast"],
+                    "director": result["meta"]["directors"],
                     "title": result["langs"]["it"]["title"],
                     "image": "https://media.uam.tv/images/media/frames/" + result["src"]["id_full"] + ".jpg",
                     "desc": result["langs"]["it"]["logline"],
-                    "tag" : result["langs"]["it"]["tags"]
+                    "tag": result["langs"]["it"]["tags"],
+                    "geolimits": result["meta"]["geolimits"]
                 };
 
                 randomBannerList.push(obj);
@@ -717,8 +724,8 @@ function addBackground() {
     changeBg(randomBannerList[0]["image"]);
     document.getElementById('random-title').innerHTML = randomBannerList[0]["title"];
     document.getElementById('desc').innerHTML = randomBannerList[0]["desc"];
-    
-    
+
+
     localStorage.setItem("detail", JSON.stringify(randomBannerList[0]));
 
 }
@@ -1026,14 +1033,88 @@ function changeBg(image) {
     var d = {
         img: image,
     }
-    var img =  d.img;
+    var img = d.img;
     var a = "linear-gradient(rgba(21, 9, 36, 1), rgba(20, 9, 34, .7), rgba(21, 9, 36, .7)),"
     var b = "url(" + img + ")";
     var c = a + b;
     console.log(c);
     document.getElementById('split_right').style.backgroundImage = c;
-    
-    
+
+
+}
+
+
+
+function setMovie() { //check geolimit
+
+    viewLoader();
+
+
+    var moviePlay;
+    var movie = JSON.parse(localStorage.getItem("detail"));
+
+    if (movie["geolimits"] === true) {
+        moviePlay = {
+            "geolimits": 2,
+            "contentId": movie["fullId"]
+        };
+    } else {
+        moviePlay = {
+            "geolimits": 1,
+            "contentId": movie["fullId"]
+        };
+    }
+
+
+    var token = localStorage.getItem("jwt token");
+
+    if (token !== null) {
+        getMovieSource(moviePlay, token);
+    } else {
+        console.log("No token found");
+        location.href = "../login.html";
+    }
+
+}
+
+function getMovieSource(moviePlay, token) { //hit stream api...
+
+    let params = {
+        "contentID": moviePlay["contentId"],
+        "prop": moviePlay["geolimits"]
+    };
+
+    let query = Object.keys(params)
+        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+        .join('&');
+
+    fetch(URL + 'v3/movies/streams/get.php?' + query, {
+            headers: {
+                'Authorization': "Bearer " + token
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            //set to storage
+
+            var videoUrl = data["data"]["embedUrlList"][0]["https"]["source"]["progressive"];
+
+            
+            localStorage.setItem("video", videoUrl);
+            
+            location.href="../Video/video.html"
+            
+
+
+            hideLoader();
+
+        })
+        .catch((error) => {
+            console.error('Err:', error);
+            hideLoader();
+        });
+
 }
 
 

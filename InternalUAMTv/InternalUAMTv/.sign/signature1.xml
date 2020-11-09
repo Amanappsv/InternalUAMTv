@@ -19,8 +19,8 @@ p5N08YXSew==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>glyNDLTZvTqQTpPwXYfhU6p/GKxX0Iq6hz1Rz+plkK8NYDsDgrVWTKKTGDr5HeR7GYCDUj4kTkN1
-RO87n26+YQ==</DigestValue>
+<DigestValue>MT3MFkVjfsLvDKDqVzbK5uY9z46dI0y613CfhmD97h7hh9mqXkylOCfUPXBDUk8rFFkY09cYTGfl
+yM0D6I9q0w==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -39,8 +39,8 @@ YaWQIX0yYw==</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>6bb0Vk+ogrZBC5QSDxxjDD/nTM7Tp4tJwnMVi5ikcZpyGVNpJhzDr294K9eiEYnqoyod9QmaqW/m
-g37i8KfjTQ==</DigestValue>
+<DigestValue>cBToN7QFmVCr9HRiYSQLCE5euk5QAz91MY42mleE7E4z0VqtEZ78gj2LakUf2mUFJKPnLYnUxTMy
+XphXyEhJUA==</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -99,13 +99,18 @@ as/7bR0HJQ==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>r2UdSM8/pKgMisV+bLjdboqPDw2vUzxQbZr/C0xzfG1SU+NsAnjYx4p6C1/OybHHjcEfFo1MpT/r
-VxtVpZj8Bw==</DigestValue>
+<DigestValue>bPN9azRpVSuz1WGlx48fKKV7UpX/K1RXW+yXaP9aOcMeqhvUE7l3ZA6uFYNWyE//sLKw02T4rgQc
+SMzrCakYuw==</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
 <DigestValue>JXih4SwqXm/59tAipiLlSBtkN3iXW1WHKw8vLVJCrpuHQJwbrGj45glmydN4lyCO50Ie5TDiEznv
 hjkZB9/clQ==</DigestValue>
+</Reference>
+<Reference URI="images%2Fabc.gif">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>vJJrAP8bqiVPj6kgW61TmtPgg3nnVM+i5ZwaNAa4ra8L0XEghbuMQMlbSanta/xQRPM+LbmE5T70
+lrqiuZ56+Q==</DigestValue>
 </Reference>
 <Reference URI="images%2FbgImage.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -317,9 +322,9 @@ GyvKX9Snig==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-CLePKdxLi8byd3zY/kEGyGldjZVzmW5nanCXilu4is3TcSx/svawEHsheZBUFl/AGxpuYw5S3+hY
-miId/YJiEH4+HnCUm6P6E7b06k3O+oghw4FLjfY5wlQj+PbB7KlsISbPmCtwpOwowE3iAJlcXfZs
-61idSvgM14sW9SpazV4=
+DyBH/HkqiOfv+K36EqRDinB7rOL6D1CLlouPO73TVqabSivojfCo3hToyn+VQqmlF8d7A+TriR9m
+mZs7YBUXPNfK1CJwUpqQzv+WmlZG043/AcX0vdl9tnngLzp5Q4Mv9WFaWuI/bKTt3RXu92JMa/YO
+CIrxQMB6AY7Sg5VK8IM=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

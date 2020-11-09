@@ -1098,7 +1098,7 @@ function getMovieSource(moviePlay, token) { //hit stream api...
 
             //set to storage
 
-            var videoUrl = data["data"]["embedUrlList"][0]["https"]["source"]["progressive"];
+            var videoUrl = data["data"]["embedUrlList"][0]["https"]["abr"]["hls"];
 
             
             localStorage.setItem("video", videoUrl);

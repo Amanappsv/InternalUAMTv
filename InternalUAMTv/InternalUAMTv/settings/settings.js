@@ -25,13 +25,13 @@ function initTizenKeys()
     	//	moveLeft();
     		break;
     	case 38: //UP arrow
-    	//	moveUp();
+    		moveUp();
     		break;
     	case 39: //RIGHT arrow
     	//	moveRight();
     		break;
     	case 40: //DOWN arrow
-    		//moveDown();
+    		moveDown();
     		break;
     	case 13: //OK button
     		//moveOk();
@@ -49,6 +49,118 @@ function initTizenKeys()
 }
 
 
+
+function moveDown(){
+
+	
+	
+	if(document.getElementsByClassName("viewBorder")[0] !== undefined)
+		{
+			var el = document.getElementsByClassName('viewBorder')[0].id;
+			
+			if(el === "profile_border"){
+				removeFocus("viewBorder");
+				setFocus("subscription_border" , "viewBorder");
+				
+				showSubscriptionSection();
+			}
+			
+			else if(el === "subscription_border"){
+				removeFocus("viewBorder");
+				setFocus("register_border" , "viewBorder");
+				
+				showRegisterSection();
+			}
+			
+			else if(el === "register_border"){
+				removeFocus("viewBorder");
+				setFocus("help_border" , "viewBorder");
+				
+				showHelpSection();
+			}
+			
+			else if(el === "help_border"){
+				removeFocus("viewBorder");
+				setFocus("contact_border" , "viewBorder");
+				
+				showContactSection();
+			}
+			
+			else if(el === "contact_border"){
+				removeFocus("viewBorder");
+				setFocus("about_border" , "viewBorder");
+				
+				showAboutSection();
+			}
+		
+			
+		}
+	
+}
+
+function moveUp(){
+
+	
+	
+	if(document.getElementsByClassName("viewBorder")[0] !== undefined)
+		{
+			var el = document.getElementsByClassName('viewBorder')[0].id;
+			
+			if(el === "subscription_border"){
+				removeFocus("viewBorder");
+				setFocus("profile_border" , "viewBorder");
+				
+				showProfileSection();
+			}
+			
+			else if(el === "register_border"){
+				removeFocus("viewBorder");
+				setFocus("subscription_border" , "viewBorder");
+				
+				showSubscriptionSection();
+			}
+			
+			else if(el === "help_border"){
+				removeFocus("viewBorder");
+				setFocus("register_border" , "viewBorder");
+				
+				showRegisterSection();
+			}
+			
+			else if(el === "contact_border"){
+				removeFocus("viewBorder");
+				setFocus("help_border" , "viewBorder");
+				
+				showHelpSection();
+			}
+			
+			else if(el === "about_border"){
+				removeFocus("viewBorder");
+				setFocus("contact_border" , "viewBorder");
+				
+				showContactSection();
+			}
+		
+			
+		}
+	
+}
+
+
+
+function setFocus(id, clas) {
+
+    document.getElementById(id).classList.add(clas);
+
+}
+
+function removeFocus(clas) {
+
+    var el = document.getElementsByClassName(clas)[0].id;
+    document.getElementById(el.toString()).classList.remove(clas);
+
+
+}
 
 function getProfileData() {
 	
@@ -69,9 +181,9 @@ function getProfileData() {
 				.then(data => {
 			
 				
+						document.getElementById('user_name_id').innerHTML = data["data"][0]["fname"];
 						document.getElementById('profile_name_section_id').innerHTML = data["data"][0]["fname"] + " " +  data["data"][0]["lname"];
 						document.getElementById('profile_email_section_id').innerHTML = data["data"][0]["email"];
-						document.getElementById('profile_phone_section_id').innerHTML = data["data"][0]["phone"];
 						
 
 				
@@ -157,6 +269,10 @@ function getDeviceListDetails(token){
 		.then(data => {
 	
 			
+			
+			
+			document.getElementById("device_number_id").innerHTML = data.length;
+			
 			data.forEach((result, index) => {
 				
 	 		
@@ -174,6 +290,7 @@ function getDeviceListDetails(token){
 				hideLoader();
 						
 				//show profile section...
+			    setFocus("profile_border" , "viewBorder");
 				showProfileSection();	
 				
 		
@@ -225,12 +342,7 @@ function showProfileSection()
 	  hideSection("help_section_id");
 	  hideSection("about_section_id");
 	  hideSection("contact_section_id");
-      document.getElementById('profile_border').classList.add('viewBorder');
-      document.getElementById('subscription_border').classList.remove('viewBorder');
-      document.getElementById('register_border').classList.remove('viewBorder');
-      document.getElementById('help_border').classList.remove('viewBorder');
-      document.getElementById('contact_border').classList.remove('viewBorder');
-      document.getElementById('about_border').classList.remove('viewBorder');
+     
 
 }
 
@@ -243,12 +355,7 @@ function showSubscriptionSection()
   hideSection("help_section_id");
   hideSection("about_section_id");
   hideSection("contact_section_id");
-  document.getElementById('profile_border').classList.remove('viewBorder');
-  document.getElementById('subscription_border').classList.add('viewBorder');
-  document.getElementById('register_border').classList.remove('viewBorder');
-  document.getElementById('help_border').classList.remove('viewBorder');
-  document.getElementById('contact_border').classList.remove('viewBorder');
-  document.getElementById('about_border').classList.remove('viewBorder');
+ 
 
 }
 
@@ -260,12 +367,7 @@ function showRegisterSection()
   hideSection("help_section_id");
   hideSection("about_section_id");
   hideSection("contact_section_id");
-  document.getElementById('profile_border').classList.remove('viewBorder');
-  document.getElementById('subscription_border').classList.remove('viewBorder');
-  document.getElementById('register_border').classList.add('viewBorder');
-  document.getElementById('help_border').classList.remove('viewBorder');
-  document.getElementById('contact_border').classList.remove('viewBorder');
-  document.getElementById('about_border').classList.remove('viewBorder');
+
 
 }
 
@@ -278,13 +380,7 @@ function showHelpSection()
   showSection("help_section_id");
   hideSection("about_section_id");
   hideSection("contact_section_id");
-  document.getElementById('profile_border').classList.remove('viewBorder');
-  document.getElementById('subscription_border').classList.remove('viewBorder');
-  document.getElementById('register_border').classList.remove('viewBorder');
-  document.getElementById('help_border').classList.add('viewBorder');
-  document.getElementById('contact_border').classList.remove('viewBorder');
-  document.getElementById('about_border').classList.remove('viewBorder');
-
+ 
 }
 
 function showContactSection()
@@ -295,12 +391,7 @@ function showContactSection()
   hideSection("help_section_id");
   hideSection("about_section_id");
   showSection("contact_section_id");
-  document.getElementById('profile_border').classList.remove('viewBorder');
-  document.getElementById('subscription_border').classList.remove('viewBorder');
-  document.getElementById('register_border').classList.remove('viewBorder');
-  document.getElementById('help_border').classList.remove('viewBorder');
-  document.getElementById('contact_border').classList.add('viewBorder');
-  document.getElementById('about_border').classList.remove('viewBorder');
+ 
 }
 
 
@@ -312,12 +403,7 @@ function showAboutSection()
   hideSection("help_section_id");
   showSection("about_section_id");
   hideSection("contact_section_id");
-  document.getElementById('profile_border').classList.remove('viewBorder');
-  document.getElementById('subscription_border').classList.remove('viewBorder');
-  document.getElementById('register_border').classList.remove('viewBorder');
-  document.getElementById('help_border').classList.remove('viewBorder');
-  document.getElementById('contact_border').classList.remove('viewBorder');
-  document.getElementById('about_border').classList.add('viewBorder');
+ 
 
 }
 
@@ -340,17 +426,12 @@ function hideSection(id){
 
 
 function viewLoader(){
-	/* document.getElementById("parentRightSection").classList.add('parent_right_section');
-	document.getElementById("spinner_display_id").classList.add('showLoader'); */
 	document.getElementById('spinner_display_id').classList.add('showLoader');
 	document.getElementById('parentRightSection').classList.add('hideLoader');
-
 	}
 
 
 function hideLoader(){
-		/*document.getElementById("parentRightSection").classList.remove('parent_right_section');
-		document.getElementById("spinner_display_id").classList.remove('showLoader'); */
 	  document.getElementById('spinner_display_id').classList.remove('showLoader');
 	  document.getElementById('spinner_display_id').classList.add('hideLoader');
 	  document.getElementById('parentRightSection').classList.remove('hideLoader');

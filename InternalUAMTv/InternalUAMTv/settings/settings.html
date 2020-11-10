@@ -26,7 +26,7 @@
                 <li onclick="openNav()"><i id="fa-bell" class="fa fa-bell" ></i><span class="badge" id="badge">5</span>
                 </li>
                 <li><i id="fa-user" class="fa fa-user "></i></li>
-                <span class="user_name">Jamshed</span>  
+                <span id="user_name_id" class="user_name"></span>  
             </ul>      
         </nav>
 </header>
@@ -120,7 +120,7 @@
                     <button class="mt-4 nav_button" onclick="showSubscriptionSection()" id="subscription_border">Subscription</button>
                     <button class="mt-4 nav_button" onclick="showRegisterSection()" id="register_border">Registered device</button>
                     <button class="mt-4 nav_button" onclick="showHelpSection()" id="help_border">Help</button>
-                    <button class="mt-4 nav_button" onclick="showContactSection()" id="contact_border">Contat Us</button>
+                    <button class="mt-4 nav_button" onclick="showContactSection()" id="contact_border">Contact Us</button>
                     <button class="mt-4 nav_button" onclick="showAboutSection()" id="about_border">About Us</button>
                 </div>
             </div>
@@ -148,9 +148,7 @@
             <p><i class="fa fa-envelope"></i> <span id="email">&nbsp; Email</span></p>
                <p id="profile_email_section_id" class="ml-4">jamshed.ahmad@oodles.com</p>
                <hr>
-             <p><i class="fa fa-phone-volume"></i> <span id="phone">&nbsp; Phone</span></p>
-               <p  id="profile_phone_section_id" class="ml-4">+91 8299491705</p>
-               <hr>
+            
              </div>
             </div>
            
@@ -158,10 +156,13 @@
             
             </div>
                  
+                 
+                 
+                 
              <!-- Subscription section -->
             <div id="subscription_section_id" >
             
-            <h1 style="font-weight:bold; font-size: 49px">Subscription Palns</h1>
+            <h1 style="font-weight:bold; font-size: 49px">Subscription Plans</h1>
                <div class="container-fluid mt-5">
                <div class="row">
                <div class="col-lg-5 col-xl-5 mt-5">
@@ -175,37 +176,11 @@
 				  <h4 style="font-weight: bold;" class="mt-4">Deadline  <span id="expiration_date_sub_id" class="ml-5"  style="font-weight: normal;"> 07/10/2020</span></h4>
 				  </div>
 				  <div class="card-footer">
-				   <h4  style="font-weight: bold;">Device  <span class="ml-5 device_total"  style="font-weight: normal;">1</span></h4>
+				   <h4  style="font-weight: bold;">Device  <span id="device_number_id" class="ml-5 device_total"  style="font-weight: normal;"></span></h4>
 				  </div>
 			   </div>
                </div>
-               <div class="col-lg-5 offset-1 col-xl-5 mt-5">
-               <p>Unactive</p>
-               <div class="card unActive_card">
-				 <div class="card-header">
-				  <h3 class="free_monthly_subs" >Monthly Subscription</h3>
-				  </div>
-				  <div class="card-body p-4">
-				  <h4 style="font-weight: bold;">Price  <span class="ml-5" style="font-weight: normal;"> $7.50</span></h4>
-				
-				  </div>
-				  <div class="card-footer">
-				  <button class="buyBtn" >Buy Subscription</button>
-				  </div>
-			   </div>
-			   <div class="card unActive_card mt-5">
-				 <div class="card-header">
-				  <h3 class="free_monthly_subs" >Annual Subscription</h3>
-				  </div>
-				  <div class="card-body p-4">
-				  <h4 style="font-weight: bold;">Price  <span class="ml-5" style="font-weight: normal;"> $70.50</span></h4>
-				
-				  </div>
-				  <div class="card-footer">
-				  <button class="buyBtn" >Buy Subscription</button>
-				  </div>
-			   </div>
-               </div>
+            
               
          </div>
         </div>
@@ -221,19 +196,10 @@
                <div class="row">
                <div id="device_name_list" class="col-lg-5 col-xl-5 mt-4">
             
-            <!-- 
-            <p>1. Samsung Smart TV - 43 inch</p>
-              <p class="mt-3">2. LG Smart TV - 50 inch</p>
-              
             
-             -->
-              
                </div>
                <div class="col-lg-3 offset-2 col-xl-5 mt-4">
-              <div>
-               <p>54845-8654-849</p>
-               <p  class="mt-3">54845-8654-849</p>
-              </div>  
+               
               </div>
               <p class="info"><i class="fa fa-info-circle"></i> Once you reach the device limit you would need to contact help to get them deleted/replaced.</p>
               
@@ -264,11 +230,9 @@
                 <div class="col-7">
              <div class="mt-4">
             <p><i class="fa fa-envelope "></i> <span id="email">&nbsp; Email</span></p>
-               <p class="ml-4 email_text">jamshed.ahmad@oodles.com</p>
+               <p class="ml-4 email_text">info@uam.tv</p>
                <hr>
-             <p><i class="fa fa-phone-volume "></i> <span id="phone">&nbsp; Phone</span></p>
-               <p  class="ml-4 email_text">+91 8299491705</p>
-               <hr>
+            
              </div>
             </div>          
                </div>

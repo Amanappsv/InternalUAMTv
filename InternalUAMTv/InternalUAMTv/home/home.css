@@ -322,6 +322,12 @@ span #detail {
     transition: 0.6s;
 }
 
+
+.catCardHover{
+	transform: scale(1.1);
+	transition: 0.4s;
+}
+
 .carousel .carousel-item {
     text-align: center;
     overflow: hidden;

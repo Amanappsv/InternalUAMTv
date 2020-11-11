@@ -54,7 +54,7 @@ function initText() {
     document.getElementById("most_viewed_list_id").innerHTML = TIZEN_L10N['home_most_viewed_list'];
     document.getElementById("most_recent_list_id").innerHTML = TIZEN_L10N['home_most_recent_list'];
     document.getElementById("detail").innerHTML = TIZEN_L10N['home_detail_text'];
-    document.getElementById("add_fav_btn").innerHTML = TIZEN_L10N['home_add_to_fav_text'];
+  
 
 }
 
@@ -402,9 +402,15 @@ function moveLeft() {
             }
             selectedScreenCatPos--;
             removeFocus("activeScreenCategory");
+            removeFocus("catCardHover");
+            
             setFocus("categoryScreen " + selectedScreenCatPos, "activeScreenCategory");
+            setFocus("categories-wrap " + selectedScreenCatPos, "catCardHover");
+       
         } else {
             removeFocus("activeScreenCategory");
+            removeFocus("catCardHover");
+            
             var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
             setFocus(onLeftElementId, "onLeft");
 
@@ -460,9 +466,8 @@ function moveRight() {
 
             setFocus("categoryScreen " + selectedScreenCatPos, "activeScreenCategory");
             
-            //my focus.....
             
-            //setFocus("categories-wrap " + selectedScreenCatPos, "cardhover");
+            setFocus("categories-wrap " + selectedScreenCatPos, "catCardHover");
         }
 
     }
@@ -554,7 +559,11 @@ function moveRight() {
             if (selectedScreenCatPos !== (categoryList.length - 1)) {
                 selectedScreenCatPos++;
                 removeFocus("activeScreenCategory");
+                removeFocus("catCardHover");
+                
+                
                 setFocus("categoryScreen " + selectedScreenCatPos, "activeScreenCategory");
+                setFocus("categories-wrap " + selectedScreenCatPos, "catCardHover");
 
                 if (selectedScreenCatPos % 4 === 0) {
                     scroll('+=200px');
@@ -563,7 +572,12 @@ function moveRight() {
             } else {
                 selectedScreenCatPos = 0;
                 removeFocus("activeScreenCategory");
+                removeFocus("catCardHover");
+
+                
                 setFocus("categoryScreen " + selectedScreenCatPos, "activeScreenCategory");
+                setFocus("categories-wrap " + selectedScreenCatPos, "catCardHover");
+
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
             }

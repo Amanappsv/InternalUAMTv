@@ -59,7 +59,9 @@ header nav ul li:nth-child(2) {
 	 position: relative;
       right: 5px;
 }
-  
+  #circle_of_cast{
+  font-size: 16px !important;
+  }
 
 header nav ul li:hover {
     display: inline-block;
@@ -73,7 +75,7 @@ header nav ul li:hover {
     margin-top: 67px;
     position: relative;
     padding: 66px;
-    background: linear-gradient(rgba(21, 9, 36, 1), rgba(20, 9, 34, 0.7), rgba(21, 9, 36, 1)), url(../images/rightBacground.png);
+    background: linear-gradient(rgba(21, 9, 36, 0.7), rgba(20, 9, 34, 0.7), rgba(21, 9, 36, 1)), url(../images/rightBacground.png);
 
 	}
 .main_container h1{
@@ -150,7 +152,7 @@ header nav ul li:hover {
     padding: 5px 15px 3px 14px;
 }
 .circle{
-	font-size: 23px;
+	font-size: 18px;
 }
 .rating{
 	font-size: 25px;

@@ -32,33 +32,7 @@ font-size: 30px;
 line-height: 40px;
 text-align: center;
 }
-.video-js .vjs-progress-control .vjs-load-progress {
-<<<<<<< HEAD
-    background-color: rgba(0, 177, 255, .4);
-    border-radius: 4px;
-    background: none !important;
-}
-.video-js .vjs-progress-control .vjs-play-progress {
-    background-color: #FF8400 !important;
-    border-radius: 4px !important;
-}
-.video-js .vjs-time-control {
-    font-size: 25px !important;
-    line-height: 40px;
-=======
-background-color: rgba(0, 177, 255, .4);
-border-radius: 4px;
-background: none !important;
-}
-.video-js .vjs-progress-control .vjs-play-progress {
-background-color: #FF8400 !important;
-border-radius: 4px !important;
-}
-.video-js .vjs-time-control {
-font-size: 25px !important;
-line-height: 40px;
->>>>>>> 60a367ae885769076728ecf514ad5183e95fcaaa
-}
+
 .video-js .vjs-control-bar .vjs-button {
 height: 100%;
 padding: 0;

@@ -1,3 +1,4 @@
+  
 const URL = "https://api.uam.tv/";
 var categoryList = [];
 var mostRecentsList = [];
@@ -125,7 +126,10 @@ function moveOk() {
         console.log(document.getElementsByClassName("activeRecents")[0].id);
     } else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
         console.log(document.getElementsByClassName("activeScreenCategory")[0].id);
+    }else if (document.getElementsByClassName("button_play")[0] !== undefined) {
+    	setMovie();
     }
+    
 
 
 }
@@ -570,7 +574,9 @@ function getHomeScreenData() {
     var token = localStorage.getItem("jwt token");
 
     if (token !== null) {
-        getRandomMovies(token);
+    	
+    	getProfileData(token);
+    	
     } else {
         console.log("No token found");
         location.href = "../login.html";
@@ -578,6 +584,38 @@ function getHomeScreenData() {
 
 
 }
+
+
+function getProfileData(token) {
+	
+	
+	
+		fetch(URL + 'v3/users/get.php', {
+				  headers: {
+					  'Authorization' : "Bearer " + token
+				  },
+				})
+				.then(response => response.json())
+				.then(data => {
+			
+				
+						document.getElementById('user_name_id').innerHTML = data["data"][0]["fname"];
+						
+
+						getRandomMovies(token);
+
+
+				})
+				.catch((error) => {
+				  console.error('Err:', error);
+				});
+			
+		
+
+	
+}
+
+
 
 function getRandomMovies(token) {
     fetch(URL + 'v3/movies/onair/getRandomSelection.php', {
@@ -822,7 +860,6 @@ function addCategories() {
                 <img src= "${result["image"]}" class="img-fluid" alt="">
                 <p class="catagory_name_style ml-2">${result["title"]}</p>
             </div>
-
         </div>
     </div>      
         `;
@@ -875,7 +912,6 @@ function addMostRecents() {
                 <img src= "${result["image"]}" class="img-fluid" alt="">
         
             </div>
-
         </div>
     </div>  
         
@@ -936,7 +972,6 @@ function addMostViewed() {
                 <img src= "${result["image"]}" class="img-fluid" alt="">
         
             </div>
-
         </div>
     </div>
        
@@ -1034,7 +1069,7 @@ function changeBg(image) {
         img: image,
     }
     var img = d.img;
-    var a = "linear-gradient(rgba(21, 9, 36, 1), rgba(20, 9, 34, .7), rgba(21, 9, 36, .7)),"
+    var a = "linear-gradient(rgba(21, 9, 36, 0.6), rgba(20, 9, 34, .7), rgba(21, 9, 36, .7)),"
     var b = "url(" + img + ")";
     var c = a + b;
     console.log(c);
@@ -1098,7 +1133,7 @@ function getMovieSource(moviePlay, token) { //hit stream api...
 
             //set to storage
 
-            var videoUrl = data["data"]["embedUrlList"][0]["https"]["source"]["progressive"];
+            var videoUrl = data["data"]["embedUrlList"][0]["https"]["abr"]["hls"];
 
             
             localStorage.setItem("video", videoUrl);

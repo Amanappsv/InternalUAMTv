@@ -50,7 +50,6 @@ function initText() {
     document.getElementById("fav_txt").innerHTML = TIZEN_L10N['home_favorites_text'];
     document.getElementById("set_txt").innerHTML = TIZEN_L10N['home_settings_text'];
     document.getElementById("category_list_id").innerHTML = TIZEN_L10N['home_category_list'];
-    document.getElementById("see_more_list_id").innerHTML = TIZEN_L10N['home_see_more_list'];
     document.getElementById("most_viewed_list_id").innerHTML = TIZEN_L10N['home_most_viewed_list'];
     document.getElementById("most_recent_list_id").innerHTML = TIZEN_L10N['home_most_recent_list'];
     document.getElementById("detail").innerHTML = TIZEN_L10N['home_detail_text'];
@@ -134,6 +133,25 @@ function moveOk() {
     }else if (document.getElementsByClassName("button_favourite")[0] !== undefined) {
     	setMovie("trailer");
     }
+    else if(document.getElementsByClassName("activeSeeMoreCat")[0] !== undefined){
+    	
+    	removeFocus("activeSeeMoreCat");
+
+        removeFocus("watch_btn");
+        setFocus("category_btn_id", "watch_btn");
+
+        
+        showCategorySection();   
+           	 
+        setFocus("categoryScreen " + selectedScreenCatPos, "activeScreenCategory");        
+        setFocus("categories-wrap " + selectedScreenCatPos, "catCardHover");
+        
+    }
+    
+    else if(document.getElementsByClassName("activeSeeMoreView")[0] !== undefined || document.getElementsByClassName("activeSeeMoreRecent")[0] !== undefined)
+    	{
+    		viewMovieListScreen();
+    	}
     
 
 
@@ -170,13 +188,27 @@ function moveUp() {
     else {
 
         if (document.getElementsByClassName("activeCategory")[0] !== undefined) {
-            setFocus("add_play_btn", "button_play");
-            document.getElementById("add_play_btn").style.opacity = 0.5;
+           
+            setFocus("see_more_cat_list_id" , "activeSeeMoreCat");
 
             removeFocus("activeCategory");
             removeFocus("cardhover");
 
-        } else if (document.getElementsByClassName("button_play")[0] !== undefined) {
+        } 
+        
+        else if(document.getElementsByClassName("activeSeeMoreCat")[0] !== undefined){
+        	
+        	setFocus("add_play_btn", "button_play");
+            document.getElementById("add_play_btn").style.opacity = 0.5;
+
+            
+            removeFocus("activeSeeMoreCat");
+
+        	
+        }
+        
+        
+        else if (document.getElementsByClassName("button_play")[0] !== undefined) {
 
             setFocus("detail", "activeDetail");
             document.getElementById("add_play_btn").style.opacity = 1;
@@ -189,26 +221,53 @@ function moveUp() {
 
             removeFocus("button_favourite");
         } else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {
-            scroll('-=500px');
-            // selectedListPos = 0 ;
-            setFocus("categories " + selectedCatPos, "activeCategory");
+           
+        	
+        	setFocus("see_more_view_list_id" , "activeSeeMoreView");
 
             removeFocus("activeViewed");
             removeFocus("cardhover");
 
-            setFocus("cat-wrap " + selectedCatPos, "cardhover");
 
-        } else if (document.getElementsByClassName("activeRecents")[0] !== undefined) {
+        } 
+        
+        else if(document.getElementsByClassName("activeSeeMoreView")[0] !== undefined){
+        	
+        	scroll('-=500px');
 
-            scroll('-=200px');
-            // selectedListPos = 0 ;
-            setFocus("viewed " + selectedViewedPos, "activeViewed");
+        	 setFocus("categories " + selectedCatPos, "activeCategory");
+        	 setFocus("cat-wrap " + selectedCatPos, "cardhover");
+            
+            removeFocus("activeSeeMoreView");
 
+        	
+        }
+        
+        
+        else if (document.getElementsByClassName("activeRecents")[0] !== undefined) {
 
+        	
+        	
+        	setFocus("see_more_recent_list_id" , "activeSeeMoreRecent");
+
+           
             removeFocus("activeRecents");
             removeFocus("cardhover");
 
-            setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
+        }
+        
+        else if(document.getElementsByClassName("activeSeeMoreRecent")[0] !== undefined){
+        	
+        	 scroll('-=200px');
+
+             setFocus("viewed " + selectedViewedPos, "activeViewed");
+             setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
+            
+            removeFocus("activeSeeMoreRecent");
+            
+            
+
+        	
         }
 
 
@@ -253,44 +312,76 @@ function moveDown() {
 
             removeFocus("activeDetail");
 
-        } else if (document.getElementsByClassName("button_play")[0] !== undefined) {
-            // selectedListPos = 0 ;
-            setFocus("categories " + selectedCatPos, "activeCategory");
-            setFocus("cat-wrap " + selectedCatPos, "cardhover");
-
+        }
+        
+        else if (document.getElementsByClassName("button_play")[0] !== undefined) {
+            setFocus("see_more_cat_list_id" , "activeSeeMoreCat");
             document.getElementById("add_play_btn").style.opacity = 1;
-
-
             removeFocus("button_play");
-        } else if (document.getElementsByClassName("button_favourite")[0] !== undefined) {
-            // selectedListPos = 0 ;
-            setFocus("categories " + selectedCatPos, "activeCategory");
+        } 
+        
+        else if (document.getElementsByClassName("button_favourite")[0] !== undefined) {
+            setFocus("see_more_cat_list_id" , "activeSeeMoreCat");
+            removeFocus("button_favourite");
+        }
+        
+        // focus on see more category...
+        
+        else if(document.getElementsByClassName("activeSeeMoreCat")[0] !== undefined) {
+
+        	setFocus("categories " + selectedCatPos, "activeCategory");
             setFocus("cat-wrap " + selectedCatPos, "cardhover");
 
-            removeFocus("button_favourite");
-        } else if (document.getElementsByClassName("activeCategory")[0] !== undefined) {
+            removeFocus("activeSeeMoreCat");
+        }
+        
+        
+        
+        else if (document.getElementsByClassName("activeCategory")[0] !== undefined) {
 
             scroll('+=400px');
-            // selectedListPos = 0 ;
 
 
             removeFocus("activeCategory");
             removeFocus("cardhover");
 
-            setFocus("viewed " + selectedViewedPos, "activeViewed");
-            setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
+            setFocus("see_more_view_list_id" , "activeSeeMoreView");
 
 
-        } else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {
+        }
+        
+ // focus on see more viewed...
+        
+        else if(document.getElementsByClassName("activeSeeMoreView")[0] !== undefined) {
 
-            scroll('+=300px');
-            // selectedListPos = 0 ;
+        	 setFocus("viewed " + selectedViewedPos, "activeViewed");
+             setFocus("viewed-wrap " + selectedViewedPos, "cardhover");
 
-            removeFocus("activeViewed");
-            removeFocus("cardhover");
+             removeFocus("activeSeeMoreView");
+        }
+        
+        
+        else if(document.getElementsByClassName("activeSeeMoreRecent")[0] !== undefined) {
 
-            setFocus("recent " + selectedRecentPos, "activeRecents");
-            setFocus("recent-wrap " + selectedRecentPos, "cardhover");
+        	 setFocus("recent " + selectedRecentPos, "activeRecents");
+             setFocus("recent-wrap " + selectedRecentPos, "cardhover");
+
+            removeFocus("activeSeeMoreRecent");
+       }
+        
+        // focus on see more recents...
+
+        else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {
+
+        	
+        	 scroll('+=300px');
+
+        	 removeFocus("activeViewed");
+             removeFocus("cardhover");
+
+             setFocus("see_more_recent_list_id" , "activeSeeMoreRecent");
+
+      
         }
 
     }
@@ -1277,6 +1368,10 @@ function getMovieSource(moviePlay, token) { // hit stream api...
 
 }
 
+
+function viewMovieListScreen(){
+    window.location.href="../Cat_Rec_Most_view/categories.html"
+    }
 
 function viewLoader() {
     document.getElementById("parentRightSection").classList.add('parent_right_section');

@@ -18,8 +18,8 @@ var selectedBanner;
 var selectedCatPos = 0,
     selectedViewedPos = 0,
     selectedRecentPos = 0,
-    selectedScreenCatPos = 0; // selected element of any of 3 lists...
-
+    selectedScreenCatPos = 0; 
+	selectedScreenFavPos = 0;
 
 var init = function() {
 
@@ -130,7 +130,9 @@ function moveOk() {
     } else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
         console.log(document.getElementsByClassName("activeScreenCategory")[0].id);
     }else if (document.getElementsByClassName("button_play")[0] !== undefined) {
-    	setMovie();
+    	setMovie("full");
+    }else if (document.getElementsByClassName("button_favourite")[0] !== undefined) {
+    	setMovie("trailer");
     }
     
 
@@ -418,6 +420,36 @@ function moveLeft() {
             document.documentElement.scrollTop = 0;
         }
     }
+    
+    
+    
+    // activeScreenFavorite
+    else if (document.getElementsByClassName("activeScreenFav")[0] !== undefined) {
+        if (selectedScreenFavPos !== 0) {
+
+
+            if (selectedScreenFavPos % 4 === 0) {
+                scroll('-=200px');
+            }
+            selectedScreenFavPos--;
+            removeFocus("activeScreenFav");
+            removeFocus("catCardHover");
+            
+          
+            setFocus("favoriteScreen " + selectedScreenFavPos, "activeScreenFav");
+            setFocus("fav-wrap " + selectedScreenFavPos, "catCardHover");
+       
+        } else {
+            removeFocus("activeScreenFav");
+            removeFocus("catCardHover");
+            
+            var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
+            setFocus(onLeftElementId, "onLeft");
+
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    }
 
 
 
@@ -458,16 +490,26 @@ function moveRight() {
     // on left not null ie. control is on side nav bar...
     if (document.getElementsByClassName("onLeft")[0] !== undefined) {
 
-        removeFocus("onLeft");
+       
         var onLeftElementId = document.getElementsByClassName("watch_btn")[0].id;
         if (onLeftElementId === "watch_btn_id") {
+        	 removeFocus("onLeft");
             setFocus("detail", "activeDetail");
         } else if (onLeftElementId === "category_btn_id") {
 
-            setFocus("categoryScreen " + selectedScreenCatPos, "activeScreenCategory");
-            
-            
+        	 removeFocus("onLeft");
+        	 
+            setFocus("categoryScreen " + selectedScreenCatPos, "activeScreenCategory");        
             setFocus("categories-wrap " + selectedScreenCatPos, "catCardHover");
+        }
+        else if (onLeftElementId === "fav_btn_id") {
+
+        	
+        	if(favList.length > 0)
+        		{
+        	     setFocus("favoriteScreen " + selectedScreenFavPos, "activeScreenFav");        
+                 setFocus("fav-wrap " + selectedScreenFavPos, "catCardHover");
+        		}
         }
 
     }
@@ -692,10 +734,12 @@ function getFavourites(token){
 			        .then(response => response.json())
 			        .then(data => {
 
-			        	 data["data"].forEach((result, index) => {
+			        	if(data["data"] != null)
+			        		{
+			        		 data["data"].forEach((result, index) => {
 
 
-			                
+					                
 			                     // add favorites to list.....
 			                     var obj = {
 			                         "fullId" : result["id_full"],
@@ -708,6 +752,7 @@ function getFavourites(token){
 
 			             })
 
+			        		}
 
 			             getMostRecents(token);
 
@@ -1148,7 +1193,7 @@ function changeBg(image) {
 
 
 
-function setMovie() { // check geolimit
+function setMovie(type) { // check geolimit
 
     viewLoader();
 
@@ -1156,17 +1201,29 @@ function setMovie() { // check geolimit
     var moviePlay;
     var movie = JSON.parse(localStorage.getItem("detail"));
 
-    if (movie["geolimits"] === true) {
-        moviePlay = {
-            "geolimits": 2,
-            "contentId": movie["fullId"]
-        };
-    } else {
-        moviePlay = {
-            "geolimits": 1,
-            "contentId": movie["fullId"]
-        };
-    }
+   if(type === "full")
+	   {
+	  		if (movie["geolimits"] === true) {
+	  				moviePlay = {
+	  					"geolimits": 2,
+	  					"contentId": movie["fullId"]
+	  				};
+	  		} else {
+	  				moviePlay = {
+	  						"geolimits": 1,
+	  						"contentId": movie["fullId"]
+	  				};
+	  		}
+	   }
+   else
+	   {
+	   			moviePlay = {
+					"geolimits": 1,
+					"contentId": movie["trailerId"]
+				};
+	   		
+	   	}
+	   
 
 
     var token = localStorage.getItem("jwt token");

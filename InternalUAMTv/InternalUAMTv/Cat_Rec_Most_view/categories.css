@@ -163,6 +163,11 @@
   .fa-arrow-left:hover {
       color: rgba(255, 132, 0, 1);
   }
+  
+  .hover-left-arrow {
+      color: rgba(255, 132, 0, 1);
+  }
+  
   .no-notification {
       position: relative;
       bottom: 16%;
@@ -190,7 +195,7 @@
       background: #12091E;
   }
   .avail_network_body {
-      height: 100vh;
+      height: 100vh;transform: scale(1.1);
       background: #12091E;
       color: white;
       font-size: 26px;
@@ -213,3 +218,9 @@
   .lock_icon {
       color: white;
   }
+  .cardhover{
+  	transform: scale(1.1);
+    transition: 0.3s;  	
+  	
+  }
+  

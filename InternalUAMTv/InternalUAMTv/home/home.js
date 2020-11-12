@@ -148,10 +148,20 @@ function moveOk() {
         
     }
     
-    else if(document.getElementsByClassName("activeSeeMoreView")[0] !== undefined || document.getElementsByClassName("activeSeeMoreRecent")[0] !== undefined)
+    else if(document.getElementsByClassName("activeSeeMoreView")[0] !== undefined)
     	{
-    		viewMovieListScreen();
+    	
+    	     localStorage.setItem("movie_screen_title", "Most Viewed");
+    	     localStorage.setItem("movies", JSON.stringify(mostViewedList));
+    		 viewMovieListScreen();
     	}
+    else if(document.getElementsByClassName("activeSeeMoreRecent")[0] !== undefined)
+	{
+    	
+	     localStorage.setItem("movie_screen_title", "Most Recents");
+	     localStorage.setItem("movies", JSON.stringify(mostRecentsList));
+		 viewMovieListScreen();
+	}
     
 
 
@@ -753,7 +763,10 @@ function getProfileData(token) {
 				.then(data => {
 			
 				
-						document.getElementById('user_name_id').innerHTML = data["data"][0]["fname"];
+					var username = data["data"][0]["fname"];	
+					document.getElementById('user_name_id').innerHTML = username;
+						
+					     localStorage.setItem("username", username);
 						
 
 						getRandomMovies(token);

@@ -14,8 +14,8 @@ zNpuZn7Z6A==</DigestValue>
 </Reference>
 <Reference URI="Cat_Rec_Most_view%2Fcategories.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>fQabjKD6p7Dq06mdjO3u/xtnXERFgvHOIrf7zcV9A7ixim9J9Sb7A15MClo4+d6+m4nLZnkyvvZe
-Fc5Aqe/9iA==</DigestValue>
+<DigestValue>7reYUSvsXOUEcwobP2IIIw9B08OW2PjRZuq+UJNVAtJwuihwsq/07IFlt12TnT+HMlqXLTL8VPvF
+vvGmgCorFg==</DigestValue>
 </Reference>
 <Reference URI="UAMTV.wgt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -109,8 +109,8 @@ iTsBDcFQJQ==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>BiNC2ax0j2EWMfc//HhJWkClS/I39h92nRfhLjdjxdkIEtjIU9bOkMlhk8IbauLn8ydz5LJdT/Qi
-mrd43A6b5A==</DigestValue>
+<DigestValue>3aHtudARIjlpfWNdOoLAtbjGWQer9KxktEA8R1Qmipr+0bDGyjLMrVnSsX3jVtT5ULRIA0lIlRlj
+4fdO38NSVw==</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -337,9 +337,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-JgIC0bfLCCh6V82yGVZAsP9k99zkrF4uuaQP3N1WYWDjC9hlgA3sYoi7FsiyLnmOIm/6KoGAvmuh
-RMS7peYFkqhSTFEqFMdsbxsZTYAWw044fA8Yzv3TumWax5QXz7eQGKqEtzdnNRYd3c8r0lctiOVP
-Iys+fBkHzPWqMCGETyI=
+RHUjOc12Jnz4rf1BqAqMkkJ23Ru9L9v8bUpV7ojs+XVYB+Vy+6ZzYSENbKeYCkk+2EfiX4PhZPh3
+kko4eGy/KBicSJdQRZNw4Ci4IuA53pSUWW7NMwZGT2YMTCFoOIMXv3/zVr44ShZLxRyiOgYUpOPN
+bxFX6ZPPunNFpdwq8vY=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

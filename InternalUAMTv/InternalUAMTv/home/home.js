@@ -1,6 +1,7 @@
   
 const URL = "https://api.uam.tv/";
 var categoryList = [];
+var categoryMovieList = [];
 var favList = [];
 var mostRecentsList = [];
 var mostViewedList = [];
@@ -127,7 +128,10 @@ function moveOk() {
     } else if (document.getElementsByClassName("activeRecents")[0] !== undefined) {
         console.log(document.getElementsByClassName("activeRecents")[0].id);
     } else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
-        console.log(document.getElementsByClassName("activeScreenCategory")[0].id);
+        
+    	getMoviesByCat(categoryList[selectedScreenCatPos]["fullId"]);
+    	
+    	
     }else if (document.getElementsByClassName("button_play")[0] !== undefined) {
     	setMovie("full");
     }else if (document.getElementsByClassName("button_favourite")[0] !== undefined) {
@@ -162,6 +166,7 @@ function moveOk() {
 	     localStorage.setItem("movies", JSON.stringify(mostRecentsList));
 		 viewMovieListScreen();
 	}
+ 
     
 
 
@@ -888,7 +893,8 @@ function getCategories(token) {
                     var obj = {
                         "fullId": result[0],
                         "title": result[1],
-                        "image": "https://media.uam.tv/images/media/category/" + result[0] + ".jpg"
+                        "image": "https://media.uam.tv/images/media/category/" + result[0] + ".jpg",
+                     
                     };
 
                     categoryList.push(obj);
@@ -923,7 +929,8 @@ function getMostRecents(token) {
                 // add most recents to list.....
                 var obj = {
                     "fullId": result["src"]["id_full"],
-                    "image": "https://media.uam.tv/images/media/slider/" + result["src"]["id_full"] + ".jpg"
+                    "image": "https://media.uam.tv/images/media/slider/" + result["src"]["id_full"] + ".jpg",
+                    "movieId" : result["uid"]
                 };
 
                 mostRecentsList.push(obj);
@@ -955,7 +962,8 @@ function getMostViewed(token) {
 
                 var obj = {
                     "fullId": result["id_full"],
-                    "image": "https://media.uam.tv/images/media/slider/" + result["id_full"] + ".jpg"
+                    "image": "https://media.uam.tv/images/media/slider/" + result["id_full"] + ".jpg",
+                    "movieId" : result["id_movie"]
                 };
 
                 mostViewedList.push(obj);
@@ -1380,6 +1388,71 @@ function getMovieSource(moviePlay, token) { // hit stream api...
         });
 
 }
+
+
+
+function getMoviesByCat(catid) {
+    
+	 var token = localStorage.getItem("jwt token");
+
+	    if (token !== null) {
+	    	
+	    	viewLoader();
+	    
+	    	
+	    	let params = {
+			        "catid": catid,
+			    };
+
+	    	
+	    	 let query = Object.keys(params)
+		        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+		        .join('&');
+	    	 
+	    	fetch(URL + 'v3/movies/onair/getByCategory.php?' + query, {
+	            headers: {
+	                'Authorization': "Bearer " + token
+	            },
+	        })
+	        .then(response => response.json())
+	        .then(data => {
+
+	            data["data"].forEach((result, index) => {
+
+	            	 var obj = {
+	                         "fullId": result["src"]["id_full"],
+	                         "image": "https://media.uam.tv/images/media/slider/" + result["src"]["id_full"] + ".jpg",
+	                         "movieId" : result["id_movie"]
+	                     };
+	            	 
+	            	 
+	            	 categoryMovieList.push(obj);
+	            	 
+	            	
+	            	
+	            })
+	            
+	            
+	            localStorage.setItem("movie_screen_title", "Movies");
+	    	    localStorage.setItem("movies", JSON.stringify(categoryMovieList));
+	    	    
+	    	    viewMovieListScreen();
+	            
+
+	        })
+	        .catch((error) => {
+	            console.error('Err:', error);
+	        });
+	    	
+	    } else {
+	        console.log("No token found");
+	        location.href = "../login.html";
+	    }
+	
+
+}
+
+
 
 
 function viewMovieListScreen(){

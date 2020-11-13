@@ -2,13 +2,18 @@ const URL = "https://api.uam.tv/";
 var categoryList = [];
 var selectedCatPos = 0;
 
+var type;
+
 var init = function () {
        
     initTizenKeys();
     
     
     document.getElementById("user_name_id").innerHTML = localStorage.getItem("username");
-    document.getElementById("screen_title").innerHTML = localStorage.getItem("movie_screen_title") ;
+    
+    type = localStorage.getItem("movie_screen_title");
+    
+    document.getElementById("screen_title").innerHTML = type;
     categoryList = JSON.parse(localStorage.getItem("movies"));
     
     addCategoriesToCategoryScreen();
@@ -61,6 +66,14 @@ function moveOk() {
 	
 	if(document.getElementsByClassName("hover-left-arrow")[0] !== undefined){
 	    location.href = "../home/home.html";
+		
+	}
+	else if(document.getElementsByClassName("activeCategory")[0] !== undefined){
+		
+		
+	
+			console.log(categoryList[selectedCatPos]["movieId"]);
+			
 		
 	}
 	

@@ -7,8 +7,18 @@ var init = function () {
     initTizenKeys();
    
     details = JSON.parse(localStorage.getItem("detail"));
+    changeBg(details["image"]);
     
     getDetailScreenData();
+    
+    
+    document.getElementById("add_fav_button_id").addEventListener("click", function() {
+    		setFav(details["uid"])
+    	});
+    
+    document.getElementById("already_fav_button_id").addEventListener("click", function() {
+    		setFav(details["uid"]);
+  	});
     
 };
 
@@ -124,40 +134,51 @@ function getCastList(token)
 
 
 
-function setFav(token , uid){
+function setFav(uid){
 	
 	
+	var token = localStorage.getItem("jwt token");
+	
+	if(token !== null)
+		{
+		  let params = {
+			        "mid": uid,
+			    };
 
-	    let params = {
-	        "mid": uid,
-	    };
+			    let query = Object.keys(params)
+			        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+			        .join('&');
 
-	    let query = Object.keys(params)
-	        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
-	        .join('&');
+			    fetch(URL + 'v3/users/favourites/post.php?' + query, {
+			    		method: 'POST',
+			            headers: {
+			                'Authorization': "Bearer " + token
+			            },
+			        })
+			        .then(response => response.json())
+			        .then(data => {
 
-	    fetch(URL + 'v3/users/favourites/post.php?' + query, {
-	    		method: 'POST',
-	            headers: {
-	                'Authorization': "Bearer " + token
-	            },
-	        })
-	        .then(response => response.json())
-	        .then(data => {
+			        
+			        	if(data["meta"]["response"] === true)
+			        		{
+			        			getFav(token , details["uid"]);
+			        		}
 
-	        
-	        	if(data["meta"]["response"] === true)
-	        		{
-	        			getFav(token , details["uid"]);
-	        		}
+			       
 
-	       
+			        })
+			        .catch((error) => {
+			            console.error('Err:', error);
+			            //hideLoader();
+			        });
+		}
+	else
+		{
+			console.log("No token found");
+			location.href = "../login.html";
+		}
 
-	        })
-	        .catch((error) => {
-	            console.error('Err:', error);
-	            //hideLoader();
-	        });
+	  
 	
 	}
 
@@ -176,33 +197,44 @@ function getFav(token , uid){
 		        .then(data => {
 
 		        	
-		        	data["data"].forEach((result, index) => {
-						
-		        				
-		        		if(result["id_movie"] === uid)
-		        			{
-		        				isFav = true;
-		        				return
-		        			}
-		        		
-		        		
-		        	
-									        
-						})
-						
-							if(isFav === true){
-		        				
-								console.log("yes fav");
-								//set filled heart...
-								
-		        			}
-		        		else{
-		        			
-		        			console.log("no fav");
-		        			
-		        			//set unfilled heart...
-		        		}
+		        	if(data["data"] != null)
+		        		{
+		        			data["data"].forEach((result, index) => {
+							
+	        				
+			        		if(result["id_movie"] === uid)
+			        			{
+			        				isFav = true;
+			        				return
+			        			}
+			        		
+			        		
+			        	
+										        
+							})
+							
+								if(isFav === true){
+			        				
+									console.log("yes fav");
+									//set filled heart...
+									showAlreadyAddedToFavButton();
+									
+			        			}
+			        		else{
+			        			
+			        			console.log("no fav");
+			        			showAddToFavButton();
+			        			
+			        			//set unfilled heart...
+			        		}
 
+		        		}
+		        	else
+		        		{
+		        		console.log("no fav");
+	        			showAddToFavButton();
+		        		}
+		        	
 		        	
 						
 		        })
@@ -215,6 +247,16 @@ function getFav(token , uid){
 }
 
 
+
+function showAddToFavButton(){
+	 document.getElementById("already_fav_button_id").style.display = 'none';
+	    document.getElementById("add_fav_button_id").style.display = '';
+}
+
+function showAlreadyAddedToFavButton(){
+	 document.getElementById("add_fav_button_id").style.display = 'none';
+	    document.getElementById("already_fav_button_id").style.display = '';
+}
 
 
 function formatTime(totalMinutes){
@@ -233,4 +275,20 @@ function formatTime(totalMinutes){
 	
 }
 
+
+
+function changeBg(image) {
+
+    var d = {
+        img: image,
+    }
+    var img = d.img;
+    var a = "linear-gradient(rgba(21, 9, 36, 0.6), rgba(20, 9, 34, .7), rgba(21, 9, 36, .7)),"
+    var b = "url(" + img + ")";
+    var c = a + b;
+    console.log(c);
+    document.getElementById('mainContainer').style.backgroundImage = c;
+
+
+}
 

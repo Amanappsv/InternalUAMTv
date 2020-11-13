@@ -83,7 +83,8 @@ header nav ul li:hover {
     margin-top: 67px;
     position: relative;
     padding: 66px;
-     background: linear-gradient(rgba(21, 9, 36, 0.7), rgba(20, 9, 34, 0.7), rgba(21, 9, 36, 1)), url(../images/rightBacground.png);
+    background-size:cover;
+    background-repeat:no-repeat
     
 }
 .main_container h1 {

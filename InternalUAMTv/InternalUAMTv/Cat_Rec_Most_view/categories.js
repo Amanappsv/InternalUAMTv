@@ -199,6 +199,9 @@ function addCategoriesToCategoryScreen() {
 }
 
 
+
+
+
 function setFocus(id, clas) {
 
     document.getElementById(id).classList.add(clas);

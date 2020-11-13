@@ -1,3 +1,6 @@
+
+
+
 body {
     margin: 0;
     padding: 0;
@@ -80,7 +83,8 @@ header nav ul li:hover {
     margin-top: 67px;
     position: relative;
     padding: 66px;
-    background: linear-gradient(rgba(21, 9, 36, 0.7), rgba(20, 9, 34, 0.7), rgba(21, 9, 36, 1)), url(../images/rightBacground.png);
+     background: linear-gradient(rgba(21, 9, 36, 0.7), rgba(20, 9, 34, 0.7), rgba(21, 9, 36, 1)), url(../images/rightBacground.png);
+    
 }
 .main_container h1 {
     font-weight: bold
@@ -108,6 +112,36 @@ header nav ul li:hover {
     border-radius: 9px 0px 0px 9px;
 }
 .fa-star {
+    padding: 17.5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 9px 0px 0px 9px;
+    background: #a29595;
+}
+.far .fa-star {
+    padding: 17.5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 9px 0px 0px 9px;
+    background: #a29595;
+}
+.fav_added {
+    width: 261px;
+    border-radius: 9px;
+    height: 58px;
+    background: #706382;
+    border: none;
+    position: relative;
+    left: 3%;
+    font-size: 23px;
+    color: white;
+    font-weight: bold;
+    padding-left: 62px;
+    padding-left: 62px;
+}
+.fa-film {
     padding: 17.5px;
     position: absolute;
     left: 0;

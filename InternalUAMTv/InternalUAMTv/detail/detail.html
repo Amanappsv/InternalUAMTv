@@ -19,6 +19,9 @@
     </head>
 
     <body>
+
+
+
         <header>
             <img src="../images/logo.svg" alt="">
             <nav>
@@ -33,7 +36,7 @@
                 </ul>
             </nav>
         </header>
-        <div class="main_container">
+        <div class="main_container" id="mainContainer">
 
 
 
@@ -111,10 +114,28 @@
 
             <button class="play_btn mt-5"><i class="fa fa-play text-white"></i><span class="ml-3">Play Now</span>
             </button>
-            <button class="watch_btn mt-5"><i class="fa fa-star text-white"></i>Add to Favourite</button>
-            <span><i class="far fa-heart text-white" id="heart_icon"></i> </span>
+            <button class="watch_btn mt-5"><i class="fa fa-film text-white"></i>Watch Trailer</button>
+            <button id="button1" onclick="SwitchButtons('button1');" class="watch_btn mt-5 ml-5"><i class="far fa-star text-white"></i>Add to Favourite</button>
+             <button id="button2" onclick="SwitchButtons('button2');" style='display:none;' class="fav_added mt-5 ml-5"><i class="fa fa-star text-white" ></i>Added in Favourite</button>
+            <!-- <span><i class="far fa-heart text-white" id="heart_icon"></i> </span> -->
             </span>
+   <script>
+        function SwitchButtons(buttonId) {
+            var hideBtn, showBtn, menuToggle;
+            if (buttonId == 'button1') {
+                showBtn = 'button2';
+                hideBtn = 'button1';
+            } else {
+                showBtn = 'button1';
+                hideBtn = 'button2';
+            }
 
+            document.getElementById(hideBtn).style.display = 'none';
+            document.getElementById(showBtn).style.display = '';
+
+
+        }
+    </script>
             <div class="container-fluid">
                 <div class="row mt-5">
                     <div class="col-8 mt-5 ">
@@ -158,6 +179,28 @@
                     </ul>
                 </div>
             </div>
+    </div>
     </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

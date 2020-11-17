@@ -19,9 +19,6 @@
     </head>
 
     <body>
-
-
-
         <header>
             <img src="../images/logo.svg" alt="">
             <nav>
@@ -116,15 +113,14 @@
                 </script>
 
 
-
-
-
                 <h1 id="detail_video_name"><span><i class="fa fa-arrow-left mr-2"></i></span></h1>
                 <div id="menu">
                     <ul>
-                        <li id="tag_list_id" ></li>
-                        <li><i class="fa fa-circle circle ml-3"></i> <span id="detail_video_length" ></span></li>
-                        <li><i class="fa fa-circle circle ml-3"></i><span id="detail_video_year" ></span></li>
+                        <li id="tag_list_id"></li>
+                        <li><i class="fa fa-circle circle ml-3"></i>  <span id="detail_video_length"></span>
+                        </li>
+                        <li><i class="fa fa-circle circle ml-3"></i><span id="detail_video_year"></span>
+                        </li>
                     </ul>
                 </div>
 
@@ -135,97 +131,111 @@
 
                 <span>
 
-
-
-            <button onclick="showLoader()" class="play_btn mt-5"><i class="fa fa-play text-white"></i><span class="ml-3">Play Now</span>
+                <button onclick="watchBtn()" id="playButton"  class="play_btn mt-5"><i class="fa fa-play text-white"></i><span class="ml-3">Play Now</span>
                 </button>
-                <button onclick="hideLoader()" class="watch_btn mt-5"><i class="fa fa-film text-white"></i>Watch Trailer</button>
-                <button id="add_fav_button_id" class="watch_btn mt-5 ml-5"><i class="far fa-star text-white"></i>Add to Favourite</button>
-                <button id="already_fav_button_id" " style='display:none;' class="fav_added mt-5 ml-5"><i class="fa fa-star text-white " ></i>Favourite</button>
+                <button onclick="TrailerBtn()" id="trail_btn"  class="watch_btn mt-5"><i class="fa fa-film text-white"></i>Watch Trailer</button>
+                <button onclick="FavouriteBtn()" id="fav_btn" id="add_fav_button_id" class="watch_btn mt-5 ml-5"><i class="far fa-star text-white"></i>Add to Favourite</button>
+                <button id="already_fav_button_id" " style='display:none;' class="fav_added mt-5 ml-5 "><i class="fa fa-star text-white " ></i>Favourite</button>
 
-            <!-- <span><i class="far fa-heart text-white" id="heart_icon"></i> </span> -->
+            <!-- <span><i class="far fa-heart text-white " id="heart_icon "></i> </span> -->
 
             </span>
+            <script type="text/javascript">
+            function watchBtn(){
+            document.getElementById('playButton').classList.add('after_click');
+            }
+             function TrailerBtn(){
+            document.getElementById('trail_btn').classList.add('after_click');
+            }
+               function FavouriteBtn(){
+            document.getElementById('fav_btn').classList.add('after_click');
+            }
+            </script>
 
-     <script type="text/javascript">
-     
-    
-     </script>
-
-            <div class="container-fluid">
-
+            <div class="container-fluid ">
                 <div class="row mt-5 ">
+                    <div class="col-8 mt-5 ">
+                      <div class="d-flex justify-content-between category_text ">
+                           <p>Synopsys</p>
 
-                    <div class="col-8 mt-5">
+                      </div>
 
-                        <div class="d-flex justify-content-between category_text">
-
-                            <p>Synopsys</p>
-
-
-
+                        <div class="d-flex mt-3 justify-content-between description ">
+                            <p id="detail_video_desc "></p>
                         </div>
-
-                        <div class="d-flex mt-3 justify-content-between description">
-
-                            <p id="detail_video_desc"></p>
-
-
-
-                        </div>
-
-
-
-
-
-
-
-
-
                     </div>
 
                 </div>
 
-                <h2 class="cast mt-3">Cast</h2>
-
+                <h2 class="cast mt-3 ">Cast</h2>
+                <br>
                 <br>
 
-                <br>
-
-                <div id="menu">
-
-                    <ul id="cast_case" >
-
-                       
+               <div id="menu ">
+                    <ul id="cast_case " >                  
 
                     </ul>
-
                 </div>
                 <br>
                 <br>
                <br>
-                <h2 class="cast">Director</h2>
-                <div id="menu">
-
+                <h2 class="cast ">Director</h2>
+                <div id="menu ">
                     <br>
-
                     <br>
+                    <ul id="director_case ">                    
 
-                    <ul id="director_case">                    
                     </ul>
-
                 </div>
-
             </div>
        </div>
-
-        </div>
-
+      </div>
     </body>
-
-
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

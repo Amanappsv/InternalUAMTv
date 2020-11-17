@@ -122,9 +122,9 @@
                 <h1 id="detail_video_name"><span><i class="fa fa-arrow-left mr-2"></i></span></h1>
                 <div id="menu">
                     <ul>
-                        <li>Documentry, Artist, Scandalous</li>
-                        <li><i class="fa fa-circle circle ml-3"></i> 1h 14m</li>
-                        <li><i class="fa fa-circle circle ml-3"></i> 2016</li>
+                        <li id="tag_list_id" ></li>
+                        <li><i class="fa fa-circle circle ml-3"></i> <span id="detail_video_length" ></span></li>
+                        <li><i class="fa fa-circle circle ml-3"></i><span id="detail_video_year" ></span></li>
                     </ul>
                 </div>
 
@@ -141,32 +141,24 @@
                 </button>
                 <button onclick="hideLoader()" class="watch_btn mt-5"><i class="fa fa-film text-white"></i>Watch Trailer</button>
                 <button id="add_fav_button_id" class="watch_btn mt-5 ml-5"><i class="far fa-star text-white"></i>Add to Favourite</button>
-                <button id="already_fav_button_id" " style='display:none;' class="fav_added mt-5 ml-5 "><i class="fa fa-star text-white " ></i>Favourite</button>
+                <button id="already_fav_button_id" " style='display:none;' class="fav_added mt-5 ml-5"><i class="fa fa-star text-white " ></i>Favourite</button>
 
-            <!-- <span><i class="far fa-heart text-white " id="heart_icon "></i> </span> -->
+            <!-- <span><i class="far fa-heart text-white" id="heart_icon"></i> </span> -->
 
             </span>
 
-     <script type="text/javascript ">
+     <script type="text/javascript">
      
-     function showLoader(){
-        document.getElementById('loadingSpinner').classList.add('ldio-eon67kjyqwt')
-         document.getElementById('viewSection').classList.add('view_Section')
-     }
-     
-      function hideLoader(){
-       document.getElementById('loadingSpinner').classList.remove('ldio-eon67kjyqwt');
-         document.getElementById('viewSection').classList.remove('view_Section')
-     }
+    
      </script>
 
-            <div class="container-fluid ">
+            <div class="container-fluid">
 
                 <div class="row mt-5 ">
 
-                    <div class="col-8 mt-5 ">
+                    <div class="col-8 mt-5">
 
-                        <div class="d-flex justify-content-between category_text ">
+                        <div class="d-flex justify-content-between category_text">
 
                             <p>Synopsys</p>
 
@@ -174,9 +166,9 @@
 
                         </div>
 
-                        <div class="d-flex mt-3 justify-content-between description ">
+                        <div class="d-flex mt-3 justify-content-between description">
 
-                            <p id="detail_video_desc ">Fiore Ribelle, primo biopic sul guru indiano Osho Raijneesh, diretto dal regista indiano Krishan Hooda, è l’occasione per vivere un viaggio di ricerca unico al di là del mito e della fede.</p>
+                            <p id="detail_video_desc"></p>
 
 
 
@@ -185,16 +177,6 @@
 
 
 
-
-                        <!-- 
-
-      <div id="cast_case " class="d-flex justify-content-between mt-5 cast_description ">
-
-       
-
-     </div>
-
-      -->
 
 
 
@@ -204,15 +186,15 @@
 
                 </div>
 
-                <h2 class="cast mt-3 ">Cast</h2>
+                <h2 class="cast mt-3">Cast</h2>
 
                 <br>
 
                 <br>
 
-                <div id="menu ">
+                <div id="menu">
 
-                    <ul id="cast_case " >
+                    <ul id="cast_case" >
 
                        
 
@@ -222,14 +204,14 @@
                 <br>
                 <br>
                <br>
-                <h2 class="cast ">Director</h2>
-                <div id="menu ">
+                <h2 class="cast">Director</h2>
+                <div id="menu">
 
                     <br>
 
                     <br>
 
-                    <ul id="director_case ">                    
+                    <ul id="director_case">                    
                     </ul>
 
                 </div>

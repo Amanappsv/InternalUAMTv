@@ -5,20 +5,30 @@ var details;
 var init = function () {
        
     initTizenKeys();
-   
-    details = JSON.parse(localStorage.getItem("detail"));
-    changeBg(details["image"]);
+  
     
-    getDetailScreenData();
+    	var token = localStorage.getItem("jwt token");
+	
+    	if(token !== null)
+			{
+    			var uid = localStorage.getItem("detail-movie-id");
+    		
+    			getDetailScreenData(token , uid);
+			}
+    	else
+    		{
+    			console.log("No token found");
+    			location.href = "../login.html";
+    		}
     
     
-    document.getElementById("add_fav_button_id").addEventListener("click", function() {
-    		setFav(details["uid"])
-    	});
+    	document.getElementById("add_fav_button_id").addEventListener("click", function() {
+    			setFav(details["uid"])
+    		});
     
-    document.getElementById("already_fav_button_id").addEventListener("click", function() {
-    		setFav(details["uid"]);
-  	});
+    	document.getElementById("already_fav_button_id").addEventListener("click", function() {
+    			setFav(details["uid"]);
+    		});
     
 };
 
@@ -63,32 +73,84 @@ function initTizenKeys()
 }
 
 
-function getDetailScreenData() {
+function getDetailScreenData(token , uid) {
 	
 
+	showLoader();
 	
-	document.getElementById("detail_video_name").innerHTML = details["title"];
-	document.getElementById("detail_video_desc").innerHTML = details["desc"];
-	document.getElementById("detail_video_length").innerHTML = formatTime(details["length"]);
 	
+	
+	//get details of movie...
+	
+	 let params = {
+		        "id": uid,
+		    };
+
+		    let query = Object.keys(params)
+		        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+		        .join('&');
 
 	
+	 fetch(URL + 'v3/movies/onair/getMovie.php?' + query, {
+         headers: {
+             'Authorization': "Bearer " + token
+         },
+     })
+     .then(response => response.json())
+     .then(data => {
+
+
+             // add details.....
+             details = {
+                 "fullId": data[0]["src"]["id_full"],
+                 "year": data[0]["meta"]["year"],
+                 "length": data[0]["meta"]["lenght"],
+                 "cast": data[0]["meta"]["cast"],
+                 "director": data[0]["meta"]["directors"],
+                 "title": data[0]["langs"]["it"]["title"],
+                 "image": "https://media.uam.tv/images/media/frames/" + data[0]["src"]["id_full"] + ".jpg",
+                 "desc": data[0]["langs"]["it"]["logline"],
+                 "tag": data[0]["langs"]["it"]["tags"],
+                 "geolimits": data[0]["meta"]["geolimits"],
+                 "trailerId": data[0]["src"]["id_trailer"],
+                 "uid": data[0]["uid"]
+             }
+            
+           
+             
+             document.getElementById("detail_video_name").innerHTML = details["title"];
+             document.getElementById("detail_video_desc").innerHTML = details["desc"];
+             document.getElementById("detail_video_length").innerHTML = formatTime(details["length"]);
+             document.getElementById("detail_video_year").innerHTML = " " + details["year"];
+             
+             changeBg(details["image"]);
+
+        
+             details["tag"].forEach((result, index) => {
+            	 
+            	 if(index == (details["tag"].length)-1)
+            		 document.getElementById("tag_list_id").innerHTML += result;
+            	 else
+                	 document.getElementById("tag_list_id").innerHTML += result + ",";
+
+             })
+             
+     
+             getDirectorList(token);
+     		
+        
+
+     })
+     .catch((error) => {
+         console.error('Err:', error);
+          hideLoader();
+     });
+	
+	
+	
+	
 	
 
-	var token = localStorage.getItem("jwt token");
-	
-	if(token !== null)
-		{
-			getDirectorList(token);
-		}
-	else
-		{
-			console.log("No token found");
-			location.href = "../login.html";
-		}
-	
-	
-	
 
 	
 }
@@ -107,7 +169,7 @@ function getDirectorList(token)
 	    li.innerHTML += result;
 
     })
-//    
+   
     	getCastList(token);
    
 	
@@ -169,7 +231,7 @@ function setFav(uid){
 			        })
 			        .catch((error) => {
 			            console.error('Err:', error);
-			            //hideLoader();
+			            hideLoader();
 			        });
 		}
 	else
@@ -227,6 +289,8 @@ function getFav(token , uid){
 			        			
 			        			//set unfilled heart...
 			        		}
+		        			
+		        			hideLoader();
 
 		        		}
 		        	else
@@ -240,7 +304,7 @@ function getFav(token , uid){
 		        })
 		        .catch((error) => {
 		            console.error('Err:', error);
-		            //hideLoader();
+		            hideLoader();
 		        });
 		
 	
@@ -291,4 +355,15 @@ function changeBg(image) {
 
 
 }
+
+
+function showLoader(){
+    document.getElementById('loadingSpinner').classList.add('ldio-eon67kjyqwt')
+     document.getElementById('viewSection').classList.add('view_Section')
+ }
+ 
+  function hideLoader(){
+   document.getElementById('loadingSpinner').classList.remove('ldio-eon67kjyqwt');
+     document.getElementById('viewSection').classList.remove('view_Section')
+ }
 

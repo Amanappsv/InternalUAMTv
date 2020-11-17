@@ -120,7 +120,11 @@ function removeFocus(clas) {
 function moveOk() {
 
     if (document.getElementsByClassName("activeDetail")[0] !== undefined) {
+    	
+    	localStorage.setItem("detail-movie-id", randomBannerList[0]["uid"]);
+		
         location.href = "../detail/detail.html";
+        
     } else if (document.getElementsByClassName("activeCategory")[0] !== undefined) {
         console.log(document.getElementsByClassName("activeCategory")[0].id);
     } else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {

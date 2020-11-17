@@ -70,10 +70,10 @@ function moveOk() {
 	}
 	else if(document.getElementsByClassName("activeCategory")[0] !== undefined){
 		
+		localStorage.setItem("detail-movie-id", categoryList[selectedCatPos]["movieId"]);
 		
-	
-			console.log(categoryList[selectedCatPos]["movieId"]);
-			
+		
+        location.href = "../detail/detail.html";
 		
 	}
 	

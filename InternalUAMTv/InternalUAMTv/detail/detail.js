@@ -2,9 +2,20 @@ const URL = "https://api.uam.tv/";
 var details;
 
 
+var isFavorited;
+
+
+
+
+
+
+
 var init = function () {
        
-    initTizenKeys();
+  
+	setFocus("playButton", "activePlay");
+	
+	initTizenKeys();
   
     
     	var token = localStorage.getItem("jwt token");
@@ -13,6 +24,7 @@ var init = function () {
 			{
     			var uid = localStorage.getItem("detail-movie-id");
     		
+    			if(uid !== null)
     			getDetailScreenData(token , uid);
 			}
     	else
@@ -23,11 +35,14 @@ var init = function () {
     
     
     	document.getElementById("add_fav_button_id").addEventListener("click", function() {
-    			setFav(details["uid"])
+    			
+    		console.log(details["uid"]);
+    		setFav(details["uid"])
     		});
     
     	document.getElementById("already_fav_button_id").addEventListener("click", function() {
-    			setFav(details["uid"]);
+    		console.log(details["uid"]);	
+    		setFav(details["uid"]);
     		});
     
 };
@@ -52,7 +67,7 @@ function initTizenKeys()
     		
     		break;
     	case 39: //RIGHT arrow
-    		
+    		moveRight();
     		break;
     	case 40: //DOWN arrow
     		
@@ -70,6 +85,36 @@ function initTizenKeys()
     		break;
     	}
     });
+}
+
+
+
+function moveRight() {
+	
+if (document.getElementsByClassName("activePlay")[0] !== undefined) {
+    	
+	
+	setFocus("trail_btn", "activeTrailer");
+	removeFocus("activePlay");
+	
+    }
+else if (document.getElementsByClassName("activeTrailer")[0] !== undefined && isFavorited == false) {
+	setFocus("add_fav_button_id", "activeFav");
+	removeFocus("activeTrailer");
+	
+}
+else if (document.getElementsByClassName("activeTrailer")[0] !== undefined && isFavorited == true) {
+	setFocus("already_fav_button_id", "activeFav");
+	removeFocus("activeTrailer");
+	
+} 
+else if (document.getElementsByClassName("activeFav")[0] !== undefined) {
+	setFocus("playButton", "activePlay");
+	removeFocus("activeFav");
+	
+} 
+
+	
 }
 
 
@@ -199,10 +244,15 @@ function getCastList(token)
 function setFav(uid){
 	
 	
+	
+	
 	var token = localStorage.getItem("jwt token");
 	
 	if(token !== null)
 		{
+		
+		showLoader();
+		
 		  let params = {
 			        "mid": uid,
 			    };
@@ -227,6 +277,9 @@ function setFav(uid){
 			        		}
 
 			       
+			        	
+			        	hideLoader();
+			        	
 
 			        })
 			        .catch((error) => {
@@ -247,7 +300,6 @@ function setFav(uid){
 
 function getFav(token , uid){
 	
-	 
 	var isFav = false;
 		 
 		    fetch(URL + 'v3/users/favourites/get.php', {
@@ -261,12 +313,18 @@ function getFav(token , uid){
 		        	
 		        	if(data["data"] != null)
 		        		{
+		        		
+		        		if(document.getElementsByClassName("activeFav")[0] !== undefined)
+		        		  removeFocus("activeFav");
+		        		
 		        			data["data"].forEach((result, index) => {
 							
 	        				
 			        		if(result["id_movie"] === uid)
 			        			{
 			        				isFav = true;
+			        				
+			        				
 			        				return
 			        			}
 			        		
@@ -284,13 +342,13 @@ function getFav(token , uid){
 			        			}
 			        		else{
 			        			
-			        			console.log("no fav");
-			        			showAddToFavButton();
 			        			
+			        			showAddToFavButton();
 			        			//set unfilled heart...
 			        		}
 		        			
-		        			hideLoader();
+		        			
+		        			
 
 		        		}
 		        	else
@@ -299,6 +357,19 @@ function getFav(token , uid){
 	        			showAddToFavButton();
 		        		}
 		        	
+		        	if(isFav == true)
+		        		{
+		        		setFocus("already_fav_button_id", "activeFav");
+		        		}
+		        	else
+		        		{
+
+	        			setFocus("add_fav_button_id", "activeFav");			        			        				
+        				
+		        		}
+		        	
+		        	isFavorited = isFav;
+        			hideLoader();
 		        	
 						
 		        })
@@ -356,6 +427,20 @@ function changeBg(image) {
 
 }
 
+
+function setFocus(id, clas) {
+
+    document.getElementById(id).classList.add(clas);
+
+}
+
+function removeFocus(clas) {
+
+    var el = document.getElementsByClassName(clas)[0].id;
+    document.getElementById(el.toString()).classList.remove(clas);
+
+
+}
 
 function showLoader(){
     document.getElementById('loadingSpinner').classList.add('ldio-eon67kjyqwt')

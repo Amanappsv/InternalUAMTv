@@ -161,9 +161,18 @@ header nav ul li:hover {
     padding-left: 62px;
     padding-left: 62px;
 }
-.after_click {
+.activePlay {
     opacity: 0.5;
 }
+
+.activeTrailer {
+    opacity: 0.5;
+}
+
+.activeFav {
+    opacity: 0.5;
+}
+
 #fa_star {
     background: #a099a9a1;
     padding: 15px;

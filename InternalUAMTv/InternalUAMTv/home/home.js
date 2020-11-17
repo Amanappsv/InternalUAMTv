@@ -126,12 +126,24 @@ function moveOk() {
         location.href = "../detail/detail.html";
         
     } else if (document.getElementsByClassName("activeCategory")[0] !== undefined) {
-        console.log(document.getElementsByClassName("activeCategory")[0].id);
+
+    	getMoviesByCat(categoryList[selectedCatPos]["fullId"]);
+
+    
     } else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {
-        console.log(document.getElementsByClassName("activeViewed")[0].id);
+    	
+    	localStorage.setItem("detail-movie-id", mostViewedList[selectedViewedPos]["movieId"]);
+		
+        location.href = "../detail/detail.html";
+
     } else if (document.getElementsByClassName("activeRecents")[0] !== undefined) {
-        console.log(document.getElementsByClassName("activeRecents")[0].id);
-    } else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
+    		
+    	localStorage.setItem("detail-movie-id", mostRecentsList[selectedRecentPos]["movieId"]);
+		
+        location.href = "../detail/detail.html";   
+    } 
+    
+    else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
         
     	getMoviesByCat(categoryList[selectedScreenCatPos]["fullId"]);
     	

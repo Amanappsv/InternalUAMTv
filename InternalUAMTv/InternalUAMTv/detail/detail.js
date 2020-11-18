@@ -17,6 +17,7 @@ var init = function () {
 	
 	initTizenKeys();
   
+	document.getElementById("user_name_id").innerHTML = localStorage.getItem("username");
     
     	var token = localStorage.getItem("jwt token");
 	
@@ -34,16 +35,6 @@ var init = function () {
     		}
     
     
-    	document.getElementById("add_fav_button_id").addEventListener("click", function() {
-    			
-    		console.log(details["uid"]);
-    		setFav(details["uid"])
-    		});
-    
-    	document.getElementById("already_fav_button_id").addEventListener("click", function() {
-    		console.log(details["uid"]);	
-    		setFav(details["uid"]);
-    		});
     
 };
 
@@ -74,7 +65,7 @@ function initTizenKeys()
     		break;
     	case 13: //OK button
     		
-    
+    		moveOk();
     		
        		break;
     	case 10009: //RETURN button
@@ -85,6 +76,27 @@ function initTizenKeys()
     		break;
     	}
     });
+}
+
+
+function moveOk(){
+
+		if (document.getElementsByClassName("activeFav")[0] !== undefined) {
+			
+			setFav(details["uid"])
+			
+		}
+		else if (document.getElementsByClassName("activePlay")[0] !== undefined) {
+			
+			setMovie("full");			
+		}
+		else if (document.getElementsByClassName("activeTrailer")[0] !== undefined) {
+			
+	    	setMovie("trailer");
+			
+		}
+
+	
 }
 
 
@@ -314,8 +326,6 @@ function getFav(token , uid){
 		        	if(data["data"] != null)
 		        		{
 		        		
-		        		if(document.getElementsByClassName("activeFav")[0] !== undefined)
-		        		  removeFocus("activeFav");
 		        		
 		        			data["data"].forEach((result, index) => {
 							
@@ -357,14 +367,27 @@ function getFav(token , uid){
 	        			showAddToFavButton();
 		        		}
 		        	
+		        	
 		        	if(isFav == true)
 		        		{
-		        		setFocus("already_fav_button_id", "activeFav");
+		        			if(document.getElementsByClassName("activeFav")[0] !== undefined)
+		        			{
+		        				removeFocus("activeFav");
+			        		
+		        				setFocus("already_fav_button_id", "activeFav");
+		        			}  
 		        		}
 		        	else
 		        		{
+		        		
+		        		
+		        			if(document.getElementsByClassName("activeFav")[0] !== undefined)
+		        			{
+		        				removeFocus("activeFav");
+		        		
+			        			setFocus("add_fav_button_id", "activeFav");			        			        				
+		        			}  
 
-	        			setFocus("add_fav_button_id", "activeFav");			        			        				
         				
 		        		}
 		        	
@@ -451,4 +474,91 @@ function showLoader(){
    document.getElementById('loadingSpinner').classList.remove('ldio-eon67kjyqwt');
      document.getElementById('viewSection').classList.remove('view_Section')
  }
+  
+  
+
+  function setMovie(type) { // check geolimit
+
+	  showLoader();
+
+
+      var moviePlay;
+      var movie = details;
+
+     if(type === "full")
+  	   {
+  	  		if (movie["geolimits"] === true) {
+  	  				moviePlay = {
+  	  					"geolimits": 2,
+  	  					"contentId": movie["fullId"]
+  	  				};
+  	  		} else {
+  	  				moviePlay = {
+  	  						"geolimits": 1,
+  	  						"contentId": movie["fullId"]
+  	  				};
+  	  		}
+  	   }
+     else
+  	   {
+  	   			moviePlay = {
+  					"geolimits": 1,
+  					"contentId": movie["trailerId"]
+  				};
+  	   		
+  	   	}
+  	   
+
+
+      var token = localStorage.getItem("jwt token");
+
+      if (token !== null) {
+          getMovieSource(moviePlay, token);
+      } else {
+          console.log("No token found");
+          location.href = "../login.html";
+      }
+
+  }
+
+  function getMovieSource(moviePlay, token) { // hit stream api...
+
+      let params = {
+          "contentID": moviePlay["contentId"],
+          "prop": moviePlay["geolimits"]
+      };
+
+      let query = Object.keys(params)
+          .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+          .join('&');
+
+      fetch(URL + 'v3/movies/streams/get.php?' + query, {
+              headers: {
+                  'Authorization': "Bearer " + token
+              },
+          })
+          .then(response => response.json())
+          .then(data => {
+
+              // set to storage
+
+              var videoUrl = data["data"]["embedUrlList"][0]["https"]["abr"]["hls"];
+
+              
+              localStorage.setItem("video", videoUrl);
+              
+              location.href="../Video/video.html"
+              
+
+
+              hideLoader();
+
+          })
+          .catch((error) => {
+              console.error('Err:', error);
+              hideLoader();
+          });
+
+  }
+
 

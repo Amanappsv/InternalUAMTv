@@ -54,8 +54,8 @@ YaWQIX0yYw==</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>AQDojuHXrpLsISmzNdKMMBKSN3/SOAQhORMHW08hDLFQNY76KwminsnJrsZ4lsTfz2BD2FigLssr
-IZLQcyveEA==</DigestValue>
+<DigestValue>xNqr6gAxrfsH2fTToEOmSMfI2+cXdVRwenY/xot3+8jUD4aJV/AIwZXy+xGmqqUAimY943dSEj7v
+h/BNTwVPyw==</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -94,13 +94,13 @@ Q9vdNaGopA==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>03/G9O6IoXIEdFr/cIHgdJ8RsXAM9iUvPDK45okZaNgttCaHANO4TTPSwi92LH9X9WHgVeJjoQlO
-63Imo+7YeA==</DigestValue>
+<DigestValue>Z9e4nYAuchQAAnKs5MYKxzc3w635FxBhPrKnbF7iXYT3kPjoW+Q38+098GNvOvELXoFutfunHvWH
+M+tIqhRMjw==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>FiDQznyPNGS8rXcVCgYqRtAGEGy11jv+But2BhlQiy+110HA3UDXA+7ROLX6s1DdB1ypDoNPoOfX
-TLl52iJU+A==</DigestValue>
+<DigestValue>0iOtnQ9giIb9qV9PX3sbD9c7/Zo7h0gA7YhIs+aC0esfBvp6VnLbhsR5FbhygNf+dZdw0NNrf/hk
+7nNDsEHCdw==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -114,8 +114,8 @@ iTsBDcFQJQ==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>OxTN2Tvg6FN3+w1QSui5Sk12y8PIj+LBcGHDPr95nfp8QRN/LzAPKsudIfIMQdnAXOs2zQJ5D66T
-PtcAoX65VQ==</DigestValue>
+<DigestValue>a36N8K8GMxqxctcjlE16d0A8UiJ0nl9eBfvUEEdHpfZjwywSZzsVHVlPJj4TXZm+bfBndfdMql5f
+M/YTb6Ixqw==</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -337,9 +337,9 @@ GyvKX9Snig==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-oeyzxsQBbem2mblTRBHiYiaXDEsaf3axsU5sRIFqzDefgT748Y35U5LIGWvBhNJ9PEpW1YCvUdSR
-k/IWnm65897RfaqjT1WodJuRiDGcKr37+GU+/LaJvSoy05uisRIaMRB7TsFLg4+xqF9Ar7tlaIFv
-go/QL8k8Le7Mj4EFlYo=
+VRVuvTPLQghVszYBCX+xerRWZWJ3DARnnfCdrp/hESna8Ju5bdEMsMs2tuTdlpNAHmvIteQN7Y5z
+lCsZMvTszqX5rZyhb36QFHfhvKLaZzbySvJ66naRegJ3ycXb1oOgcuxp8JGoHdvtc4Wcfz8ABaoM
+nMw4O8zHATTNmEKYNfI=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

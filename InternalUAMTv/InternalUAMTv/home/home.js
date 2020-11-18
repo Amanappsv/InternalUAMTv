@@ -182,6 +182,13 @@ function moveOk() {
 	     localStorage.setItem("movies", JSON.stringify(mostRecentsList));
 		 viewMovieListScreen();
 	}
+    else if (document.getElementsByClassName("activeScreenFav")[0] !== undefined){
+    	
+    	localStorage.setItem("detail-movie-id", favList[selectedScreenFavPos]["movie_id"]);
+		
+        location.href = "../detail/detail.html";
+    	
+    }
  
     
 
@@ -629,8 +636,11 @@ function moveRight() {
         	
         	if(favList.length > 0)
         		{
-        	     setFocus("favoriteScreen " + selectedScreenFavPos, "activeScreenFav");        
-                 setFocus("fav-wrap " + selectedScreenFavPos, "catCardHover");
+        		
+        			removeFocus("onLeft");
+        	     
+        			setFocus("favoriteScreen " + selectedScreenFavPos, "activeScreenFav");        
+        			setFocus("fav-wrap " + selectedScreenFavPos, "catCardHover");
         		}
         }
 
@@ -746,6 +756,39 @@ function moveRight() {
                 document.documentElement.scrollTop = 0;
             }
         }
+        
+        else if (document.getElementsByClassName("activeScreenFav")[0] !== undefined) {
+            if (selectedScreenFavPos !== (favList.length - 1)) {
+            	selectedScreenFavPos++;
+                removeFocus("activeScreenFav");
+                removeFocus("catCardHover");
+                
+                
+                setFocus("favoriteScreen " + selectedScreenFavPos, "activeScreenFav");        
+                setFocus("fav-wrap " + selectedScreenFavPos, "catCardHover");
+                
+                
+
+                if (selectedScreenFavPos % 4 === 0) {
+                    scroll('+=200px');
+                }
+
+            } else {
+            	
+            	selectedScreenFavPos = 0;
+                removeFocus("activeScreenFav");
+                removeFocus("catCardHover");
+
+                
+                setFocus("favoriteScreen " + selectedScreenFavPos, "activeScreenFav");        
+                setFocus("fav-wrap " + selectedScreenFavPos, "catCardHover");
+
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        }
+        
+        
 
         // end else
     }
@@ -869,7 +912,8 @@ function getFavourites(token){
 			                     var obj = {
 			                         "fullId" : result["id_full"],
 			                          "title" : result["title"],
-			                         "image": "https://media.uam.tv/images/media/slider/" + result["id_full"] + ".jpg"
+			                         "image": "https://media.uam.tv/images/media/slider/" + result["id_full"] + ".jpg",
+			                         "movie_id" : result["id_movie"]
 			                     };
 
 			                     favList.push(obj);
@@ -1266,7 +1310,6 @@ function addFavouritesToFavouritesScreen() {
         <div id="favoriteScreen ${idx}" class="col-lg-3 mt-4">
         <div id="fav-wrap ${idx}" class="card" style="width: 18rem;">
             <img class="card-img-top" src="${result["image"]}" alt="Card image cap">
-            <p class="category_type">${result["title"]}</p>
         </div>
     </div>
                 

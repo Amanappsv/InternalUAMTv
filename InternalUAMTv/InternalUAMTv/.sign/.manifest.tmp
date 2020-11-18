@@ -6,8 +6,11 @@ Cat_Rec_Most_view/categories.js__DEL__nKFuYoBWIAvPsGsTw3S9T7yBliA1fOPUmME0iPYBft
 e7fAPHEaYg==
 UAMTV.wgt__DEL__MCmwXKaJEAlx6nQ6cw/kQeCJB44yd6SmluId8L7FH9vW/IxIDqcrosnE0jVBJY7FkfgmokHY52fS
 bARoSFf4VQ==
+Video/.gitignore__DEL__e7cS4AaHK141PX52cG3MROU6vCLOe9O1SEDM12rA7XAgjYzSaKgj/whZ9ei87xZmEhMl4GTlTdrL
+01HrDMzWhQ==
 Video/nuevo.min.js__DEL__hOKes4JFbVC1gHA1nnExZF1V2SbIz8aSxQxDvcOUIqqte8VikdFf2vTlFDQytHJyGHWnVZC7aKEn
 HkIRP/sYbA==
+<<<<<<< HEAD
 Video/video.css__DEL__QtiJlabDHr2Xo+x9xN/zo9dSZQqXa3vMilnVXJueafL4l89J3fnT/OcdRdlppj6bI7F0bPV9p1hm
 ObwAXaJlFw==
 Video/video.html__DEL__HiUkBpE+dneVCdDMWT0BzM9qPGWv/iE4Ut3vX92B76E9KSW4nhYjiMp3nh5tmdEtOagSfUBn9KVw
@@ -36,6 +39,36 @@ detail/detail.html__DEL__Z9e4nYAuchQAAnKs5MYKxzc3w635FxBhPrKnbF7iXYT3kPjoW+Q38+0
 M+tIqhRMjw==
 detail/detail.js__DEL__0iOtnQ9giIb9qV9PX3sbD9c7/Zo7h0gA7YhIs+aC0esfBvp6VnLbhsR5FbhygNf+dZdw0NNrf/hk
 7nNDsEHCdw==
+=======
+Video/video.css__DEL__PRXiRX1ihuWYC2fYC6PK8510JUoK5SnrwyQKqe1y1Lpi61JNjjk1j+HvVuiOI8Vk8UifKfwYHaU1
+UQ+TSkk6qg==
+Video/video.html__DEL__eDmg1+UJTTKH6Ysvb/nPCJ5ODMkgX4RG2C70veM0rNqNQ9W/L+Uy6OiTUr6U5fBMJou0o0GxwlEO
+ZtMl5vaMAw==
+Video/video.js__DEL__k+tWN08CqSVk+21wyZQSuTyqAEn3IR+/XTQbjBzeOlNv7jTmCo3hjcuP9bhpBhpIslS/d33ysSdy
+foF4eWKoYg==
+Video/video.min.js__DEL__GsEow+DW1sGAFrGFSOYvPZWpLGliQyjVo7aI/zh7cPdJSbl7gRLv76IDbEehB7Q5kQ7QUKMlzBWh
+w4HcFzsebw==
+Video/videojs.min.css__DEL__AMGqQYxOTKTyauxOTA6k7eSprxF4P1pCl8dKXiyNT0204KkMMVqoRWRfmvZiEXrAilnny37Prulx
+1+fi98JWdQ==
+config.xml__DEL__NT0DdMXRR2yWqRYAsL1MemIZ9kW01eiQh9mQw9hd+W+zFonJxgOvZ+qhZ1s5zx1l+hZj9E2cvcmM
+w9GXD0VqXA==
+css/all.min.css__DEL__4nAegGSFoPDu3Va192UDZLMvq6M0aTLjRnzOaKTvOjw6yp9ofL4tIIzKp5Lj1CD2942zX/lFmxfA
+Rf58BB1Lqw==
+css/bootstrap.min.css__DEL__o32fdyhVS7bCQdaDA+Dwm9Qn8GGmgc9hvd3x3aQKDHfBDj4L+OWPHTHBrxTffllBwm7lOwZeNUVO
+qM3/tHOS7g==
+css/login.css__DEL__eGXaChAJN1+NwOZtBHg0D+LmYnBQyg9fAcL+9t11nKdaIGkOTP1U0S3c0uUz7XjiKBT4joOZHYfx
+Lyoov7KtkQ==
+css/splash.css__DEL__9ER4TFho+sRrfzCd8zK7R1qKXmZVhcp1JnYx7vd+KJRLWtYOLHxBNPCjh+Nn8JejxlR0J0LXp3UF
+QflkhFYI4g==
+css/style.css__DEL__7ApfhE4I1675fe5ApMpYEkV09KqkmH2SuEwvXM0sJNUYLPPHB/K2X5OS3xmj5EClZgSedGC+QsOC
+njSGfTOAyQ==
+detail/detail.css__DEL__gcnL6Reqk7Dfl/aEs1LaPU5XUzOFVsqSZWiFn+QLwQiSjv5d5st2H96z2uTtvywLRDCsbJ8TOJyV
+pqmpYd/baQ==
+detail/detail.html__DEL__VaUqB1SHYoCV0T2m/OTTkRC9M/tBRi4YjuVdeaRWF7uQqGGxke5/RpIFXtILv0HP+KRKvry7lqGq
+2KTlKD9rmw==
+detail/detail.js__DEL__nlYNf1gtt4tyUEE8ThUBU4E5n84Dz1mjk7r8fTQ6VOx3OovsHlbfZwnDr0XZPX5G33BdhsiFyJ/m
+dqlttq/cpA==
+>>>>>>> 1634406fe8330e6158d6df58847b2faad415ed17
 home/home.css__DEL__EgC9JicX+wlGSD0oj711Fc3TYl2Sv1ia6Gzs+j9ekGMljU72y7+lDox6GBpQykOscFvm0LAWay5S
 xh5FImRrJg==
 home/home.html__DEL__TMfaynplcspdD8fHYWYpQASerHM3XZJZi8ubh0hy5AmYiCQUbkuPoOCYau9nEwbUBbjd/OFG/tPN
@@ -82,6 +115,7 @@ js/splash.js__DEL__8c5juh6a7AOkIR+cJnWru1x9XLyxIyYabkozW8dCeqiNPxjbevhjW306vPw1f
 fCNQdNrtLw==
 language.js__DEL__z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGl
 ODJ6+SfaPg==
+<<<<<<< HEAD
 locales/en-us/language.js__DEL__/KdDDepyEA+pIashDL6OOfmS4EEUhYWJd0KlDMxOmuWfDkMwEyTrYu7CiL8DSefvZO2pO7FEVcvF
 3aPnGb7p5A==
 locales/it-it/language.js__DEL__zZ/UmzRiF1FvrigJDASC0UhQw+kssN7qC5Kxolh2Dmh6HBOZQ1VAm7D1JXk8vJ/GJ+4HxypvMIcK
@@ -96,6 +130,24 @@ settings/settings.js__DEL__MlFR2whIUjpB+V8/Rln1K4vt5SBNuHkErJgRgIELBIrtHxAf49d0L
 YJhCvPCJxw==
 splash.html__DEL__retKFYWIbzDePUNnxTyo+BoI65YuQ8WWumhyv2NABPKSxwylEv3iW9d3VCsXMRwjWKiv0OOTpsc5
 SPKbHpChbw==
+=======
+locales/en-us/language.js__DEL__sQjaMfvyfy2W0iscq8OP8vmtdyH1L2VY89+4htLiDKfrdQlAAfCcgj5+reDCxYTZYZaE+xxuklXQ
+5bq60dB+Vg==
+locales/it-it/language.js__DEL__9ysi/A/8VNisMbvgz5wjKoOef0dV5IcGIXhm6LvpJu5cZfZSBddH1CIKSWe+0jO+Jrv5ndvhvO1r
+dQAOXfFDpA==
+login.html__DEL__ldnwKXmYibbolaJgSowaLitqxrkIM7K7N6pKmgVaCd4Yq157hoRsp5NgoMVQvuoyb9K9upRxQoM2
+Sbn5NZAHAA==
+settings/settings.css__DEL__AlMAtprafA9uhhrMld/5EViqy/jw/Ts73vj77DhmqcoP1khbgre4SpAA4SsRxKSZbPOZAtuUcuKq
+UCteIvXhGg==
+settings/settings.html__DEL__1h+x9cj52kFK5cFuw2B74X+FbavUtfMzaNJlB16GUP/loookRRl9V5WcwxwEd4XCQOTNsRLurdbS
+i6Prc5U7UQ==
+settings/settings.js__DEL__PI93lvkq9dkd+3VX75lQWOh9J+xa9cuqiAaQ9yk4w04imThJASIuwnM5n6y0gbsh6gCdkISVV1RD
+nuFibKmCig==
+splash.html__DEL__WYZ3JbomZaftWlmrBrkYeUx6/Q3iuOZ9YwNg8vrniZ20EwNdCkkEuilPh8sW9s5RvciLZkNj/9RY
+fUWByern2g==
+vid.mp4__DEL__rMPLc3NyW6cMgZhCe0Psego+5ktm9NuOUxoaLlHq+26VuMyZrW0hlyNz6yJB213ftzCA6y5HQT8G
+Y8AUj5N72A==
+>>>>>>> 1634406fe8330e6158d6df58847b2faad415ed17
 webfonts/fa-brands-400.eot__DEL__/hNSPpSEkFApQuInj+R4i+YujHrW+BaWcysy/zXpMktzaSL6h2/cSclghvp3C2JbtiS4ZBPa/MW0
 zVRftI5+zw==
 webfonts/fa-brands-400.svg__DEL__xKN2+YxzEqmvhFVz6TfOveGsBZSPokhw9gx6a6sU1kuiwfD5UI5Ai5me3sy62yVLkDPNEWf1TnY4
@@ -126,5 +178,10 @@ webfonts/fa-solid-900.woff__DEL__VXhgC81Kbn1nh0mGwRa4fKS2C6oeFGWdQtW8esA3NFF4rp3
 197pTLSiiA==
 webfonts/fa-solid-900.woff2__DEL__NKyrJbO5lNO9zc0P1k0Nq6tPrWfL+DZ78drARjAUwu1TkkkTHLGAovuIlpfCEFE3R1kqe9drVtL3
 WtII/8SlpQ==
+<<<<<<< HEAD
 author-signature.xml__DEL__xNqr6gAxrfsH2fTToEOmSMfI2+cXdVRwenY/xot3+8jUD4aJV/AIwZXy+xGmqqUAimY943dSEj7v
 h/BNTwVPyw==
+=======
+author-signature.xml__DEL__l1oHWeX5wEMub6V0fmeyknP8cvjyWQvr/mIMST6DUF7luQcq43DZG+NdMJDxSKriPAGrJwMAANuO
+ev/KfjT+zg==
+>>>>>>> 1634406fe8330e6158d6df58847b2faad415ed17

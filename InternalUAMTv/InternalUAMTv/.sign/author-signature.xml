@@ -34,13 +34,13 @@ HkIRP/sYbA==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>HCug9vHfHyaY1JrCBOMsiYHC1Qxb1DechD/SZ0+PsJrNaPPeSsBZ9cQ0IpIFQCEDmlCLWqk+dK8Q
-5FB9kZYN6Q==</DigestValue>
+<DigestValue>RwjAR+mvBYgvPdlojOeisRvi5G1JhXdp1O1ene3lkrdLQR6VqlmDl6B9EC00tFhml4oui2aR8qBe
+T5YC2OY7Bw==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>hCH5TrGV1eqICWLtycFS/0A2u3tY5cobLwU/2TWR5xWcImYkRu+7VcS+QgwWSe7jtDUW7LMTfN05
-Uqv1jvgGDw==</DigestValue>
+<DigestValue>RgYSAFOuaRCoG3Rit5d9NH1K3HPIWk/X5XKW9wzmliwLGyH+RbxG/iWZfN/wNDuZ4yVMTPR7abe8
+35/vLJK8RQ==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -332,9 +332,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Hhb0hSfZssSmIKj55GLQc2xzpwnm3sTaHm/Vh1a9816uOwOuMeoRvDdwF+9V3ZSi7hAew6se1nsV
-xNFzoaDvNttnrcLaWAxjgP+GixLzYrghdSzRngV0e1GQnuQxcI4GagSK1r0ElQrMxZjvPfu1Es8U
-iND+cmwkzNoPZgZf4s4=
+cu+RUmhALtLVC+8ijx01ZPZyMMOCDptmojyWDIN2LaFecKTp+0n/UsMbenYStkjYvhnuYVtn1Iz3
+dtyaeqxMxPYKX/2Y8/DYk7f4WUyk5eqFk/YUV00AjFfowTkVjISgGy9R0No0eipAA+9HytMqTy+K
+x8X5zXKJi7tm0mlUehA=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

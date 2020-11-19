@@ -65,6 +65,11 @@ header nav ul li:hover {
     color: rgba(255, 132, 0, 1)
 }
 
+
+.button_left{
+	color: rgba(255, 132, 0, 1) !important;
+}
+
 .column_1 {
     float: left;
     width: 25%;

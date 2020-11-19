@@ -262,7 +262,14 @@ function login()
 	.then(data => {
 	  console.log('Success:', data["jwt"]);
 	  
-	  //if(document.getElementById("remember").checked)
+	  if(document.getElementById("remember").checked){
+		  localStorage.setItem("remembered", "true");
+	  }
+	  else{
+		  	localStorage.setItem("remembered", "false");
+		  }
+	  
+	  
 	  localStorage.setItem("jwt token", data["jwt"]);
 	  
 	  hideLoader();

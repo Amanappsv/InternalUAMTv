@@ -9,7 +9,7 @@ var randomBannerList = [];
 
 
 
-var selectedBanner;
+var selectedBannerIndex = 0;
 
 
 
@@ -36,13 +36,68 @@ var init = function() {
     setFocus("watch_btn_id", "onLeft");
     getHomeScreenData();
     initTizenKeys();
+    
+    
+    
 
+   
 
+    
 
 
 };
 
+
+
+
 window.onload = init;
+
+
+function changeBackgroundImg(index) {
+	
+	console.log("here");
+	
+	if( selectedBannerIndex +  (index) < 0)
+		{
+		selectedBannerIndex = randomBannerList.length - 1;
+		 
+		  
+		  	changeBg(randomBannerList[selectedBannerIndex]["image"]);
+		    document.getElementById('random-title').innerHTML = randomBannerList[selectedBannerIndex]["title"];
+		    document.getElementById('desc').innerHTML = randomBannerList[selectedBannerIndex]["desc"];
+
+
+		    localStorage.setItem("detail", JSON.stringify(randomBannerList[selectedBannerIndex]));
+			
+		}
+	else if(selectedBannerIndex +  (index) > randomBannerList.length-1)
+		{
+		selectedBannerIndex = 0;
+		 
+		  
+		  	changeBg(randomBannerList[selectedBannerIndex]["image"]);
+		    document.getElementById('random-title').innerHTML = randomBannerList[selectedBannerIndex]["title"];
+		    document.getElementById('desc').innerHTML = randomBannerList[selectedBannerIndex]["desc"];
+
+
+		    localStorage.setItem("detail", JSON.stringify(randomBannerList[selectedBannerIndex]));
+			
+		}
+		else
+			{
+			  selectedBannerIndex = selectedBannerIndex  +  (index);
+			  
+				changeBg(randomBannerList[selectedBannerIndex]["image"]);
+			    document.getElementById('random-title').innerHTML = randomBannerList[selectedBannerIndex]["title"];
+			    document.getElementById('desc').innerHTML = randomBannerList[selectedBannerIndex]["desc"];
+
+
+			    localStorage.setItem("detail", JSON.stringify(randomBannerList[selectedBannerIndex]));
+			}
+	
+	
+}
+
 
 function initText() {
 
@@ -121,13 +176,13 @@ function moveOk() {
 
     if (document.getElementsByClassName("activeDetail")[0] !== undefined) {
     	
-    	localStorage.setItem("detail-movie-id", randomBannerList[0]["uid"]);
+    	localStorage.setItem("detail-movie-id", randomBannerList[selectedBannerIndex]["uid"]);
 		
         location.href = "../detail/detail.html";
         
     } else if (document.getElementsByClassName("activeCategory")[0] !== undefined) {
 
-    	getMoviesByCat(categoryList[selectedCatPos]["fullId"]);
+    	getMoviesByCat(categoryList[selectedCatPos]["fullId"] , categoryList[selectedCatPos]["title"]);
 
     
     } else if (document.getElementsByClassName("activeViewed")[0] !== undefined) {
@@ -145,7 +200,7 @@ function moveOk() {
     
     else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
         
-    	getMoviesByCat(categoryList[selectedScreenCatPos]["fullId"]);
+    	getMoviesByCat(categoryList[selectedScreenCatPos]["fullId"] , categoryList[selectedScreenCatPos]["title"]);
     	
     	
     }else if (document.getElementsByClassName("button_play")[0] !== undefined) {
@@ -188,6 +243,18 @@ function moveOk() {
 		
         location.href = "../detail/detail.html";
     	
+    }
+    else if (document.getElementsByClassName("button_left")[0] !== undefined) {
+        
+    	var el = document.getElementsByClassName("button_left")[0].id;
+    	
+    	if(el === "left_back_id"){
+    		    changeBackgroundImg(-1);
+       	}
+    	else{
+		    	changeBackgroundImg(1);
+    	}
+
     }
  
     
@@ -236,13 +303,19 @@ function moveUp() {
         
         else if(document.getElementsByClassName("activeSeeMoreCat")[0] !== undefined){
         	
-        	setFocus("add_play_btn", "button_play");
-            document.getElementById("add_play_btn").style.opacity = 0.5;
-
+        	setFocus("left_back_id", "button_left");
             
             removeFocus("activeSeeMoreCat");
 
         	
+        }
+        
+        else if(document.getElementsByClassName("button_left")[0] !== undefined){
+        	setFocus("add_play_btn", "button_play");
+            document.getElementById("add_play_btn").style.opacity = 0.5;
+
+            
+            removeFocus("button_left");
         }
         
         
@@ -280,6 +353,8 @@ function moveUp() {
 
         	
         }
+        
+     
         
         
         else if (document.getElementsByClassName("activeRecents")[0] !== undefined) {
@@ -353,10 +428,15 @@ function moveDown() {
         }
         
         else if (document.getElementsByClassName("button_play")[0] !== undefined) {
-            setFocus("see_more_cat_list_id" , "activeSeeMoreCat");
+            setFocus("left_back_id" , "button_left");
             document.getElementById("add_play_btn").style.opacity = 1;
             removeFocus("button_play");
         } 
+        
+        else if(document.getElementsByClassName("button_left")[0] !== undefined){
+        	 setFocus("see_more_cat_list_id" , "activeSeeMoreCat");
+             removeFocus("button_left");
+        }
         
         else if (document.getElementsByClassName("button_favourite")[0] !== undefined) {
             setFocus("see_more_cat_list_id" , "activeSeeMoreCat");
@@ -519,6 +599,15 @@ function moveLeft() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+
+    }
+    else if (document.getElementsByClassName("button_left")[0] !== undefined) {
+       
+    	var el = document.getElementsByClassName("button_left")[0].id;
+    	if(el === "right_back_id"){
+    		removeFocus("button_left");
+    		setFocus("left_back_id" , "button_left");
+    	}
 
     }
 
@@ -729,7 +818,19 @@ function moveRight() {
             }
 
 
-        } else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
+        } 
+        
+        else if (document.getElementsByClassName("button_left")[0] !== undefined) {
+            
+        	var el = document.getElementsByClassName("button_left")[0].id;
+        	if(el === "left_back_id"){
+        		removeFocus("button_left");
+        		setFocus("right_back_id" , "button_left");
+        	}
+
+        }
+        
+        else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
             if (selectedScreenCatPos !== (categoryList.length - 1)) {
                 selectedScreenCatPos++;
                 removeFocus("activeScreenCategory");
@@ -1450,7 +1551,7 @@ function getMovieSource(moviePlay, token) { // hit stream api...
 
 
 
-function getMoviesByCat(catid) {
+function getMoviesByCat(catid , catName) {
     
 	 var token = localStorage.getItem("jwt token");
 
@@ -1492,7 +1593,7 @@ function getMoviesByCat(catid) {
 	            })
 	            
 	            
-	            localStorage.setItem("movie_screen_title", "Movies");
+	            localStorage.setItem("movie_screen_title", catName);
 	    	    localStorage.setItem("movies", JSON.stringify(categoryMovieList));
 	    	    
 	    	    viewMovieListScreen();

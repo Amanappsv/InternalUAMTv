@@ -7,7 +7,11 @@ var init = function () {
     
 	
     var token = localStorage.getItem("jwt token");
+    
+    var remembered = localStorage.getItem("remembered");
    
+    
+    console.log("remembered" , remembered);
     
     //launch next screen after 2 seconds....
 //    setInterval(function(){
@@ -25,8 +29,10 @@ var init = function () {
 	 else
 		 {
 		
-
- 	 	 heartbeatPost(token);
+		 	if(remembered === "true")
+		 		heartbeatPost(token);
+		 	else
+		 		location.href = "login.html";
  		
 		 } 
     	
@@ -50,6 +56,8 @@ window.onload = init;
 function heartbeatPost(token)
 {
 	
+	
+	console.log("heartbeat");
 	let formData = new FormData();
 	formData.append('devicehash', "SDKHUWUR7SQ24");
 	formData.append('devicefriendlyname',  webapis.productinfo.getModel());

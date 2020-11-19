@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -15,18 +12,18 @@
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../css/all.min.css" />
-
     </head>
-
     <body>
         <header>
             <img src="../images/logo.svg" alt="">
             <nav>
                 <ul>
-                    <li onclick="openWifiNav()"><i id="fa-wifi" class="fa fa-wifi "></i>
-                    </li>
-                    <li onclick="openNav()"><i id="fa-bell" class="fa fa-bell"></i><span class="badge" id="badge">1</span>
-                    </li>
+                    <!--  
+                <li onclick="openWifiNav()"><i id="fa-wifi" class="fa fa-wifi "></i>
+                </li>
+                <li onclick="openNav()"><i id="fa-bell" class="fa fa-bell"></i><span class="badge" id="badge">5</span>
+                </li>
+                -->
                     <li><i id="fa-user" class="fa fa-user "></i>
                     </li>
                     <span id="user_name_id" class="user_name">Jamshed</span>
@@ -49,11 +46,7 @@
         <div id="mySidenav_ntwork" class="sidenav">
             <div class="network_header">
                 <p>
-                    <i class="fa fa-arrow-left" onclick="closeWifiNav()"></i>&nbsp; <span>Network
-
-
-
-							& Internet</span>
+                    <i class="fa fa-arrow-left" onclick="closeWifiNav()"></i>&nbsp; <span>Network & Internet</span>
                 </p>
             </div>
             <div class="avail_network">
@@ -63,9 +56,6 @@
                 <div class="d-flex justify-content-between">
                     <div>
                         <i class="fa fa-wifi ml-2 wifi_icon"></i>  <span class="ml-3 mb-5 wifi_name">Home <br> <span
-
-
-
 								class="conented_wifi_txt">Connected</span>
                         </span>
                     </div>
@@ -101,29 +91,11 @@
                 function closeWifiNav() {
                     document.getElementById("mySidenav_ntwork").style.width = "0";
                 }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
         </script>
         <div class="container-fluid" style="margin-top: 164px">
             <h1 class="cat_heading"><i id="arrow_left_id" class="fa fa-arrow-left ml-5"><i><span id="screen_title" class="ml-3"></span></i></i>
-
         </h1>
-        
-         <div id="container-fluid-category-id" class="container-fluid mt-4"></div>
-       
-          
-           
+            <div id="container-fluid-category-id" class="container-fluid mt-4"></div>
         </div>
     </body>
-
 </html>

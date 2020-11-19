@@ -21,9 +21,6 @@ header {
 header img {
     height: 55px;
     margin-top: 14px;
-    position: absolute;
-    top: 1%;
-    left: 1%;
 }
 
 header nav {

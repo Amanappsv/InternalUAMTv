@@ -120,12 +120,13 @@ span #detail {
 
 .split {
     margin-top: 119px;
-    height: 1592px;
     width: 74%;
     right: 0;
     z-index: 1;
     position: absolute;
     color: white;
+    height: auto;
+    min-height: 100vh;
 }
 
 .left {
@@ -306,7 +307,7 @@ span #detail {
 
 .img-fluid {
     position: relative;
-    height: 238px !important;
+    height: 216px !important;
 }
 
 .catagory_name_style {
@@ -315,18 +316,18 @@ span #detail {
     font-weight: bold;
     letter-spacing: 1px;
     left: 50%;
-    top: 80%;
+    top: 84%;
     transform: translate(-50%, -50%);
 }
 
 .carousel .cardhover {
-    transform: scale(1.04);
+    transform: scale(1.1);
     transition: 0.6s;
 }
 
 
 .catCardHover{
-	transform: scale(1.04);
+	transform: scale(1.1);
     transition: 0.6s;
 }
 
@@ -366,11 +367,11 @@ span #detail {
 }
 
 .carousel .thumb-wrapper {
-    margin: -9px;
+    margin: 5px;
     text-align: left;
     background: #fff;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-    height: 22vh;
+    height: 20vh;
 }
 
 .carousel .thumb-content {
@@ -398,10 +399,6 @@ span #detail {
     text-shadow: none;
     font-weight: bold;
     color: white !important;
-    background: #000000;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
     margin: -22px 117px 0 160px;
 }
 

@@ -1185,7 +1185,7 @@ function addCategoriesToCategoryScreen() {
         var temp = `
         <div id="categoryScreen ${idx}" class="col-lg-3 mt-4">
         <div id="categories-wrap ${idx}" class="card" style="width: 18rem;">
-            <img class="card-img-top" src="${result["image"]}" alt="Card image cap">
+            <img class="card-img-top image_placeholder" src="${result["image"]}" alt="Card image cap">
             <p class="category_type">${result["title"]}</p>
         </div>
     </div> 
@@ -1239,7 +1239,7 @@ function addCategories(token) {
         <div id="categories ${idx}" class="col-sm-3">
         <div id="cat-wrap ${idx}" class="thumb-wrapper">
             <div class="img-box">
-                <img src= "${result["image"]}" class="img-fluid" alt="">
+                <img src= "${result["image"]}" class="img-fluid image_placeholder" alt="">
                 <p class="catagory_name_style ml-2">${result["title"]}</p>
             </div>
         </div>
@@ -1295,7 +1295,7 @@ function addMostRecents() {
         <div id="recent ${idx}" class="col-sm-3">
         <div id="recent-wrap ${idx}" class="thumb-wrapper">
             <div class="img-box">
-                <img src= "${result["image"]}" class="img-fluid" alt="">
+                <img src= "${result["image"]}" class="img-fluid image_placeholder" alt="">
         
             </div>
         </div>
@@ -1355,7 +1355,7 @@ function addMostViewed() {
         <div id="viewed ${idx}" class="col-sm-3">
         <div id="viewed-wrap ${idx}" class="thumb-wrapper">
             <div class="img-box">
-                <img src= "${result["image"]}" class="img-fluid" alt="">
+                <img src= "${result["image"]}" class="img-fluid image_placeholder" alt="">
         
             </div>
         </div>
@@ -1410,7 +1410,7 @@ function addFavouritesToFavouritesScreen() {
         var temp = `      
         <div id="favoriteScreen ${idx}" class="col-lg-3 mt-4">
         <div id="fav-wrap ${idx}" class="card" style="width: 18rem;">
-            <img class="card-img-top" src="${result["image"]}" alt="Card image cap">
+            <img class="card-img-top image_placeholder" src="${result["image"]}" alt="Card image cap">
         </div>
     </div>
                 

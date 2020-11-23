@@ -196,7 +196,7 @@ function addCategoriesToCategoryScreen() {
       
     	<div id="categories ${idx}" class="col-lg-3 mt-4">
    			<div id="cat-wrap ${idx}" class="card">
-   				<img class="card-img-top" src="${result["image"]}" alt="Card image cap">
+   				<img class="card-img-top image_placeholder" src="${result["image"]}" alt="Card image cap">
    			</div>
    		</div>
         

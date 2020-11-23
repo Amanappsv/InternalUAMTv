@@ -3,9 +3,16 @@
       color: white;
       background: linear-gradient(rgba(21, 9, 36, 1), rgba(20, 9, 34, .7), rgba(21, 9, 36, .7)), black;
       background-repeat: no-repeat;
-      height: 200vh;
       overflow: auto;
+      height: auto;
+      min-height: 100vh;
   }
+  .image_placeholder{
+	 background: url('../images/placeholder.png') no-repeat;
+	 border-radius: 16px !important;   
+	  width: 26rem !important;
+      height: 289px !important;
+	}
   header {
       width: 100%;
       font-size: 42px;
@@ -33,6 +40,11 @@
       border-radius: 50%;
       background-color: #291b3c;
       margin-right: 10px;
+  }
+  .main_section{
+    min-height: 100vh;
+    height: auto;
+    margin-top: 13rem;
   }
   #fa-user,
   #fa-wifi,
@@ -64,13 +76,15 @@
   .card {
       position: relative;
       border: none !important;
-      background: black;
+      background: none !important;
       width: 26rem;
-      margin: 32px;
       height: 289px;
+      margin: 32px;
   }
   .card-img-top {
       height: 100% !important;
+      width: 100% !important;
+      border-radius: 16px !important;
   }
   .cat_name {
       position: absolute;
@@ -82,10 +96,15 @@
       color: white;
       font-size: 30px;
   }
+  .mt-4, .my-4 {
+    margin-top: 6.5rem!important;
+}
   .cat_heading {
-      font-size: 41px;
-      margin: 49px 0 0 -8px;
-      color: white;
+    font-size: 41px;
+    color: white;
+    position: absolute;
+    top: 35px;
+    margin-top: 121px;
   }
   .row {
       margin-right: 57px !important;

@@ -17,6 +17,21 @@ d1ub3U4MTA==</DigestValue>
 <DigestValue>ivzfMPp21jxMSNg0kVxCxnhGRpaQ2thcX69zArdprKyMtecmQURQDJdqJyjiXpD/n7vxoDd5dryA
 azc5awI6ig==</DigestValue>
 </Reference>
+<Reference URI="Search%2Fsearch.css">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>5lWUQhXCWjxdL32Cftga7Y2eV0xunE3C4tO3FxtdlEAt3Jg0N2RMJvADcYRotWMnq7s5uKxIZ4Q/
+Z9M+CDDNNQ==</DigestValue>
+</Reference>
+<Reference URI="Search%2Fsearch.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>V9T4RhCEszzM7MjADkbKRm9RL7vPgOjP5Ukq6UdB/I0mB0TDDJoF96I2osl58/4g1wI155ImOzbE
++SKaw9OSZQ==</DigestValue>
+</Reference>
+<Reference URI="Search%2Fsearch.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGl
+ODJ6+SfaPg==</DigestValue>
+</Reference>
 <Reference URI="Video%2F.gitignore">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
 <DigestValue>e7cS4AaHK141PX52cG3MROU6vCLOe9O1SEDM12rA7XAgjYzSaKgj/whZ9ei87xZmEhMl4GTlTdrL
@@ -89,8 +104,8 @@ njSGfTOAyQ==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>dEk4W1dUomzEihdJL/jn4XlO4tmOtHqU816omV/ceLBXKCEptAioFHodIej837pcoohkb4wz2HHh
-wLjJ330glA==</DigestValue>
+<DigestValue>RTfdFS074dDQREX61vo4+CtgHkxaA5GZWHGAKe+RIda50Q0YPMWFBPnTQ/M3KF1Of5uww7e8CKer
+bcJvG3NhlA==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -342,9 +357,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-XLfF3Tk3OSU/nnha4kjp5Ja8Y9RPuhCjCe/5Pzl0CDgbhtSs+CxOWcqN8uURehot7niz6txd2B8x
-NDPUIphbh4Sk0IbgndgfAtls/5Q7gf8j3yLMNPJ2NeJoE1nfV0kxjGQzyCGkBXCVb0fFVuI9GzUR
-R7SSjJvqdUDFw86oUzM=
+Csmzl6dEpXQOyWe+wDBt47xOY5+udg91yE8YYapoS/WNvuDoy2IIHB1dtacuH4/Hp7XbepThDZhB
+ojid1pW6aLRyi3LBub5XZDgmNImmvLpIXy5fr5UYP5e4eVfXdIsBuIvz2HuyF0c9TQ1eywDafw6J
+RogkMn6Ut28zv/qvtt4=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

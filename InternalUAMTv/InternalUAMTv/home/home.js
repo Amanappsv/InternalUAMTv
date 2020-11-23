@@ -34,33 +34,47 @@ var init = function() {
 
     setFocus("watch_btn_id", "watch_btn");
     setFocus("watch_btn_id", "onLeft");
-    getHomeScreenData();
+   
     initTizenKeys();
     
     
     
     
-    var decodedToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MDU1OTI4" +
-    		"ODMsImlzcyI6Ii51YW0udHYiLCJuYmYiOjE2MDU1OTI3NjMsImV4cCI6MTYwNTY3OTE2MywicmVm" +
-    		"cmVzaHRva2VuIjoiNjJjMGRjYTktMjYxMy00ZjhmLTg2YzItMGUwOGY0YjJhNTNmIiwidXNlcklkIjoiM2JhN" +
-    		"jI2MWQtNjJkMy00YTA5LTllOTEtMDVhNDY5ZDg0NzVjIiwidXNlck5hbWUiOiJiaGF2bmEua2F0Y" +
-    		"XJpYUBvb2RsZXN0ZWNobm9sb2dpZXMuY29tIiwiZm5hbWUiOiJCaGF2bmEiLCJzdGF0ZSI6IkF" +
-    		"jdGl2ZSIsImlzLWFkbWluIjpudWxsLCJiZXRhIjpudWxsLCJlbnYiOiJQUk9EIn0.LUx0" +
-    		"bGXZ9L4c_7Xs0VZ3cJAlCFvO6t9HKLavc5zirFwpoCp6XPdfGIvYxLFxVlM6wG8jQ8pnnEU1oKI6PROwVw";
     
-    var isExpiredToken = false;
+    //get token...
+    var token = localStorage.getItem("jwt token");
 
-    var dateNow = new Date();
+    if (token !== null) {
+    	
+    	
+    	
+    	
+    	//check token expiration...
+    	var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
 
-    if(decodedToken.exp < dateNow.getTime()/1000)
+        var exp = JSON.parse(jsonPayload).exp;
 
-    {
-           isExpiredToken = true;
+       if (Date.now() >= exp * 1000) {
+     	  location.href = "../login.html";
+       }
+       else
+       {
+     	  getHomeScreenData();
+       }
+    
+     
+    	
+    } else {
+        console.log("No token found");
+        location.href = "../login.html";
     }
 
-   
-    console.log("tokenexp" , decodedToken.exp);
 
+    
     
 
 
@@ -137,9 +151,11 @@ function initTizenKeys() {
     document.addEventListener('keydown', function(e) {
         switch (e.keyCode) {
             case 37: // LEFT arrow
+            	
                 moveLeft();
                 break;
             case 38: // UP arrow
+            
                 moveUp();
                 break;
             case 39: // RIGHT arrow
@@ -303,6 +319,17 @@ function moveUp() {
             showCategorySection();
 
         }
+   		else if(el === "watch_btn_id"){
+   				
+   				removeFocus("watch_btn");
+   				
+    			console.log("inside");
+                location.href = "../Search/search.html";
+    		}
+    		
+   	
+   	
+   	
 
 
     }

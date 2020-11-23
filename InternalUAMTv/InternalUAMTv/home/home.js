@@ -39,8 +39,27 @@ var init = function() {
     
     
     
+    
+    var decodedToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MDU1OTI4" +
+    		"ODMsImlzcyI6Ii51YW0udHYiLCJuYmYiOjE2MDU1OTI3NjMsImV4cCI6MTYwNTY3OTE2MywicmVm" +
+    		"cmVzaHRva2VuIjoiNjJjMGRjYTktMjYxMy00ZjhmLTg2YzItMGUwOGY0YjJhNTNmIiwidXNlcklkIjoiM2JhN" +
+    		"jI2MWQtNjJkMy00YTA5LTllOTEtMDVhNDY5ZDg0NzVjIiwidXNlck5hbWUiOiJiaGF2bmEua2F0Y" +
+    		"XJpYUBvb2RsZXN0ZWNobm9sb2dpZXMuY29tIiwiZm5hbWUiOiJCaGF2bmEiLCJzdGF0ZSI6IkF" +
+    		"jdGl2ZSIsImlzLWFkbWluIjpudWxsLCJiZXRhIjpudWxsLCJlbnYiOiJQUk9EIn0.LUx0" +
+    		"bGXZ9L4c_7Xs0VZ3cJAlCFvO6t9HKLavc5zirFwpoCp6XPdfGIvYxLFxVlM6wG8jQ8pnnEU1oKI6PROwVw";
+    
+    var isExpiredToken = false;
+
+    var dateNow = new Date();
+
+    if(decodedToken.exp < dateNow.getTime()/1000)
+
+    {
+           isExpiredToken = true;
+    }
 
    
+    console.log("tokenexp" , decodedToken.exp);
 
     
 

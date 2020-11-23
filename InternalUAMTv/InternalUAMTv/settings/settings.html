@@ -117,14 +117,14 @@
 <div class="container-fluid">
         <div class="row" style=" height: 100vh;">
            <div class="col-3 offset-2 ">
-   <h1 class="mt-5 pl-2 setting_text"><i class="fa fa-arrow-left" ></i> <span >Settings</span></h1>
+   <h1 class="mt-5 pl-2 setting_text"><i class="fa fa-arrow-left" ></i> <span >impostazioni</span></h1>
                 <div class="d-flex flex-column pl-5 pr-5 pt-5 left_nav_item" style="align-items: start;">
-                    <button class="mt-4 nav_button" onclick="showProfileSection()" id="profile_border">Profile</button>
-                    <button class="mt-4 nav_button" onclick="showSubscriptionSection()" id="subscription_border">Subscription</button>
-                    <button class="mt-4 nav_button" onclick="showRegisterSection()" id="register_border">Registered device</button>
-                    <button class="mt-4 nav_button" onclick="showHelpSection()" id="help_border">Help</button>
-                    <button class="mt-4 nav_button" onclick="showContactSection()" id="contact_border">Contact Us</button>
-                    <button class="mt-4 nav_button" onclick="showAboutSection()" id="about_border">About Us</button>
+                    <button class="mt-4 nav_button" onclick="showProfileSection()" id="profile_border">Profilo</button>
+                    <button class="mt-4 nav_button" onclick="showSubscriptionSection()" id="subscription_border">Sottoscrizione</button>
+                    <button class="mt-4 nav_button" onclick="showRegisterSection()" id="register_border">Dispositivo registrato</button>
+                    <button class="mt-4 nav_button" onclick="showHelpSection()" id="help_border">Aiuto</button>
+                    <button class="mt-4 nav_button" onclick="showContactSection()" id="contact_border">Contattaci</button>
+                    <button class="mt-4 nav_button" onclick="showAboutSection()" id="about_border">Riguardo a noi</button>
                 </div>
             </div>
                <script type="text/javascript">
@@ -141,15 +141,15 @@
             
                 <div class="d-flex flex-row align-items-center">
               <img alt="" src="../images/tizen_32.png" class="img-fluid profile_Img" >
-             <h3 id="profile_name_section_id" class="ml-3">Jamshed Ahmad</h3>
+             <h3 id="profile_name_section_id" class="ml-3"></h3>
              </div>
               <div class="row mt-5">
             <div class="col-7"style="font-size: 26px;">
-             <h3>Contacts</h3>
-             <p>Contact details are needed to receive notifications from the service and interaction with customer support.</p>
+             <h3>Contatti</h3>
+             <p>I dettagli di contatto sono necessari per ricevere notifiche dal servizio e l'interazione con l'assistenza clienti.</p>
              <div class="contact_detail mt-4">
             <p><i class="fa fa-envelope"></i> <span id="email">&nbsp; Email</span></p>
-               <p id="profile_email_section_id" class="ml-4">jamshed.ahmad@oodles.com</p>
+               <p id="profile_email_section_id" class="ml-4"></p>
                <hr>
             
              </div>
@@ -165,21 +165,21 @@
              <!-- Subscription section -->
             <div id="subscription_section_id" >
             
-            <h1 style="font-weight:bold; font-size: 49px">Subscription Plans</h1>
+            <h1 style="font-weight:bold; font-size: 49px">Piani di abbonamento</h1>
                <div class="container-fluid mt-5">
                <div class="row">
                <div class="col-lg-5 col-xl-5 mt-5">
-               <p>Active</p>
+               <p>Attiva</p>
                <div class="card">
 				  <div class="card-header">
 				  <h3 id="type_sub_id" class="free_monthly_subs" >Free Monthly Subscription</h3>
 				  </div>
 				  <div class="card-body">
-				  <h4 style="font-weight: bold;">Effective  <span id="effective_date_sub_id" class="ml-5" style="font-weight: normal;">07/09/2020</span></h4>
-				  <h4 style="font-weight: bold;" class="mt-4">Deadline  <span id="expiration_date_sub_id" class="ml-5"  style="font-weight: normal;"> 07/10/2020</span></h4>
+				  <h4 style="font-weight: bold;">Efficace  <span id="effective_date_sub_id" class="ml-5" style="font-weight: normal;">07/09/2020</span></h4>
+				  <h4 style="font-weight: bold;" class="mt-4">Scadenza<span id="expiration_date_sub_id" class="ml-5"  style="font-weight: normal;"> 07/10/2020</span></h4>
 				  </div>
 				  <div class="card-footer">
-				   <h4  style="font-weight: bold;">Device  <span id="device_number_id" class="ml-5 device_total"  style="font-weight: normal;"></span></h4>
+				   <h4  style="font-weight: bold;">Dispositivo  <span id="device_number_id" class="ml-5 device_total"  style="font-weight: normal;"></span></h4>
 				  </div>
 			   </div>
                </div>
@@ -194,17 +194,17 @@
              <!-- Register section -->
             <div id="register_section_id">
             
-            <h1 style="font-weight:bold; font-size: 49px">Registered Devices</h1>
+            <h1 style="font-weight:bold; font-size: 49px">Dispositivi registrati</h1>
                <div class="container-fluid mt-4" style="font-size: 27px">
                <div class="row">
                <div id="device_name_list" class="col-lg-5 col-xl-5 mt-4">
             
             
                </div>
-               <div class="col-lg-3 offset-2 col-xl-5 mt-4">
+               <div class="col-lg-3 offset-2 col-xl-5 mt-3">
                
               </div>
-              <p class="info"><i class="fa fa-info-circle"></i> Once you reach the device limit you would need to contact help to get them deleted/replaced.</p>
+              <p class="info"><i class="fa fa-info-circle"></i> Una volta raggiunto il limite del dispositivo, dovrai contattare l'assistenza per eliminarli / sostituirli.</p>
               
          </div>
         </div>
@@ -216,15 +216,15 @@
           
                
                <i class="fa fa-question-circle"></i> <br><br>
-               <h1 class="find_help">Find Help Online</h1>
-               <p class="mt-1" style="font-size: 23px;">On your phone or computer, visit;</p>
+               <h1 class="find_help">Trova aiuto in linea</h1>
+               <p class="mt-1" style="font-size: 23px;">Sul tuo telefono o computer, visita;</p>
                <h1 class="mt-5 website">https://uam.tv/page/about/faq/</h1>
              
            </div>
              <!-- Contact section -->
             <div id="contact_section_id" >
             
-            <h1 style="font-weight:bold; font-size: 49px" class="ml-3">Contact Us</h1>
+            <h1 style="font-weight:bold; font-size: 49px" class="ml-3">Contattaci</h1>
                <div class="container-fluid">
                <div class="row">
                <div class="col-lg-12 col-xl-12 " style="font-size: 27px;">
@@ -247,15 +247,15 @@
             <div id="about_section_id" >
             
             
-            <h1 style="font-weight:bold; font-size: 49px" class="ml-3">About Us</h1>
+            <h1 style="font-weight:bold; font-size: 49px" class="ml-3">Riguardo a noi</h1>
                <div class="container-fluid">
                <div class="row">
                <div class="col-lg-12 col-xl-12 " style="font-size: 27px;">
              <p class="mt-5 ">
-             UAM.TV is an independent web TV that allows you to stream content on the platform: this means that you can see all the contents in real time, without advertising interruptions and without having to download them. All content is always available when and where you want.
+            UAM.TV è una web TV indipendente che permette di riprodurre in streaming i contenuti sulla piattaforma: questo significa che puoi vedere tutti i contenuti in tempo reale, senza interruzioni pubblicitarie e senza doverli scaricare. Tutti i contenuti sono sempre disponibili quando e dove vuoi.
              </p>   
               <p class="mt-4">
-              As much as we would very much like to be able to provide the service for free, currently we would not be able to financially support the project. Behind a web TV there are people who work to build and maintain the technical structure, to think, search, and select the contents we offer and for all the related editorial needs. The only way to be able to provide a free service would be to open up to the advertising market, but this would inevitably deprive us of the autonomy and independence that allow us to be, or at least try to be, a voice out of the chorus.
+            Per quanto vorremmo essere in grado di fornire il servizio gratuitamente, attualmente non saremmo in grado di sostenere finanziariamente il progetto. Dietro una web tv ci sono persone che lavorano per costruire e mantenere la struttura tecnica, per pensare, cercare e selezionare i contenuti che offriamo e per tutte le relative esigenze editoriali. L'unico modo per poter fornire un servizio gratuito sarebbe aprirsi al mercato pubblicitario, ma questo ci priverebbe inevitabilmente dell'autonomia e dell'indipendenza che ci permettono di essere, o almeno provare ad essere, una voce fuori dal coro.
              </p>          
                </div>
                          

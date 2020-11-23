@@ -119,7 +119,7 @@ function moveLeft(){
 	   if (selectedCatPos !== 0) {
 
            if (selectedCatPos % 4 == 0) {
-               scroll('-=300px');
+               scroll('-=370px');
            }
 
            selectedCatPos--;
@@ -145,7 +145,7 @@ function moveRight() {
 
         if (selectedCatPos % 4 == 0) {
         	
-            scroll('+=300px');
+            scroll('+=370px');
         	
         }
     } else {

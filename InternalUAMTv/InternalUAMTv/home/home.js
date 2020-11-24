@@ -57,9 +57,12 @@ var init = function() {
         }).join(''));
 
         var exp = JSON.parse(jsonPayload).exp;
+        var refreshToken = JSON.parse(jsonPayload).refreshtoken;
 
        if (Date.now() >= exp * 1000) {
-     	  location.href = "../login.html";
+     	  
+    	   refreshMyToken(token , refreshToken);
+    	   
        }
        else
        {
@@ -85,6 +88,41 @@ var init = function() {
 
 window.onload = init;
 
+
+//refresh my token if expire...
+function refreshMyToken(token , refreshToken){
+	
+	  let params = {
+		        "devicehash": webapis.productinfo.getDuid(),
+		        "devicefriendlyname": webapis.productinfo.getModel(),
+		        "platform" : "Tizen " + webapis.tvinfo.getVersion(),
+		        "version" :  webapis.productinfo.getVersion()
+		    };
+
+		    let query = Object.keys(params)
+		        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+		        .join('&');
+
+		    fetch(URL + 'v3/users/auth/renew.php?' + query, {
+		            headers: {
+		                'Authorization': "Bearer " + refreshToken
+		            },
+		        })
+		        .then(response => response.json())
+		        .then(data => {
+
+		        	localStorage.setItem("jwt token", data["jwt"]);
+		        	
+		        	getHomeScreenData();
+
+		        })
+		        .catch((error) => {
+		            console.error('Err:', error);
+		            hideLoader();
+		        });
+
+	
+}
 
 function changeBackgroundImg(index) {
 	
@@ -261,14 +299,14 @@ function moveOk() {
     else if(document.getElementsByClassName("activeSeeMoreView")[0] !== undefined)
     	{
     	
-    	     localStorage.setItem("movie_screen_title", "Most Viewed");
+    	     localStorage.setItem("movie_screen_title", "I più visti");
     	     localStorage.setItem("movies", JSON.stringify(mostViewedList));
     		 viewMovieListScreen();
     	}
     else if(document.getElementsByClassName("activeSeeMoreRecent")[0] !== undefined)
 	{
     	
-	     localStorage.setItem("movie_screen_title", "Most Recents");
+	     localStorage.setItem("movie_screen_title", "La maggior parte dei recenti");
 	     localStorage.setItem("movies", JSON.stringify(mostRecentsList));
 		 viewMovieListScreen();
 	}

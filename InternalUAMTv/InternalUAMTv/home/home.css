@@ -171,7 +171,7 @@ span #detail {
 }
 
 .play_btn {
-    width: 233px;
+    width: 258px;
     border: 2px solid hsla(266, 6%, 45%, 1);
     background: rgba(255, 132, 0, 1);
     border-radius: 9px;
@@ -290,8 +290,6 @@ span #detail {
 }
 
 .fa-search {
-    position: relative;
-    top: 50px;
     font-size: 31px;
 }
 

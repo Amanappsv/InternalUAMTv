@@ -88,7 +88,7 @@ header nav ul li:hover {
     font-weight: bold
 }
 .play_btn {
-    width: 200px;
+    width: 228px;
     border: 2px solid hsla(266, 6%, 45%, 1);
     background: rgba(255, 132, 0, 1);
     border-radius: 9px;
@@ -148,7 +148,7 @@ header nav ul li:hover {
     background: #a29595;
 }
 .watch_btn {
-    width: 244px;
+    width: 293px;
     border-radius: 9px;
     height: 58px;
     background: #706382;

@@ -20,16 +20,56 @@
     </head>
 
     <body>
+    
+    <header>
+        <img src="../images/logo.svg" alt="">
+        <nav>
+            <ul>
+            <!--  
+                <li onclick="openWifiNav()"><i id="fa-wifi" class="fa fa-wifi "></i>
+                </li>
+                <li onclick="openNav()"><i id="fa-bell" class="fa fa-bell"></i><span class="badge" id="badge">5</span>
+                </li>
+                -->
+                <li><i id="fa-user" class="fa fa-user "></i>
+                </li>
+                <span id="user_name_id" class="user_name">Jamshed</span>
+            </ul>
+        </nav>
+    </header>
         <div class="main_container">
+        
+         <div id="viewSpinner" class="loadingio-spinner-spinner-rexyx9adxl">
+                <div id="loadingSpinner" >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            
+           <div class="search_container" id="searchContainer" >
             <div class="form-group searchBox">
                 <i class="fa fa-search" id="serachBtn" onclick="searchButtonStyle()"></i>
                 <input type="text" id="search_field_id" class="form-control searchInput" placeholder="Search here">
+            </div>        
+            <div id="container-fluid_id" class="container-fluid" style="display: none;">            
             </div>
-            
-            <div id="container-fluid_id" class="container-fluid">
-             
-               
-            </div>
+           </div>
+           <div class="not_Found">
+           <i class="fa fa-film"></i>
+           <p class="errMsg">Oops!!</p>
+           <p>Looks like we couldn't find any matches.</p> 
+           <p>Try again or browse on Closets.</p>
+           </div>
         </div>
     </body>
     </body>

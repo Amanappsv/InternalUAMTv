@@ -159,6 +159,7 @@ function addCategoriesToCategoryScreen() {
 
 function searchButtonStyle(){
     document.getElementById("serachBtn").classList.add('searchStyleAfterClick');
+    document.getElementById("loadingSpinner").classList.add('ldio-eon67kjyqwt');
     
     var token = localStorage.getItem("jwt token");
 

@@ -96,8 +96,7 @@
     z-index: 2;
     padding: 14px;
     background: white;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 132, 0, 1);
+   
   }
   .searchBox {
       position: relative;
@@ -111,8 +110,7 @@
       font-size: 31px;
       box-shadow: none;
       z-index: 12;
-      border-radius: 36px;
-      border: 2px solid rgba(255, 132, 0, 1);
+     
   }
   .searchStyleAfterClick{
   opacity: 0.5;
@@ -211,12 +209,12 @@ height: 100%;
 position: relative;
 transform: translateZ(0) scale(1);
 backface-visibility: hidden;
-transform-origin: 0 0; / see note above /
+transform-origin: 0 0;
 }
 .ldio-eon67kjyqwt div { box-sizing: content-box; }
 .not_Found{
 	position: absolute;
-    left: 33%;
+    left: 24%;
     top: 34%;
     text-align: center;
 }

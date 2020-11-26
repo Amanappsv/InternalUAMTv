@@ -84,6 +84,15 @@ function moveOk(){
 	if(document.getElementsByClassName("searchStyleAfterClick")[0] !== undefined)
 	searchButtonStyle();
 	
+	else if(document.getElementsByClassName("activeCategory")[0] !== undefined){
+		
+		localStorage.setItem("detail-movie-id", categoryList[selectedCatPos]["id_movie"]);
+		
+		
+        location.href = "../detail/detail.html";
+		
+	}
+	
 }
 
 function moveDown(){

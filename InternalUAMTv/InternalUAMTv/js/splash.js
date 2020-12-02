@@ -59,7 +59,7 @@ function heartbeatPost(token)
 	
 	console.log("heartbeat");
 	let formData = new FormData();
-	formData.append('devicehash', "SDKHUWUR7SQ24");
+	formData.append('devicehash', webapis.productinfo.getDuid());
 	formData.append('devicefriendlyname',  webapis.productinfo.getModel());
 	formData.append('platform', "Tizen " + webapis.tvinfo.getVersion());
 	formData.append('version', webapis.productinfo.getVersion());

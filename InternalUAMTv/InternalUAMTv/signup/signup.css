@@ -157,6 +157,13 @@ h2{
 	color:#FF8400;
 }
 
+
+.loginBtn_style{
+	border: 2px solid #FF8400;
+	background: none;
+	color: white;
+}
+
 .remember_label_style{
 	color: #FF8400 !important;
 	text-decoration: underline !important ;
@@ -164,6 +171,11 @@ h2{
 hr{
 	position: relative;
     top: 61px;
+}
+
+
+.signupfocus{
+	color: #FF8400 !important;
 }
 
 

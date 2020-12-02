@@ -88,8 +88,10 @@ function keyOk()
 			loginStyleChange();
 			login();
 		}
-	else 
-		{}
+	else if(document.activeElement.id === "subscribe")
+		{
+		  	location.href = "signup/signup.html";
+		}
 }
 
 function keyUp()

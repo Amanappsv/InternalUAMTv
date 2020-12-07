@@ -29,8 +29,8 @@ RsnDl3frzA==</DigestValue>
 </Reference>
 <Reference URI="Search%2Fsearch.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>TBF+OK1ihiuToBNd9nUwQ5WWDJPheIPwreHThI1DgmweHYbibGfja8IgtI9ApL9WiK6lUzPeNCBX
-XkJBlmT9RQ==</DigestValue>
+<DigestValue>nS6/K++HPJZL/N/PNYtxI8WVpLTQzA1JlydoRB1F8HsToKVG8+B/UWKacjATOE2+68uRERZNTr2L
+phmQ8r2iRQ==</DigestValue>
 </Reference>
 <Reference URI="Video%2F.gitignore">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -49,13 +49,13 @@ HkIRP/sYbA==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>mpJwyNsYjSSHtdJOABmRCb4UZX2rK/t6X2O9vvyjkr6cgLqwPTsOM7B8rSnL/cM/myxsGx2CQzrX
-NcnYEPnRbA==</DigestValue>
+<DigestValue>XZdsauaowurdF3reElCPRvL4nCUf/0hC9clsjFvwaGzb0vuUXR3JyEiJgzE3FYCBqHQgu0Vcx0bU
+GkP3OUmQ8g==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>RgYSAFOuaRCoG3Rit5d9NH1K3HPIWk/X5XKW9wzmliwLGyH+RbxG/iWZfN/wNDuZ4yVMTPR7abe8
-35/vLJK8RQ==</DigestValue>
+<DigestValue>0fWI9T04j4qcuWoSd2Bm/jB3MvSRqKT3J7jxVmwq5t+mJskJ2tkiBvtHhModhFTNBlxFzTCUMQ0D
+9DXQrYXlhw==</DigestValue>
 </Reference>
 <Reference URI="Video%2Fvideo.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -114,8 +114,8 @@ nZI1TkvkYA==</DigestValue>
 </Reference>
 <Reference URI="detail%2Fdetail.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>0iOtnQ9giIb9qV9PX3sbD9c7/Zo7h0gA7YhIs+aC0esfBvp6VnLbhsR5FbhygNf+dZdw0NNrf/hk
-7nNDsEHCdw==</DigestValue>
+<DigestValue>biqZYvYI1gnl4imcdM4ESh8rHtPjJ8AVt00cRBYkJXdVB1UXovo4AY13EHYvcahLh+L+iibxJBpX
+ExGe+zjJMA==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -129,8 +129,8 @@ hdbKLyRuwg==</DigestValue>
 </Reference>
 <Reference URI="home%2Fhome.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>Xdn0ir4EHzDGuIBfQhD6efMelMbKJw9je2DPVoie5Gsp1rC2P3cL0XJ1eKoLZQ+DJYW3iRpFO35A
-K9lmh9/SdQ==</DigestValue>
+<DigestValue>SjZCRNjIkI6AHIgAVIi5jQwEskk5zD4z0x5ShbDGENBKsF/0Ic7mi516Twlk8hiUNjZcSV6j2myQ
+LeNOCfySvA==</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -244,8 +244,8 @@ D5E75jBLQg==</DigestValue>
 </Reference>
 <Reference URI="js%2Fsplash.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>wk3HnznxZi/wv730cSjCHiLwcQ0Rsk5aTmBKdY1/CxdmDESoEQLhn/iFcIGCVoiEQQJWJxROG33m
-Pn8/yjPUxg==</DigestValue>
+<DigestValue>OBQJrcJYB5azKSP/ayU6K6Xqt/Ad5B2I09N962c9MwZcERNSsTVd6tSe/OK8mpi9gVRb0e20PTZ1
+Kmacm1dvBg==</DigestValue>
 </Reference>
 <Reference URI="language.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -294,8 +294,8 @@ RYjJwUyKiw==</DigestValue>
 </Reference>
 <Reference URI="signup%2Fsignup.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>BbXFvgXJhHjOCP8Wkfncowt1UCGr4Ykh+Yd7Ka1/CzXO7whi1o1SFxZny/UYaNlCS3JQAw3zkb0o
-O2txry7GfA==</DigestValue>
+<DigestValue>zL1ETS7U3VkKapudJ5UNpYW8rMLdYNpf+sLHqqb4U90HY70OePWjtU3Oo9eT9aTcEC7zTl68mkgN
++YiHeuOrBg==</DigestValue>
 </Reference>
 <Reference URI="splash.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -387,9 +387,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-MFDIYOx6+rDyYCUtsfx18WcVejCMI300PRR7XZgLeVpI22dj1JgrWcfVpjQdTLvejzCbKor9xVsC
-KWEKWa11OyNs1mLuMNtUNvUqE+Y4q72Q54EX4fy2MEDmDoblXqMImkUkHRVmDzzOG6zt7KRbBYdV
-B5l+YBgDts8hFGqNSoY=
+BFX6Dc1/S59UJ06QpoQ1qTGR136Iet5KtyR98dRM1+7KmbdLmi3ICAE0wWTjNBa6vQCerv0oiTL+
+unk6dvzvCGW7hEGPbYJGgrKj+kwXYTBP4gDDPf/DeOZMr8v9Dw0TsAP7PZw91C8JAmnw+pdzjO4O
+CLmPFkzRekxr6MEDQMo=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

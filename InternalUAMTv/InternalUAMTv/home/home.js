@@ -270,20 +270,7 @@ function moveOk() {
 		
         location.href = "../detail/detail.html";   
     } 
-    else if (document.getElementsByClassName("watch_btn")[0] !== undefined){
-    	
-    	
-    	var el = document.getElementsByClassName("watch_btn")[0].id;
-    	
-    	if(el === "logout_btn_id"){
-    	
-    		localStorage.removeItem("jwt token");
-    		
-    		location.href = "../login.html";
-    		
-    	}
    
-    }
     
     else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
         
@@ -342,6 +329,21 @@ function moveOk() {
 		    	changeBackgroundImg(1);
     	}
 
+    }
+    
+ else if (document.getElementsByClassName("watch_btn")[0] !== undefined){
+    	
+    	
+    	var el = document.getElementsByClassName("watch_btn")[0].id;
+    	
+    	if(el === "logout_btn_id"){
+    	
+    		localStorage.removeItem("jwt token");
+    		
+    		location.href = "../login.html";
+    		
+    	}
+   
     }
  
     
@@ -1645,6 +1647,8 @@ function getMovieSource(moviePlay, token) { // hit stream api...
 
             
             localStorage.setItem("video", videoUrl);
+            localStorage.setItem("videoId",  moviePlay["contentId"]);
+            
             
             location.href="../Video/video.html"
             

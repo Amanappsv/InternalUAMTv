@@ -15,7 +15,7 @@ var init = function () {
     
     //launch next screen after 2 seconds....
 //    setInterval(function(){
-    	
+//    	
     	
     
     setTimeout(function(){ 

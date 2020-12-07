@@ -7,6 +7,7 @@ var categoryList = [];
 var init = function () {
        
     initTizenKeys();
+    hideSection("not_found_id");
     document.getElementById("search_field_id").focus();
     setFocus("search_field_id" , "activeField");
     document.getElementById("user_name_id").innerHTML = localStorage.getItem("username");
@@ -259,7 +260,7 @@ function doSearch(text , token){
 
 			        		  var obj = {
 			                          "fullId": result["id_full"],
-			                          "image": "https://media.uam.tv/images/media/frames/" + result["id_full"] + ".jpg",
+			                          "image": "https://media.uam.tv/images/media/slider/" + result["id_full"] + ".jpg",
 			                          "id_movie": result["id_movie"]
 			                     
 			                      };

@@ -546,6 +546,8 @@ function showLoader(){
 
               
               localStorage.setItem("video", videoUrl);
+              localStorage.setItem("videoId",  moviePlay["contentId"]);
+              
               
               location.href="../Video/video.html"
               

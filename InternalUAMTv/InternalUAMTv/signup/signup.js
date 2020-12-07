@@ -136,7 +136,7 @@ function signup(){
 	
 
 	
-	fetch('https://testapi.uam.tv/v3/users/post.php', {
+	fetch('https://api.uam.tv/v3/users/post.php', {
 	  method: 'POST', // or 'PUT'
 	  body:formData,
 	})
@@ -147,8 +147,7 @@ function signup(){
 		hideLoader();
 		
 		if(data["meta"]["response"] == true){
-			alert("Successfully Registered");
-			location.href = "../login.html";
+			login();
 		}
 		else{
 			alert("Account already exists!");
@@ -158,11 +157,77 @@ function signup(){
 	  
 	})
 	.catch((error) => {
-		alert("Failed!");
+		alert("Errore!");
 	  hideLoader();
 	});
 	
 	
+	
+	
+	
+}
+
+
+
+
+
+//login function....
+function login()
+{
+	
+	
+	
+	
+	//showLoader
+	
+	showLoader();
+	
+	
+	
+	
+	let formData = new FormData();
+	formData.append('username', document.getElementById("email").value);
+	formData.append('password', document.getElementById("pass").value);
+	formData.append('devicehash', webapis.productinfo.getDuid());
+	formData.append('devicefriendlyname',  webapis.productinfo.getModel());
+	formData.append('platform', "Tizen " + webapis.tvinfo.getVersion());
+	formData.append('version', webapis.productinfo.getVersion());
+	
+	
+	
+	
+	
+	
+
+	
+	fetch('https://api.uam.tv/v3/users/auth/get.php', {
+	  method: 'POST', // or 'PUT'
+	  body:formData,
+	})
+	.then(response => response.json())
+	.then(data => {
+	  console.log('Success:', data["jwt"]);
+	
+	  
+	  localStorage.setItem("remembered", "true");
+	  
+	  
+	  localStorage.setItem("jwt token", data["jwt"]);
+	  
+	  hideLoader();
+	  
+	  location.href = "home/home.html";
+	  
+	  
+	  
+	  
+	})
+	.catch((error) => {
+	  console.error('Err:', error);
+	  hideLoader();
+	});
+	
+
 	
 	
 	

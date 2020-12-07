@@ -29,12 +29,17 @@ var init = function () {
 	 else
 		 {
 		
-		 	if(remembered === "true")
-		 		heartbeatPost(token);
+			 if(remembered === "true")
+		 		{
+		 		  
+		 			 heartbeatPost(token);
+		 		  
+		 		}
 		 	else
 		 		location.href = "login.html";
- 		
-		 } 
+	
+		 }
+    	
     	
     	
     }, 3000);

@@ -270,6 +270,20 @@ function moveOk() {
 		
         location.href = "../detail/detail.html";   
     } 
+    else if (document.getElementsByClassName("watch_btn")[0] !== undefined){
+    	
+    	
+    	var el = document.getElementsByClassName("watch_btn")[0].id;
+    	
+    	if(el === "logout_btn_id"){
+    	
+    		localStorage.removeItem("jwt token");
+    		
+    		location.href = "../login.html";
+    		
+    	}
+   
+    }
     
     else if (document.getElementsByClassName("activeScreenCategory")[0] !== undefined) {
         
@@ -355,6 +369,13 @@ function moveUp() {
             setFocus("category_btn_id", "watch_btn");
 
             showCategorySection();
+
+        }
+        else if (el === "logout_btn_id") {
+            removeFocus("watch_btn");
+            setFocus("fav_btn_id", "watch_btn");
+
+            showFavouriteSection();
 
         }
    		else if(el === "watch_btn_id"){
@@ -494,10 +515,16 @@ function moveDown() {
 
             showFavouriteSection();
         } else if (el === "fav_btn_id") {
-            removeFocus("watch_btn");
-            setFocus("setting_btn_id", "watch_btn");
+        	removeFocus("watch_btn");
+            setFocus("logout_btn_id", "watch_btn");
 
-            settingsNavigate();
+            
+        }
+        else if(el === "logout_btn_id"){
+        	 removeFocus("watch_btn");
+             setFocus("setting_btn_id", "watch_btn");
+
+             settingsNavigate();
         }
 
 

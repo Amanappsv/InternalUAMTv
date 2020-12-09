@@ -231,10 +231,14 @@ function getSubscriptionDetails(token){
 			
 		
 				document.getElementById("type_sub_id").innerHTML = toUpper(data["data"]["payment-method"]) + " " + toUpper(data["data"]["frequency"]) + " Subscription";
+
+				if(data["data"]["start-date"] != null && data["data"]["start-date"] != "")
 				document.getElementById("effective_date_sub_id").innerHTML = formatDate(data["data"]["start-date"]);
+				
+				if(data["data"]["expiration-date"] != null && data["data"]["expiration-date"] != "")
 				document.getElementById("expiration_date_sub_id").innerHTML = formatDate(data["data"]["expiration-date"]);
 			
-				
+
 				
 				getDeviceListDetails(token)
 				

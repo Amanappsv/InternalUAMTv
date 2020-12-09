@@ -1087,7 +1087,8 @@ function getRandomMovies(token) {
                     "tag": result["langs"]["it"]["tags"],
                     "geolimits": result["meta"]["geolimits"],
                     "trailerId": result["src"]["id_trailer"],
-                    "uid": result["uid"]
+                    "uid": result["uid"],
+                    "movie_id" : result["uid"]
                
                 };
 
@@ -1646,8 +1647,9 @@ function getMovieSource(moviePlay, token) { // hit stream api...
             var videoUrl = data["data"]["embedUrlList"][0]["https"]["abr"]["hls"];
 
             
+            var movie = JSON.parse(localStorage.getItem("detail"));
             localStorage.setItem("video", videoUrl);
-            localStorage.setItem("videoId",  moviePlay["contentId"]);
+            localStorage.setItem("videoId",  movie["movie_id"]);
             
             
             location.href="../Video/video.html"

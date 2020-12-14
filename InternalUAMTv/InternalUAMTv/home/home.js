@@ -307,7 +307,7 @@ function moveOk() {
     else if(document.getElementsByClassName("activeSeeMoreRecent")[0] !== undefined)
 	{
     	
-	     localStorage.setItem("movie_screen_title", "La maggior parte dei recenti");
+	     localStorage.setItem("movie_screen_title", "Ultime uscite");
 	     localStorage.setItem("movies", JSON.stringify(mostRecentsList));
 		 viewMovieListScreen();
 	}

@@ -24,10 +24,6 @@ var selectedCatPos = 0,
 
 var init = function() {
 
-
-    initText();
-
-
     viewLoader();
 
     // set Focus on details text....
@@ -170,20 +166,6 @@ function changeBackgroundImg(index) {
 }
 
 
-function initText() {
-
-    document.getElementById("watch_txt").innerHTML = TIZEN_L10N['home_watch_now_text'];
-    document.getElementById("cat_txt").innerHTML = TIZEN_L10N['home_category_text'];
-    document.getElementById("fav_txt").innerHTML = TIZEN_L10N['home_favorites_text'];
-    document.getElementById("set_txt").innerHTML = TIZEN_L10N['home_settings_text'];
-    document.getElementById("category_list_id").innerHTML = TIZEN_L10N['home_category_list'];
-    document.getElementById("most_viewed_list_id").innerHTML = TIZEN_L10N['home_most_viewed_list'];
-    document.getElementById("most_recent_list_id").innerHTML = TIZEN_L10N['home_most_recent_list'];
-    document.getElementById("detail").innerHTML = TIZEN_L10N['home_detail_text'];
-  
-
-}
-
 function initTizenKeys() {
     // add eventListener for keydown
     document.addEventListener('keydown', function(e) {
@@ -208,8 +190,10 @@ function initTizenKeys() {
 
                 break;
             case 10009: // RETURN button
-                tizen.application.getCurrentApplication().exit();
-                break;
+//                tizen.application.getCurrentApplication().exit();
+                
+            	 location.href = "../home/home.html";
+            	break;
             default:
                 console.log('Key code : ' + e.keyCode);
                 break;
@@ -337,10 +321,21 @@ function moveOk() {
     	var el = document.getElementsByClassName("watch_btn")[0].id;
     	
     	if(el === "logout_btn_id"){
-    	
-    		localStorage.removeItem("jwt token");
     		
-    		location.href = "../login.html";
+    		
+    		var value = confirm("Do you want to logout? ");
+    	
+    		
+    		if(value == true){
+    	
+    			
+        		localStorage.removeItem("jwt token");
+        		localStorage.removeItem("remembered");
+        		location.href = "../login.html";
+    			
+    		}
+    		
+
     		
     	}
    

@@ -128,6 +128,7 @@ function signup(){
 	formData.append('password', document.getElementById("pass").value);
 	formData.append('fname', document.getElementById("fname").value);
 	formData.append('lname',  document.getElementById("lname").value);
+	formData.append('idaff' , 'samsung');
 	
 	
 	

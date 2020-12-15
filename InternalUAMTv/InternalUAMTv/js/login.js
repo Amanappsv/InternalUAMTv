@@ -1,10 +1,6 @@
 var init = function () {
        
-	
-	
-	initText();
-	
-    document.getElementById("email").focus();
+	  document.getElementById("email").focus();
     initLoginElements();
     initTizenKeys();
 };
@@ -14,15 +10,6 @@ window.onload = init;
 
 
 
-
-function initText(){
-	
-	document.getElementById("signIn_text_id").innerHTML = TIZEN_L10N['sign_in_text'];
-	document.getElementById("remmber_label").innerHTML = TIZEN_L10N['sign_in_remember_me'];
-	document.getElementById("loginButton").innerHTML = TIZEN_L10N['sign_in_btn_text'];
-	document.getElementById("forgotPassword").innerHTML = TIZEN_L10N['sign_in_forgot_pass'];	
-
-}
 
 
 

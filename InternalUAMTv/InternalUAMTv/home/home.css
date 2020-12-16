@@ -775,3 +775,12 @@ h2 {
      height: 289px;
      border-radius: 12px;
 	}
+.unsubscribeText{
+	font-size: 1.8rem;
+    color: rgba(255, 132, 0, 1);
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    top: 1rem;
+}	
+	

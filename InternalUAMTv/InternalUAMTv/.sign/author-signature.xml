@@ -264,13 +264,13 @@ ODJ6+SfaPg==</DigestValue>
 </Reference>
 <Reference URI="settings%2Fsettings.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>fWg/3tCjADaatfTb1VR7cJ6YvsFpjWSntsGpipcD+fXKr+GmLXqJq+50FR6Jei+qeLMa/7b5cw9z
-W4zR/+gaYA==</DigestValue>
+<DigestValue>5b1zEoSelKj4ey14IEMASECVjt6w8HkNqNHDySQnNIURcuuWC6AAniQZJOonQCxbjJ5pLcXLDOKl
+ksI8ZVE7pg==</DigestValue>
 </Reference>
 <Reference URI="settings%2Fsettings.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>VPHLMZ5A0jjLfklWQoq5ONvhWQ2++x/q7s3xcYXk+K0gxKo+KfFTy7J1ArENO8wtii42V8u8jvmY
-MbuPFsB1Lg==</DigestValue>
+<DigestValue>IuI47ZDohkaDDudJCMeDNwj4GfmNuQHdLAnqIfIMFgVKe7uFb67koS3fOVpLx7mrtMAm9fzlhkH9
+36x56TYN9Q==</DigestValue>
 </Reference>
 <Reference URI="settings%2Fsettings.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -382,9 +382,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Y5r8G3xfVtBlPN5BXsTSb39WPQqCWKmYAXxBzRjXNBtfWDfytX6bLbSUvmmv8+m3dXtPa7za9RXr
-Qc3QUAXrLT5jdX0gdvrrRV3YXaGLriLE0HJxgDRmaKYtaYEj+1Zd9SYw/LC4MEBquhgV8H7txkJk
-vwZ61J+WR0L6HVj4Lrg=
+fdwv8NgmDnJh/W107gduSFXC50pGUOsvUUVY3TIuyBBsgyqpEk6oDlBlb8CEWA90GEDzS3+Ad6Wi
+RVE4xpnJcS3RF7PWxKM48iAgLwPIoMhgBPYlAvr4x45bT5a2/dZRdQDr14V+ooootnZQpdfG8urC
+kX82mT8u+5HHZREyCKk=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

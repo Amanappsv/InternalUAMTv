@@ -184,7 +184,8 @@ function login()
 	showLoader();
 	
 	
-	
+	 var app = tizen.application.getCurrentApplication();
+
 	
 	let formData = new FormData();
 	formData.append('username', document.getElementById("email").value);
@@ -192,7 +193,7 @@ function login()
 	formData.append('devicehash', webapis.productinfo.getDuid());
 	formData.append('devicefriendlyname',  webapis.productinfo.getModel());
 	formData.append('platform', "Tizen " + webapis.tvinfo.getVersion());
-	formData.append('version', webapis.productinfo.getVersion());
+	formData.append('version', app.appInfo.version);
 	
 	
 	

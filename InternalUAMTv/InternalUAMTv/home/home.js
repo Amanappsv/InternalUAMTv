@@ -109,11 +109,15 @@ window.onload = init;
 //refresh my token if expire...
 function refreshMyToken(token , refreshToken){
 	
+	
+	 var app = tizen.application.getCurrentApplication();
+
+	 
 	  let params = {
 		        "devicehash": webapis.productinfo.getDuid(),
 		        "devicefriendlyname": webapis.productinfo.getModel(),
 		        "platform" : "Tizen " + webapis.tvinfo.getVersion(),
-		        "version" :  webapis.productinfo.getVersion()
+		        "version" :  app.appInfo.version
 		    };
 
 		    let query = Object.keys(params)
@@ -1696,6 +1700,12 @@ function getMovieSource(moviePlay, token) { // hit stream api...
             // set to storage
 
             var videoUrl = data["data"]["embedUrlList"][0]["https"]["abr"]["hls"];
+            
+            if(moviePlay["geolimits"] == 2){
+            	localStorage.setItem("geo", "true");
+            }
+            else
+            	localStorage.setItem("geo", "false");
 
             
             var movie = JSON.parse(localStorage.getItem("detail"));

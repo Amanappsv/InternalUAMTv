@@ -10,6 +10,8 @@ var init = function () {
     setPlayer();
     
     
+    
+    
     console.log(localStorage.getItem("videoId"));
     
     
@@ -122,7 +124,37 @@ function setPlayer() {
 //	    	volumeStep: 0.1,
 //	    	seekStep: 5
 //	    	});
+	    
+	    
+	    var geo = localStorage.getItem("geo");
+	    
+	    console.log("geo" , geo);
+	    
+	 //   if(geo == "true")
+	    headRequest(url);
+	    
+	    
 }
+
+function headRequest(pathToResource) {
+	  fetch(pathToResource, {
+	    method: 'HEAD'
+	  })
+
+	  .then(data => {
+
+		  if (data.status == 401) {
+			  alert("Attualmente questo titolo non è disponibile nel tuo paese. Nella home page c'è molto altro da scoprire");
+		}
+		  
+		  
+          })
+          .catch((error) => {
+              console.log('Err:', error);
+              
+          });
+	}
+
 
 
 

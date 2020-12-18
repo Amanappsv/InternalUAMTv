@@ -556,6 +556,12 @@ function showLoader(){
 
               var videoUrl = data["data"]["embedUrlList"][0]["https"]["abr"]["hls"];
 
+              if(moviePlay["geolimits"] == 2){
+              	localStorage.setItem("geo", "true");
+              }
+              else
+              	localStorage.setItem("geo", "false");
+
               
               localStorage.setItem("video", videoUrl);
               localStorage.setItem("videoId",  details["uid"]);

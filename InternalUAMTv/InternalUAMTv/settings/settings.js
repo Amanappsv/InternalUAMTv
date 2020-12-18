@@ -4,6 +4,20 @@ var init = function () {
        
 	
 	viewLoader();
+	
+	 var subscribed = localStorage.getItem("subscribed");
+	    
+	    if(subscribed == "true"){
+	     	document.getElementById('unsubscribeUser').style.display = "none"
+	    }
+	    else {
+			 
+		    document.getElementById('setting_section_id').style.display = "none"
+
+
+		   }
+
+	
 	getProfileData();
     initTizenKeys();
 };

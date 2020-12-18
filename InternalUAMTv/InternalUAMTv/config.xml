@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/UAMTV" version="1.0.1" viewmodes="maximized">
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="https://uam.tv/" version="1.0.2" viewmodes="maximized">
     <access origin="*" subdomains="true"></access>
     <tizen:application id="IFV5mNO52T.UAMTV" package="IFV5mNO52T" required_version="2.3"/>
+    <author href="https://uam.tv/" email="info@uam.tv">UAM.TV</author>
     <content src="splash.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
     <icon src="icon.png"/>

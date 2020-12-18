@@ -13,7 +13,19 @@ var isFavorited;
 var init = function () {
        
   
-	setFocus("playButton", "activePlay");
+    var subscribed = localStorage.getItem("subscribed");
+    
+    if(subscribed == "true"){
+    	setFocus("playButton", "activePlay");
+     	document.getElementById('unsubscribeUser').style.display = "none"
+    }
+    else {
+		 
+	    document.getElementById('button_layout_id').style.display = "none"
+
+
+	   }
+
 	
 	initTizenKeys();
   

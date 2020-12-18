@@ -471,10 +471,8 @@ color: white;
 }
 .unsubscribedUser{
 	position: absolute;
-    top: 33%;
-    left: 12%;
     font-size: 45px;
     font-weight: bold;
-    color: rgba(255, 132, 0, 1);
+    color: white;
     text-align: center;
 }

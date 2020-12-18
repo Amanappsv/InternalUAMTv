@@ -6,6 +6,7 @@ var favList = [];
 var mostRecentsList = [];
 var mostViewedList = [];
 var randomBannerList = [];
+var activeSubscription;
 
 
 
@@ -52,6 +53,10 @@ var init = function() {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
 
+        activeSubscription = JSON.parse(jsonPayload).state;
+        
+       
+         
         var exp = JSON.parse(jsonPayload).exp;
         var refreshToken = JSON.parse(jsonPayload).refreshtoken;
 
@@ -62,9 +67,25 @@ var init = function() {
        }
        else
        {
+    	   
+    	   if(activeSubscription == "Active")
+    		   {
+    			  localStorage.setItem("subscribed", "true");
+  		   		document.getElementById('unsubscribeUser').style.display = "none"
+
+    		   }
+    		   else {
+     			  localStorage.setItem("subscribed", "false");
+   			   document.getElementById('button_layout_id').style.display = "none"
+
+
+    		   }
+    	   
      	  getHomeScreenData();
        }
     
+       
+       
      
     	
     } else {
@@ -109,6 +130,27 @@ function refreshMyToken(token , refreshToken){
 
 		        	localStorage.setItem("jwt token", data["jwt"]);
 		        	
+		        	var base64Url = data["jwt"].split('.')[1];
+		            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+		            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+		                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+		            }).join(''));
+
+		        	activeSubscription = JSON.parse(jsonPayload).state;
+		            
+		        	   if(activeSubscription == "Active"){
+		     			    localStorage.setItem("subscribed", "true");
+		    		   		document.getElementById('unsubscribeUser').style.display = "none"
+
+		        	   }
+		    		   else {
+		     			   localStorage.setItem("subscribed", "false");
+		    			   document.getElementById('button_layout_id').style.display = "none"
+
+
+		    		   }
+		    	   
+		        	
 		        	getHomeScreenData();
 
 		        })
@@ -122,7 +164,6 @@ function refreshMyToken(token , refreshToken){
 
 function changeBackgroundImg(index) {
 	
-	console.log("here");
 	
 	if( selectedBannerIndex +  (index) < 0)
 		{
@@ -413,9 +454,15 @@ function moveUp() {
         }
         
         else if(document.getElementsByClassName("button_left")[0] !== undefined){
-        	setFocus("add_play_btn", "button_play");
-            document.getElementById("add_play_btn").style.opacity = 0.5;
+        	  if(activeSubscription == "Active"){
+        		  setFocus("add_play_btn", "button_play");
+                  document.getElementById("add_play_btn").style.opacity = 0.5;
 
+        	  }
+        	  else{
+        		  setFocus("detail", "activeDetail");
+        	  }
+        	
             
             removeFocus("button_left");
         }
@@ -528,9 +575,18 @@ function moveDown() {
     } else {
 
         if (document.getElementsByClassName("activeDetail")[0] !== undefined) {
-            setFocus("add_play_btn", "button_play");
-            document.getElementById("add_play_btn").style.opacity = 0.5;
+          
+        	  if(activeSubscription == "Active"){
+        			setFocus("add_play_btn", "button_play");
+                    document.getElementById("add_play_btn").style.opacity = 0.5;
 
+        	  }
+  		   		
+  		   else {
+  			       setFocus("left_back_id" , "button_left");   
+  		   }
+  			   
+        
             removeFocus("activeDetail");
 
         }

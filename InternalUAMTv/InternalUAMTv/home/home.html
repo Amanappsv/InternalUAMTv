@@ -29,6 +29,8 @@
                 <li onclick="openNav()"><i id="fa-bell" class="fa fa-bell"></i><span class="badge" id="badge">5</span>
                 </li>
                 -->
+                 <li   ><i id="fa-bell" class="fa fa-lock"></i><span class="badge" id="badge"><a href="#myModal" data-toggle="modal">Modal</a></span>
+                </li>
                 <li><i id="fa-user" class="fa fa-user "></i>
                 </li>
                 <span id="user_name_id" class="user_name"></span>
@@ -290,6 +292,34 @@
             </div>
         </div>
     </div>
+    
+    
+
+    
+    
+<!-- Modal -->
+<div class="bs-example">
+  
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button> 
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to logout?</p>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
 </body>
 
 </html>

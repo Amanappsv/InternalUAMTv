@@ -32,7 +32,13 @@ header nav ul li {
     background-color: #291b3c;
     margin-right: 10px;
 }
-
+ .bs-example{
+    	margin: 20px;
+    }
+    .modal{
+     top: 27rem !important;
+    left: 18rem !important;
+    }
 #fa-user,
 #fa-wifi,
 #fa-bell {

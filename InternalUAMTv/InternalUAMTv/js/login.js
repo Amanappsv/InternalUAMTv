@@ -238,7 +238,7 @@ function login()
 	formData.append('username', document.getElementById("email").value);
 	formData.append('password', document.getElementById("pass").value);
 	formData.append('devicehash', webapis.productinfo.getDuid());
-	formData.append('devicefriendlyname',  webapis.productinfo.getModel());
+	formData.append('devicefriendlyname', "Samsung " +  webapis.productinfo.getModel());
 	formData.append('platform', "Tizen " + webapis.tvinfo.getVersion());
 	formData.append('version', app.appInfo.version);
 	
@@ -266,12 +266,9 @@ function login()
 	  
 	  
 	  localStorage.setItem("jwt token", data["jwt"]);
-	  
-	  hideLoader();
-	  
-	  location.href = "home/home.html";
-	  
-	  
+	
+	  heartbeatPost(data["jwt"] , app.appInfo.version);
+	
 	  
 	  
 	})
@@ -348,4 +345,45 @@ function initLoginElements()
     
     
 }
+
+
+
+
+
+function heartbeatPost(token , version)
+{
+	
+	
+	console.log("heartbeat");
+	let formData = new FormData();
+	formData.append('devicehash', webapis.productinfo.getDuid());
+	formData.append('devicefriendlyname',  "Samsung " + webapis.productinfo.getModel());
+	formData.append('platform', "Tizen " + webapis.tvinfo.getVersion());
+	formData.append('version', version);
+	
+	
+	fetch('https://api.uam.tv/v3/users/devices/heartbeat/post.php', {
+	   	  method: 'POST',
+		  body:formData,
+		  headers: {
+			  'Authorization' : "Bearer " + token,
+		  },
+		})
+		.then(response => response.json())
+		.then(data => {
+	
+			  hideLoader();
+			  
+			  location.href = "home/home.html";
+			  
+			  
+			
+		  
+		})
+		.catch((error) => {
+		  console.log("Err : " , error);
+		
+		  
+		});
+	}
 

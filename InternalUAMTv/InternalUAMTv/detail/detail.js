@@ -186,6 +186,11 @@ function getDetailScreenData(token , uid) {
              }
             
            
+             if(data[0]["meta"]["parentalguidance"] == true){
+            	
+            	 //show section of child line
+            	 
+             }
              
              document.getElementById("detail_video_name").innerHTML = details["title"];
              document.getElementById("detail_video_desc").innerHTML = details["desc"];

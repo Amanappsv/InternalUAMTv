@@ -32,7 +32,7 @@ var init = function () {
 			 if(remembered === "true")
 		 		{
 		 		  
-		 			 heartbeatPost(token);
+				    location.href = "home/home.html";
 		 		  
 		 		}
 		 	else
@@ -56,40 +56,6 @@ window.onload = init;
 
 
 
-
-
-function heartbeatPost(token)
-{
-	
-	
-	console.log("heartbeat");
-	let formData = new FormData();
-	formData.append('devicehash', webapis.productinfo.getDuid());
-	formData.append('devicefriendlyname',  webapis.productinfo.getModel());
-	formData.append('platform', "Tizen " + webapis.tvinfo.getVersion());
-	formData.append('version', webapis.productinfo.getVersion());
-	
-	
-	fetch(URL + 'v3/users/devices/heartbeat/post.php', {
-	   	  method: 'POST',
-		  body:formData,
-		  headers: {
-			  'Authorization' : "Bearer " + token,
-		  },
-		})
-		.then(response => response.json())
-		.then(data => {
-	
-			
-			location.href = "home/home.html";
-		  
-		})
-		.catch((error) => {
-		  console.log("Err : " , error);
-		  location.href = "login.html";
-		  
-		});
-	}
 
 
 

@@ -541,4 +541,15 @@ transform-origin: 0 0; / see note above /
     position: relative;
     top: 1rem;
 }	
-	
+.syn_txt1{
+	font-size: 28px;
+    color: white;
+    font-style: italic;
+    margin-top: 22px;
+}
+	.syn_txt2{
+	font-size: 28px;
+    color: white;
+    font-weight:bold;
+    margin-top: 22px;
+}
